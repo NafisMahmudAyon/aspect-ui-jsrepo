@@ -1,21 +1,67 @@
-import { ReactNode } from 'react';
+// components/AccordionHeader.tsx
+import { ReactNode } from 'react'
 
-interface AccordionHeaderProps {
-  isOpen: boolean;
-  onClick: () => void;
-  children?: ReactNode | string; // Allow header content to be passed as children
+export interface AccordionHeaderProps {
+  isOpen?: boolean
+  onClick?: () => void
+  children?: ReactNode
+  className?: string
+  iconEnabled?: boolean
+  activeIcon?: ReactNode
+  inactiveIcon?: ReactNode
+  iconClassName?: string
+  activeIconClassName?: string
+  inactiveIconClassName?: string
+  iconPosition?: 'left' | 'right'
 }
 
-const AccordionHeader: React.FC<AccordionHeaderProps> = ({ isOpen, onClick, children }) => {
+const AccordionHeader: React.FC<AccordionHeaderProps> = ({
+  isOpen,
+  onClick,
+  children,
+  className,
+  iconEnabled,
+  activeIcon,
+  inactiveIcon,
+  iconClassName,
+  activeIconClassName,
+  inactiveIconClassName,
+  iconPosition = 'left'
+}) => {
   return (
     <div
-      className="p-4 cursor-pointer flex justify-between items-center"
+      className={`flex cursor-pointer items-center justify-between gap-3 p-4 ${className}`}
       onClick={onClick}
     >
-      <span>{children}</span>
-      <span>{isOpen ? '-' : '+'}</span>
+      {iconEnabled && iconPosition === 'left' && (
+        <span
+          className={`${iconClassName} ${isOpen ? activeIconClassName : inactiveIconClassName}`}
+        >
+          {isOpen
+            ? activeIcon
+              ? activeIcon
+              : '-'
+            : inactiveIcon
+              ? inactiveIcon
+              : '+'}
+        </span>
+      )}
+      <span className={`flex-1`}>{children}</span>
+      {iconEnabled && iconPosition === 'right' && (
+        <span
+          className={`${iconClassName} ${isOpen ? activeIconClassName : inactiveIconClassName}`}
+        >
+          {isOpen
+            ? activeIcon
+              ? activeIcon
+              : '-'
+            : inactiveIcon
+              ? inactiveIcon
+              : '+'}
+        </span>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default AccordionHeader;
+export default AccordionHeader

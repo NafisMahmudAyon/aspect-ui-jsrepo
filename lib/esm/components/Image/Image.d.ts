@@ -1,6 +1,7 @@
-import React from 'react';
-interface ImageProps extends React.HTMLAttributes<HTMLDivElement | HTMLAnchorElement> {
-    text: string;
+import React from 'react'
+interface ImageProps
+  extends React.HTMLAttributes<HTMLDivElement | HTMLAnchorElement> {
+  text: string
 }
-export declare const Image: React.FC<ImageProps>;
-export {};
+export declare const Image: React.FC<ImageProps>
+export {}
