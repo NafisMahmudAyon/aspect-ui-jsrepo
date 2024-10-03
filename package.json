@@ -36,7 +36,8 @@
     "lint": "eslint app --ext ts,tsx,js,jsx,cjs --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint app --ext js,jsx,ts,tsx,cjs --fix",
     "prettier": "npx prettier --write .",
-    "format": "prettier --write 'app/**/*.{js,jsx,ts,tsx,css,html}'"
+    "format": "prettier --write 'app/**/*.{js,jsx,ts,tsx,css,html}'",
+    "watchX": "npx tailwindcss -i ./app/globals.css -o ./app/index.css"
   },
   "repository": {
     "type": "git",

@@ -31,3 +31,11 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.button {
+  font-size: 3rem;
+  line-height: 4.875rem;
+  letter-spacing: -2.3px;
+  background-color: red;
+}

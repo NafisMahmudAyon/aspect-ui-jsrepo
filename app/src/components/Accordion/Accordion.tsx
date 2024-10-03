@@ -34,7 +34,7 @@ interface AccordionProps {
   iconPosition?: 'left' | 'right'
 }
 
-const Accordion: React.FC<AccordionProps> = ({
+export const Accordion: React.FC<AccordionProps> = ({
   items,
   multiple = false,
   active = 0,
@@ -128,4 +128,4 @@ const Accordion: React.FC<AccordionProps> = ({
   return <div className='space-y-4'>{processedChildren}</div>
 }
 
-export default Accordion
+
