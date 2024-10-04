@@ -39,7 +39,7 @@ const AccordionDemo = () => {
   return (
     <div>
       <h2 className='mb-4 text-xl font-semibold'>Multiple Open Accordions</h2>
-      <Accordion items={accordionItems} multiple={true} active={2} />
+      <Accordion items={accordionItems} multiple={false} active={2} />
 
       <Accordion
         items={accordionItems}

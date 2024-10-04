@@ -6,7 +6,7 @@
 - Button
 - Card
 - Image
-- Video
+- ~~Video~~
 - Slider/Carousel
 - Progress Bar
 - Avatar
