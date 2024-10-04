@@ -1,4 +1,4 @@
-'use client';
+'use strict';
 import { Splide, SplideTrack, Options } from '@splidejs/react-splide';
 import "@splidejs/splide/dist/css/splide.min.css";
 import { ReactElement } from 'react';
@@ -19,15 +19,26 @@ interface SliderProps {
   nextArrowStyle?: string;
   autoplayStyle?: string;
   playIconStyle?: string;
+  pgStyle?: string;
   pauseIconStyle?: string;
-  paginationStyle?: object;  // Make sure this is an object for custom styles
+  paginationStyle?: React.CSSProperties;  // Make sure this is an object for custom styles
 }
 
 export const Slider: React.FC<SliderProps> = ({
   children, options, arrowIcon, playIcon, pauseIcon, autoplay, pagination = true, arrows = true,
+  pgStyle="",
   progressBar, arrowStyle = '', prevArrowStyle = '', nextArrowStyle = '', autoplayStyle = '',
   playIconStyle = "", pauseIconStyle = "", paginationStyle, ...rest
 }) => {
+  var pgStyles = ""
+  if (pgStyle) {
+    var style = pgStyle.split(" ") // split by blank space if multiple spaces
+    for (let i = 0; i < style.length; i++) {
+      if (style[i] != "") {
+        pgStyles += `[&_li_.splide\_\_pagination\_\_page]:${style[i]} `
+      }
+    }
+  }
 
   // Function to generate CSS string from pagination style object
   const generateCSSFromStyle = (style: any) => {
@@ -44,20 +55,19 @@ export const Slider: React.FC<SliderProps> = ({
   const paginationStyleCSS = generateCSSFromStyle(paginationStyle);
 
   return (
-      <Splide hasTrack={false} className="relative uid" aria-label="My Favorite Images" options={options} {...rest}>
+    <div className='relative uid'>
+      <Splide hasTrack={false} className="" aria-label="My Favorite Images" options={options} {...rest}>
         <SplideTrack>{children}</SplideTrack>
-
         {arrows && (
           <div className={`${arrowStyle} splide__arrows`}>
             <button className={`${prevArrowStyle} splide__arrow splide__arrow--prev`} type="button" aria-label="Previous slide">
-              {arrowIcon && arrowIcon != undefined ? arrowIcon : ">"}
+              {arrowIcon && arrowIcon != undefined ? arrowIcon : "<"}
             </button>
             <button className={`${nextArrowStyle} splide__arrow splide__arrow--next`} type="button" aria-label="Next slide">
               {arrowIcon && arrowIcon != undefined ? arrowIcon : ">"}
             </button>
           </div>
         )}
-
         {autoplay && (
           <>
             <button className={`${autoplayStyle} splide__toggle`} type="button">
@@ -67,17 +77,20 @@ export const Slider: React.FC<SliderProps> = ({
             {progressBar && <div className="splide__progress"><div className="splide__progress__bar" /></div>}
           </>
         )}
-
-        {pagination && <ul className="splide__pagination"></ul>}
-      {/* Dynamically applying styles */}
-      <style jsx>{`
-      .uid {
-        background-color: white;
-      }
-        .uid .splide__pagination__page {
-          ${paginationStyleCSS}
+        {pagination && <ul className={`splide__pagination ${pgStyles}`}>
+          <li role="presentation"><button className="splide__pagination__page ">
+        <style jsx>{`
+        .uid {
+          background-color: red;
         }
-      `}</style>
+        .uid .splide__pagination li .splide__pagination__page {
+            background-color: blue;
+          }
+        `}</style>
+            </button></li>
+        </ul>}
+        {/* Dynamically applying styles */}
       </Splide>
+    </div>
   );
 };

@@ -2,14 +2,14 @@
 
 ### UI Components:
 
-- Accordion
-- Button
+- Accordion //icon
+- Button //icon
 - Card
 - Image
 - ~~Video~~
-- Slider/Carousel
+- Slider/Carousel //icon
 - Progress Bar
-- Avatar
+- Avatar //icon
 - Badge
 - Breadcrumb
 - Blockquote
