@@ -10,11 +10,11 @@
 - Slider/Carousel //icon
 - Progress Bar
 - Avatar //icon
-- Badge
+- Badge //wait
 - Breadcrumb
-- Blockquote
+- Blockquote //wait
 - Alert/Toast
-- Modal/Popup
+- Modal/Popup //need style and other
 - Tabs
 - Table
 - List

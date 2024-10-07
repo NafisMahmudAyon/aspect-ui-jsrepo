@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { Icon } from '../Icon';
+// import { Icon } from '../Icon';
 
 // import "../../../css/output.css"
 

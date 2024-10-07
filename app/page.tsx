@@ -3,10 +3,12 @@
 import Dark from '@/components/Dark';
 import AccordionDemo from '@/components/test/Accordion'
 import AvatarDemo from '@/components/test/Avatar';
+import BreadcrumbDemo from '@/components/test/Breadcrumb';
 import ButtonDemo from '@/components/test/Button'
 import CardDemo from '@/components/test/Card';
 import CircularProgressDemo from '@/components/test/CircularProgress';
 import ImageDemo from '@/components/test/Image';
+import ModalDemo from '@/components/test/Modal';
 import ProgressBarDemo from '@/components/test/ProgressBar';
 import SliderDemo from '@/components/test/Slider';
 
@@ -20,10 +22,12 @@ export default function Home() {
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
-      <AvatarDemo />
+      {/* <AvatarDemo />
       <ProgressBarDemo />
       <CircularProgressDemo />
-      <SliderDemo />
+      <SliderDemo /> */}
+      {/* <BreadcrumbDemo /> */}
+      <ModalDemo />
     </main>
   )
 }
