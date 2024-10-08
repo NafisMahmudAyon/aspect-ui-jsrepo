@@ -13,7 +13,18 @@ const ModalDemo = () => {
         <p className="mb-4">This is the modal content.</p>
         <ModalAction>Close</ModalAction>
       </ModalContent>
-    </Modal></div>
+    </Modal>
+      <Modal>
+      <ModalAction>
+        Open Modal2
+      </ModalAction>
+      <ModalContent>
+        <h2 className="text-2xl font-bold mb-2">Modal Title2</h2>
+        <p className="mb-4">This is the modal content 2.</p>
+        <ModalAction>Close2</ModalAction>
+      </ModalContent>
+    </Modal>
+    </div>
   )
 }
 

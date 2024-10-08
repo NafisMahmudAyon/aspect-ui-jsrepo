@@ -15,7 +15,7 @@
 - Blockquote //wait
 - Alert/Toast
 - Modal/Popup //need style and other
-- Tabs
+- Tabs //need style and other
 - Table
 - List
 - Dropdown

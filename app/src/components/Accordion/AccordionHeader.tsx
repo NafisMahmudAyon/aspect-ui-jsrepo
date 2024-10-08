@@ -1,67 +1,69 @@
-// components/AccordionHeader.tsx
-import { ReactNode } from 'react'
+'use client'
 
-export interface AccordionHeaderProps {
-  isOpen?: boolean
-  onClick?: () => void
-  children?: ReactNode
-  className?: string
-  iconEnabled?: boolean
-  activeIcon?: ReactNode
-  inactiveIcon?: ReactNode
-  iconClassName?: string
-  activeIconClassName?: string
-  inactiveIconClassName?: string
-  iconPosition?: 'left' | 'right'
+import React, { ReactNode } from 'react';
+import { useAccordion } from './AccordionContext';
+
+interface AccordionHeaderProps {
+  children: ReactNode;
+  isOpen?: boolean;
+  onToggle?: () => void;
+  iconEnabled?: boolean;
+  iconPosition?: 'left' | 'right';
+  iconClassName?: string;
+  activeIconClassName?: string;
+  inactiveIconClassName?: string;
+  activeIcon?: ReactNode;
+  inactiveIcon?: ReactNode;
+  disabled?: boolean;
 }
 
-const AccordionHeader: React.FC<AccordionHeaderProps> = ({
-  isOpen,
-  onClick,
+export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   children,
-  className,
-  iconEnabled,
-  activeIcon,
-  inactiveIcon,
-  iconClassName,
-  activeIconClassName,
-  inactiveIconClassName,
-  iconPosition = 'left'
+  isOpen,
+  onToggle,
+  iconEnabled: headerIconEnabled,
+  iconPosition: headerIconPosition,
+  iconClassName: headerIconClassName,
+  activeIconClassName: headerActiveIconClassName,
+  inactiveIconClassName: headerInactiveIconClassName,
+  activeIcon: headerActiveIcon,
+  inactiveIcon: headerInactiveIcon,
+  disabled = false,
 }) => {
+  const {
+    iconEnabled: accordionIconEnabled,
+    iconPosition: accordionIconPosition,
+    iconClassName: accordionIconClassName,
+    activeIconClassName: accordionActiveIconClassName,
+    inactiveIconClassName: accordionInactiveIconClassName,
+    activeIcon: accordionActiveIcon,
+    inactiveIcon: accordionInactiveIcon,
+  } = useAccordion();
+
+  const iconEnabled = headerIconEnabled ?? accordionIconEnabled;
+  const iconPosition = headerIconPosition ?? accordionIconPosition;
+  const iconClassName = headerIconClassName ?? accordionIconClassName;
+  const activeIconClassName = headerActiveIconClassName ?? accordionActiveIconClassName;
+  const inactiveIconClassName = headerInactiveIconClassName ?? accordionInactiveIconClassName;
+  const activeIcon = headerActiveIcon ?? accordionActiveIcon ?? '▲';
+  const inactiveIcon = headerInactiveIcon ?? accordionInactiveIcon ?? '▼';
+
+  const icon = isOpen ? activeIcon : inactiveIcon;
+  const iconClass = `${iconClassName} ${isOpen ? activeIconClassName : inactiveIconClassName} transition-transform duration-300`;
+
   return (
-    <div
-      className={`flex cursor-pointer items-center justify-between gap-3 p-4 ${className}`}
-      onClick={onClick}
+    <button
+      className={`w-full p-4 text-left flex items-center justify-between ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+      onClick={onToggle}
+      disabled={disabled}
     >
       {iconEnabled && iconPosition === 'left' && (
-        <span
-          className={`${iconClassName} ${isOpen ? activeIconClassName : inactiveIconClassName}`}
-        >
-          {isOpen
-            ? activeIcon
-              ? activeIcon
-              : '-'
-            : inactiveIcon
-              ? inactiveIcon
-              : '+'}
-        </span>
+        <span className={`${iconClass} ${isOpen ? 'rotate-180' : ''}`}>{icon}</span>
       )}
-      <span className={`flex-1`}>{children}</span>
+      <span className="flex-grow">{children}</span>
       {iconEnabled && iconPosition === 'right' && (
-        <span
-          className={`${iconClassName} ${isOpen ? activeIconClassName : inactiveIconClassName}`}
-        >
-          {isOpen
-            ? activeIcon
-              ? activeIcon
-              : '-'
-            : inactiveIcon
-              ? inactiveIcon
-              : '+'}
-        </span>
+        <span className={`${iconClass} ${isOpen ? 'rotate-180' : ''}`}>{icon}</span>
       )}
-    </div>
-  )
-}
-
-export default AccordionHeader
+    </button>
+  );
+};

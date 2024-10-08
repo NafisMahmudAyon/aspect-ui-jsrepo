@@ -1,24 +1,18 @@
-// components/AccordionContent.tsx
-import { ReactNode } from 'react'
+'use client'
 
-export interface AccordionContentProps {
-  isOpen?: boolean
-  children?: ReactNode
-  className?: string
+import React, { ReactNode } from 'react';
+
+interface AccordionContentProps {
+  children: ReactNode;
+  isOpen?: boolean;
 }
 
-const AccordionContent: React.FC<AccordionContentProps> = ({
-  isOpen,
-  children,
-  className
-}) => {
+export const AccordionContent: React.FC<AccordionContentProps> = ({ children, isOpen }) => {
+  if (!isOpen) return null;
+
   return (
-    <div
-      className={`accordion-content overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 p-4' : 'invisible max-h-0 p-0'} ${className}`}
-    >
+    <div className="p-4 border-t">
       {children}
     </div>
-  )
-}
-
-export default AccordionContent
+  );
+};

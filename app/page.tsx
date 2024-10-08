@@ -11,6 +11,7 @@ import ImageDemo from '@/components/test/Image';
 import ModalDemo from '@/components/test/Modal';
 import ProgressBarDemo from '@/components/test/ProgressBar';
 import SliderDemo from '@/components/test/Slider';
+import TabsDemo from '@/components/test/Tabs';
 
 export default function Home() {
   
@@ -18,7 +19,7 @@ export default function Home() {
   return (
     <main className='mx-auto min-h-screen py-24'>
       <Dark />
-      {/* <AccordionDemo /> */}
+      <AccordionDemo />
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
@@ -27,7 +28,8 @@ export default function Home() {
       <CircularProgressDemo />
       <SliderDemo /> */}
       {/* <BreadcrumbDemo /> */}
-      <ModalDemo />
+      {/* <ModalDemo /> */}
+      {/* <TabsDemo /> */}
     </main>
   )
 }

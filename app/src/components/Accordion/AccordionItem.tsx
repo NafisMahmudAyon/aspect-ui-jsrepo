@@ -1,44 +1,30 @@
-import React, { ReactNode } from 'react'
-import AccordionHeader from './AccordionHeader'
-import AccordionContent from './AccordionContent'
-import { AccordionHeaderProps } from './AccordionHeader'
-import { AccordionContentProps } from './AccordionContent'
+'use client'
 
-export interface AccordionItemProps {
-  isOpen?: boolean
-  onToggle?: () => void
-  children?: ReactNode
+import React, { ReactNode } from 'react';
+import { useAccordion } from './AccordionContext';
+
+interface AccordionItemProps {
+  children: ReactNode;
+  id: string;
+  disabled?: boolean;
 }
 
-const AccordionItem: React.FC<AccordionItemProps> = ({
-  isOpen,
-  onToggle,
-  children
-}) => {
+export const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, disabled = false }) => {
+  const { openItems, toggleItem } = useAccordion();
+  const isOpen = openItems.includes(id);
+
   return (
-    <div className='rounded-md border border-gray-200'>
-      {children &&
-        React.Children.map(children, child => {
-          if (React.isValidElement(child)) {
-            if (child.type === AccordionHeader) {
-              // Ensure type safety by casting child to the correct type
-              return React.cloneElement(
-                child as React.ReactElement<AccordionHeaderProps>,
-                { isOpen, onClick: onToggle }
-              )
-            }
-            if (child.type === AccordionContent) {
-              return React.cloneElement(
-                child as React.ReactElement<AccordionContentProps>,
-                { isOpen }
-              )
-            }
-          }
-          return child
-        })}
+    <div className={`border rounded-md overflow-hidden ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
+      {React.Children.map(children, child => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            isOpen,
+            onToggle: disabled ? undefined : () => toggleItem(id),
+            disabled
+          });
+        }
+        return child;
+      })}
     </div>
-  )
-}
-
-AccordionItem.displayName = 'AccordionItem'
-export default AccordionItem
+  );
+};

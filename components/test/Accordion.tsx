@@ -1,4 +1,4 @@
-import {Accordion} from '@/app/src/components/Accordion'
+import {Accordion, AccordionContent, AccordionHeader, AccordionItem} from '@/app/src/components/Accordion'
 import React from 'react'
 
 const AccordionDemo = () => {
@@ -39,22 +39,37 @@ const AccordionDemo = () => {
   return (
     <div>
       <h2 className='mb-4 text-xl font-semibold'>Multiple Open Accordions</h2>
-      <Accordion items={accordionItems} multiple={false} active={2} />
+      
+      <Accordion iconEnabled={true} iconPosition="right">
+        <AccordionItem id="item1">
+          <AccordionHeader>Header text 1</AccordionHeader>
+          <AccordionContent>Content text 1</AccordionContent>
+        </AccordionItem>
+        <AccordionItem id="item2">
+          <AccordionHeader>Header text 2</AccordionHeader>
+          <AccordionContent>Content text 2</AccordionContent>
+        </AccordionItem>
+        <AccordionItem id="item3">
+          <AccordionHeader iconEnabled={false}>Header text 3 (no icon)</AccordionHeader>
+          <AccordionContent>Content text 3</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+      
+      <Accordion iconEnabled={true} iconPosition="right" multiple={true}>
+        <AccordionItem id="item1">
+          <AccordionHeader>Header text 1</AccordionHeader>
+          <AccordionContent>Content text 1</AccordionContent>
+        </AccordionItem>
+        <AccordionItem id="item2">
+          <AccordionHeader>Header text 2</AccordionHeader>
+          <AccordionContent>Content text 2</AccordionContent>
+        </AccordionItem>
+        <AccordionItem id="item3" disabled>
+          <AccordionHeader>Header text 3 (disabled)</AccordionHeader>
+          <AccordionContent>Content text 3</AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
-      <Accordion
-        items={accordionItems}
-        multiple={true}
-        active={3}
-        className='bg-red-500'
-        contentClassName='bg-blue-500'
-        headerClassName='bg-green-500'
-        itemClassName='bg-yellow-500'
-        iconClassName='bg-purple-500'
-        activeIconClassName='bg-orange-500'
-        inactiveIconClassName='bg-pink-500'
-        iconPosition='left'
-        iconEnabled={true}
-      />
     </div>
   )
 }
