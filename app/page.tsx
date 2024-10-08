@@ -14,7 +14,11 @@ import ProgressBarDemo from '@/components/test/ProgressBar';
 import SliderDemo from '@/components/test/Slider';
 import TableDemo from '@/components/test/Table';
 import TabsDemo from '@/components/test/Tabs';
-
+import NavbarDemo from '@/components/test/Navbar';
+import SidebarDemo from '@/components/test/Sidebar';
+import InputDemo from '@/components/test/Input';
+import TextareaDemo from '@/components/test/Textarea';
+import CheckboxDemo from '@/components/test/Checkbox';
 export default function Home() {
   
   
@@ -33,7 +37,12 @@ export default function Home() {
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
-      <DropdownDemo />
+      {/* <DropdownDemo /> */}
+      {/* <NavbarDemo /> */}
+      {/* <SidebarDemo /> */}
+      {/* <InputDemo /> */}
+      {/* <TextareaDemo /> */}
+      <CheckboxDemo />
     </main>
   )
 }

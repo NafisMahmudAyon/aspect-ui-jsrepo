@@ -19,13 +19,13 @@
 - Table //need style and other
 - List //wait
 - Dropdown //need style and other
-- Navigation Menu
-- Sidebar
-- Icon
+- Navigation Menu //need style and other
+- Sidebar //need style and other
+- Icon //wait
 - Label
-- Input (Text, Number, Password)
-- Textarea
-- Checkbox
+- Input (Text, Number, Password) //need style and other
+- Textarea //need style and other
+- Checkbox //need style and other
 - Radio Button
 - Switch/Toggle
 - File Upload

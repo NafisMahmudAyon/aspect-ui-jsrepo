@@ -8,13 +8,13 @@ interface DropdownContentProps {
 }
 
 export const DropdownContent: React.FC<DropdownContentProps> = ({ children }) => {
-  const { isOpen } = useDropdown();
+  const { isOpen, positionClass } = useDropdown();
 
   if (!isOpen) return null;
 
   return (
-    <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white text-blue-500 ring-1 ring-black ring-opacity-5">
-      <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+    <div className={`absolute z-10 ${positionClass}`}>
+      <div className="bg-white border border-gray-200 rounded-md shadow-lg">
         {children}
       </div>
     </div>
