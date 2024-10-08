@@ -16,9 +16,9 @@
 - Alert/Toast
 - Modal/Popup //need style and other
 - Tabs //need style and other
-- Table
-- List
-- Dropdown
+- Table //need style and other
+- List //wait
+- Dropdown //need style and other
 - Navigation Menu
 - Sidebar
 - Icon

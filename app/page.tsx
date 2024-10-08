@@ -7,6 +7,7 @@ import BreadcrumbDemo from '@/components/test/Breadcrumb';
 import ButtonDemo from '@/components/test/Button'
 import CardDemo from '@/components/test/Card';
 import CircularProgressDemo from '@/components/test/CircularProgress';
+import DropdownDemo from '@/components/test/Dropdown';
 import ImageDemo from '@/components/test/Image';
 import ModalDemo from '@/components/test/Modal';
 import ProgressBarDemo from '@/components/test/ProgressBar';
@@ -31,7 +32,8 @@ export default function Home() {
       {/* <BreadcrumbDemo /> */}
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
-      <TableDemo />
+      {/* <TableDemo /> */}
+      <DropdownDemo />
     </main>
   )
 }
