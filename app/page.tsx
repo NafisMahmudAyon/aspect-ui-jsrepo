@@ -23,6 +23,9 @@ import RadioDemo from '@/components/test/Radio';
 import SwitchDemo from '@/components/test/Switch';
 import FileUploadDemo from '@/components/test/FileUpload';
 import ToggleButtonDemo from '@/components/test/ToggleButton';
+import PaginationDemo from '@/components/test/Pagination';
+import DatePickerDemo from '@/components/test/DatePicker';
+import TooltipDemo from '@/components/test/Tooltip';
 export default function Home() {
   
   
@@ -50,7 +53,10 @@ export default function Home() {
       {/* <RadioDemo /> */}
       {/* <SwitchDemo /> */}
       {/* <FileUploadDemo /> */}
-      <ToggleButtonDemo />
+      {/* <ToggleButtonDemo /> */}
+      {/* <PaginationDemo /> */}
+      {/* <DatePickerDemo /> */}
+      <TooltipDemo />
     </main>
   )
 }

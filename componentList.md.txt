@@ -30,10 +30,10 @@
 - Switch //need style and other
 - Toggle //need style and other
 - File Upload //need style and other
-- Pagination
-- Stepper
-- Calendar/Date Picker
-- Tooltip
+- Pagination  //need style and other
+- Stepper //wait
+- Calendar/Date Picker //need style and other
+- Tooltip //need style and other
 - Spinner/Loader
 - Search Bar
 - Breadcrumbs
