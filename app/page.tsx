@@ -19,6 +19,10 @@ import SidebarDemo from '@/components/test/Sidebar';
 import InputDemo from '@/components/test/Input';
 import TextareaDemo from '@/components/test/Textarea';
 import CheckboxDemo from '@/components/test/Checkbox';
+import RadioDemo from '@/components/test/Radio';
+import SwitchDemo from '@/components/test/Switch';
+import FileUploadDemo from '@/components/test/FileUpload';
+import ToggleButtonDemo from '@/components/test/ToggleButton';
 export default function Home() {
   
   
@@ -42,7 +46,11 @@ export default function Home() {
       {/* <SidebarDemo /> */}
       {/* <InputDemo /> */}
       {/* <TextareaDemo /> */}
-      <CheckboxDemo />
+      {/* <CheckboxDemo /> */}
+      {/* <RadioDemo /> */}
+      {/* <SwitchDemo /> */}
+      {/* <FileUploadDemo /> */}
+      <ToggleButtonDemo />
     </main>
   )
 }

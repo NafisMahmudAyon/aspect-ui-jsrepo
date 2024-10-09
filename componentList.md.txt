@@ -26,9 +26,10 @@
 - Input (Text, Number, Password) //need style and other
 - Textarea //need style and other
 - Checkbox //need style and other
-- Radio Button
-- Switch/Toggle
-- File Upload
+- Radio Button //need style and other
+- Switch //need style and other
+- Toggle //need style and other
+- File Upload //need style and other
 - Pagination
 - Stepper
 - Calendar/Date Picker
