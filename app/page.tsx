@@ -26,6 +26,9 @@ import ToggleButtonDemo from '@/components/test/ToggleButton';
 import PaginationDemo from '@/components/test/Pagination';
 import DatePickerDemo from '@/components/test/DatePicker';
 import TooltipDemo from '@/components/test/Tooltip';
+import SpinnerDemo from '@/components/test/Spinner';
+import StepperDemo from '@/components/test/Stepper';
+import RatingDemo from '@/components/test/Rating';
 export default function Home() {
   
   
@@ -56,7 +59,10 @@ export default function Home() {
       {/* <ToggleButtonDemo /> */}
       {/* <PaginationDemo /> */}
       {/* <DatePickerDemo /> */}
-      <TooltipDemo />
+      {/* <TooltipDemo /> */}
+      {/* <SpinnerDemo /> */}
+      {/* <StepperDemo /> */}
+      <RatingDemo />
     </main>
   )
 }

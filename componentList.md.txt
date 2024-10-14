@@ -31,13 +31,23 @@
 - Toggle //need style and other
 - File Upload //need style and other
 - Pagination  //need style and other
-- Stepper //wait
+- Stepper //need style and other
 - Calendar/Date Picker //need style and other
 - Tooltip //need style and other
-- Spinner/Loader
-- Search Bar
-- Breadcrumbs
-- Rating
+- Spinner/Loader //need style and other
+- Search Bar //cancel
+- Breadcrumbs //cancel
+- Rating //need style and other
+- Alert 
+- Divider
+- Notification
+- Number Input
+- Number Counter
+- Skeleton
+- Slider
+- Toast
+- Back To Top
+- Timeline
 - Chip/Tag
 - Form (Login, Signup, Contact)
 - Footer
