@@ -42,13 +42,16 @@
 - Divider //need style and other
 - Notification //wait
 - Number Input //wait
-- Number Counter
-- Skeleton
-- Slider
-- Toast
-- Back To Top
-- Timeline
+- Number Counter //need style and other
+- Skeleton //need style and other
+- Slider  //need style and other
+- Toast  //need style and other
+- Back To Top  //need style and other
+- Timeline //need customization
 - Chip/Tag
+- Masonry
+- Grid
+- Flex
 - Form (Login, Signup, Contact)
 - Footer
 - Header/Navbar

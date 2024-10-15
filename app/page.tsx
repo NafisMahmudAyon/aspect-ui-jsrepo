@@ -11,7 +11,6 @@ import DropdownDemo from '@/components/test/Dropdown';
 import ImageDemo from '@/components/test/Image';
 import ModalDemo from '@/components/test/Modal';
 import ProgressBarDemo from '@/components/test/ProgressBar';
-import SliderDemo from '@/components/test/Slider';
 import TableDemo from '@/components/test/Table';
 import TabsDemo from '@/components/test/Tabs';
 import NavbarDemo from '@/components/test/Navbar';
@@ -31,9 +30,16 @@ import StepperDemo from '@/components/test/Stepper';
 import RatingDemo from '@/components/test/Rating';
 import AlertDemo from '@/components/test/Alert';
 import DividerDemo from '@/components/test/Divider';
+import NumberCounterDemo from '@/components/test/NumberCounter';
+import SkeletonDemo from '@/components/test/Skeleton';
+import CarouselDemo from '@/components/test/Carousel';
+import SliderDemo from '@/components/test/Slider';
+import ToastDemo from '@/components/test/Toast';
+import BackToTopDemo from '@/components/test/BackToTop';
+import TimelineDemo from '@/components/test/Timeline';
 export default function Home() {
-  
-  
+
+
   return (
     <main className='mx-auto min-h-screen py-24'>
       <Dark />
@@ -41,10 +47,10 @@ export default function Home() {
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
-      {/* <AvatarDemo />
-      <ProgressBarDemo />
-      <CircularProgressDemo />
-      <SliderDemo /> */}
+      {/* <AvatarDemo /> */}
+      {/* <ProgressBarDemo /> */}
+      {/* <CircularProgressDemo /> */}
+      {/* <CarouselDemo /> */}
       {/* <BreadcrumbDemo /> */}
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
@@ -66,7 +72,13 @@ export default function Home() {
       {/* <StepperDemo /> */}
       {/* <RatingDemo /> */}
       {/* <AlertDemo /> */}
-      <DividerDemo />
+      {/* <DividerDemo /> */}
+      {/* <NumberCounterDemo /> */}
+      {/* <SkeletonDemo /> */}
+      {/* <SliderDemo /> */}
+      {/* <ToastDemo /> */}
+      {/* <BackToTopDemo />   */}
+      <TimelineDemo />
     </main>
   )
 }
