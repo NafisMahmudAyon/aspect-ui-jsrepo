@@ -38,10 +38,10 @@
 - Search Bar //cancel
 - Breadcrumbs //cancel
 - Rating //need style and other
-- Alert 
-- Divider
-- Notification
-- Number Input
+- Alert //need style and other
+- Divider //need style and other
+- Notification //wait
+- Number Input //wait
 - Number Counter
 - Skeleton
 - Slider

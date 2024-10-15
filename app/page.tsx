@@ -29,6 +29,8 @@ import TooltipDemo from '@/components/test/Tooltip';
 import SpinnerDemo from '@/components/test/Spinner';
 import StepperDemo from '@/components/test/Stepper';
 import RatingDemo from '@/components/test/Rating';
+import AlertDemo from '@/components/test/Alert';
+import DividerDemo from '@/components/test/Divider';
 export default function Home() {
   
   
@@ -62,7 +64,9 @@ export default function Home() {
       {/* <TooltipDemo /> */}
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}
-      <RatingDemo />
+      {/* <RatingDemo /> */}
+      {/* <AlertDemo /> */}
+      <DividerDemo />
     </main>
   )
 }
