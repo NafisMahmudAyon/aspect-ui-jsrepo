@@ -115,6 +115,22 @@ module.exports = {
         }
       },
       fontSize: {
+        display: [
+          '6rem',
+          {
+            lineHeight: '6.875rem',
+            letterSpacing: '-2.5px',
+            fontWeight: '700'
+          }
+        ],
+        display2: [
+          '5rem',
+          {
+            lineHeight: '5.75rem',
+            letterSpacing: '-2.875px',
+            fontWeight: '700'
+          }
+        ],
         h1: [
           '3rem',
           {
@@ -163,7 +179,7 @@ module.exports = {
             fontWeight: '500'
           }
         ],
-        p: [
+        body1: [
           '1rem',
           {
             lineHeight: '1.5rem',
@@ -171,11 +187,27 @@ module.exports = {
             fontWeight: '400'
           }
         ],
-        caption: [
+        body2: [
           '0.875rem',
           {
             lineHeight: '1.25rem',
+            letterSpacing: '-0.75px',
+            fontWeight: '400'
+          }
+        ],
+        caption: [
+          '0.75rem',
+          {
+            lineHeight: '1.66rem',
             letterSpacing: '-0.5px',
+            fontWeight: '400'
+          }
+        ],
+        p: [
+          '1rem',
+          {
+            lineHeight: '1.5rem',
+            letterSpacing: '-0.7px',
             fontWeight: '400'
           }
         ],

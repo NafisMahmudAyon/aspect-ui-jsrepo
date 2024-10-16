@@ -47,7 +47,8 @@
 - Slider  //need style and other
 - Toast  //need style and other
 - Back To Top  //need style and other
-- Timeline //need customization
+- Timeline //need style and other
+- Typography //need style and other
 - Chip/Tag
 - Masonry
 - Grid
