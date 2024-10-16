@@ -38,6 +38,7 @@ import ToastDemo from '@/components/test/Toast';
 import BackToTopDemo from '@/components/test/BackToTop';
 import TimelineDemo from '@/components/test/Timeline';
 import TypographyDemo from '@/components/test/Typography';
+import MasonryDemo from '@/components/test/Masonry';
 export default function Home() {
 
 
@@ -80,7 +81,8 @@ export default function Home() {
       {/* <ToastDemo /> */}
       {/* <BackToTopDemo />   */}
       {/* <TimelineDemo /> */}
-      <TypographyDemo />
+      {/* <TypographyDemo /> */}
+      <MasonryDemo />
       {/* <p className='text-body2  '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni delectus ab commodi est. Deserunt quos necessitatibus corporis sint hic, nulla fugit tenetur nam perspiciatis maiores aliquid veniam. Nisi, quae modi!</p> */}
     </main>
   )

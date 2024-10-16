@@ -41,31 +41,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NafisMahmudAyon/abstract-kit.git"
+    "url": "git+https://github.com/NafisMahmudAyon/aspect-ui.git"
   },
   "keywords": [
+    "aspect-ui",
     "ui",
-    "landing page",
-    "Landing Page",
-    "Landing Page UI",
-    "landing page UI",
-    "UI"
+    "react",
+    "design-system",
+    "tailwindcss",
+    "tailwind-css"
   ],
   "author": "Nafis Mahmud Ayon <nafismahmudayon@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NafisMahmudAyon/abstract-kit/issues"
+    "url": "https://github.com/NafisMahmudAyon/aspect-ui/issues"
   },
   "dependencies": {
-    "@splidejs/react-splide": "^0.7.12",
     "embla-carousel": "^8.3.0",
-    "embla-carousel-react": "^8.3.0",
+    "embla-carousel-react": "^8.3.0"
+  },
+  "devDependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "framer-motion": "^11.11.9",
     "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
+    "react-dom": "^18",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
