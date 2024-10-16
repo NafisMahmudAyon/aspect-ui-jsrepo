@@ -1,24 +1,14 @@
-import { ReactNode } from 'react';
-interface AccordionItem {
-    title: ReactNode;
-    content: ReactNode;
-}
+import React, { ReactNode } from 'react';
 interface AccordionProps {
-    items?: AccordionItem[];
-    multiple?: boolean;
-    active?: number;
-    children?: ReactNode;
-    className?: string;
+    children: ReactNode;
     iconEnabled?: boolean;
-    activeIcon?: ReactNode;
-    inactiveIcon?: ReactNode;
-    headerClassName?: string;
-    contentClassName?: string;
-    itemClassName?: string;
+    iconPosition?: 'left' | 'right';
     iconClassName?: string;
     activeIconClassName?: string;
     inactiveIconClassName?: string;
-    iconPosition?: 'left' | 'right';
+    activeIcon?: ReactNode;
+    inactiveIcon?: ReactNode;
+    multiple?: boolean;
 }
 export declare const Accordion: React.FC<AccordionProps>;
 export {};

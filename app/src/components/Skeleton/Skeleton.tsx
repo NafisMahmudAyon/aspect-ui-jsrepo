@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
 type SkeletonVariation = 'text' | 'circular' | 'rectangular' | 'rounded';
 // type AnimationType = 'pulse' | 'wave' | 'shimmer';
@@ -33,29 +33,29 @@ export const Skeleton: React.FC<SkeletonProps> = ({
         return 'rounded';
     }
   };
-  const animation = 'pulse'
+  // const animation = 'pulse'
 
-  const getAnimationStyle = () => {
-    switch (animation) {
-      // case 'wave':
-      //   return {
-      //     backgroundImage: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent)',
-      //     backgroundSize: '200% 100%',
-      //     animation: 'wave 1.5s infinite',
-      //   };
-      // case 'shimmer':
-      //   return {
-      //     backgroundImage: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
-      //     backgroundSize: '200% 100%',
-      //     animation: 'shimmer 1.5s infinite',
-      //   };
-      case 'pulse':
-      default:
-        return {
-          animation: 'pulse 1.5s infinite',
-        };
-    }
-  };
+  // const getAnimationStyle = () => {
+  //   switch (animation) {
+  //     // case 'wave':
+  //     //   return {
+  //     //     backgroundImage: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent)',
+  //     //     backgroundSize: '200% 100%',
+  //     //     animation: 'wave 1.5s infinite',
+  //     //   };
+  //     // case 'shimmer':
+  //     //   return {
+  //     //     backgroundImage: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent)',
+  //     //     backgroundSize: '200% 100%',
+  //     //     animation: 'shimmer 1.5s infinite',
+  //     //   };
+  //     case 'pulse':
+  //     default:
+  //       return {
+  //         animation: 'pulse 1.5s infinite',
+  //       };
+  //   }
+  // };
 
   return (
     <div

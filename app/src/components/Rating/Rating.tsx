@@ -1,5 +1,5 @@
 'use client'
-import { Star } from '@/components/Icon/Star';
+import { Star } from '../Icon/Star';
 import React, { useState } from 'react';
 
 interface RatingProps {

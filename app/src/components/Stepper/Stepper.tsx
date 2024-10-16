@@ -18,6 +18,7 @@ interface StepperItemProps {
   icon: ReactNode;
   label: string;
   children?: ReactNode;
+  index?: number;
 }
 
 const Stepper: React.FC<StepperProps> = ({ children, initialStep = 0 }) => {
@@ -41,6 +42,7 @@ const Stepper: React.FC<StepperProps> = ({ children, initialStep = 0 }) => {
               />
             )}
             {React.cloneElement(child, {
+              ...child.props,
               index,
             })}
           </React.Fragment>

@@ -49,8 +49,9 @@
 - Back To Top  //need style and other
 - Timeline //need style and other
 - Typography //need style and other
+- Select 
 - Chip/Tag
-- Masonry
+- Masonry  //need style and other
 - Grid
 - Flex
 - Form (Login, Signup, Contact)

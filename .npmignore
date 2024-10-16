@@ -20,3 +20,4 @@ postcss.config.mjs
 .next
 componentList.md.txt
 .prettierrc.json
+LICENSE.md

@@ -1,7 +1,7 @@
 // import Image from "next/image";
 // 'use client'
 import Dark from '@/components/Dark';
-import AccordionDemo from '@/components/test/Accordion'
+// import AccordionDemo from '@/components/test/Accordion'
 import AvatarDemo from '@/components/test/Avatar';
 import BreadcrumbDemo from '@/components/test/Breadcrumb';
 import ButtonDemo from '@/components/test/Button'
@@ -82,7 +82,7 @@ export default function Home() {
       {/* <BackToTopDemo />   */}
       {/* <TimelineDemo /> */}
       {/* <TypographyDemo /> */}
-      <MasonryDemo />
+      {/* <MasonryDemo /> */}
       {/* <p className='text-body2  '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni delectus ab commodi est. Deserunt quos necessitatibus corporis sint hic, nulla fugit tenetur nam perspiciatis maiores aliquid veniam. Nisi, quae modi!</p> */}
     </main>
   )

@@ -1,8 +1,7 @@
-import { ReactNode } from 'react';
-export interface AccordionContentProps {
+import React, { ReactNode } from 'react';
+interface AccordionContentProps {
+    children: ReactNode;
     isOpen?: boolean;
-    children?: ReactNode;
-    className?: string;
 }
-declare const AccordionContent: React.FC<AccordionContentProps>;
-export default AccordionContent;
+export declare const AccordionContent: React.FC<AccordionContentProps>;
+export {};

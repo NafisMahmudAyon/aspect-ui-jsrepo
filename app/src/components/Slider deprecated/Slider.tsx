@@ -41,18 +41,18 @@ export const Slider: React.FC<SliderProps> = ({
   }
 
   // Function to generate CSS string from pagination style object
-  const generateCSSFromStyle = (style: any) => {
-    return Object.entries(style)
-      .map(([key, value]) => {
-        // Convert camelCase to kebab-case for CSS properties
-        const cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
-        return `${cssKey}: ${value};`;
-      })
-      .join(' ');
-  };
+  // const generateCSSFromStyle = (style: any) => {
+  //   return Object.entries(style)
+  //     .map(([key, value]) => {
+  //       // Convert camelCase to kebab-case for CSS properties
+  //       const cssKey = key.replace(/([A-Z])/g, '-$1').toLowerCase();
+  //       return `${cssKey}: ${value};`;
+  //     })
+  //     .join(' ');
+  // };
 
   // Generate the CSS string based on the passed paginationStyle
-  const paginationStyleCSS = generateCSSFromStyle(paginationStyle);
+  // const paginationStyleCSS = generateCSSFromStyle(paginationStyle);
 
   return (
     <div className='relative uid'>
@@ -79,14 +79,14 @@ export const Slider: React.FC<SliderProps> = ({
         )}
         {pagination && <ul className={`splide__pagination ${pgStyles}`}>
           <li role="presentation"><button className="splide__pagination__page ">
-        <style jsx>{`
+        {/* <style jsx>{`
         .uid {
           background-color: red;
         }
         .uid .splide__pagination li .splide__pagination__page {
             background-color: blue;
           }
-        `}</style>
+        `}</style> */}
             </button></li>
         </ul>}
         {/* Dynamically applying styles */}

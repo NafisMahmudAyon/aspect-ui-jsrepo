@@ -47,7 +47,7 @@ const AccordionDemo = () => {
         </AccordionItem>
         <AccordionItem id="item2">
           <AccordionHeader>Header text 2</AccordionHeader>
-          <AccordionContent>Content text 2</AccordionContent>
+          <AccordionContent><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iste, esse sunt hic consequatur temporibus incidunt nemo deleniti harum dolorum optio sapiente quisquam ea sed, neque officiis suscipit nostrum obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur itaque aperiam repellat minima debitis autem sint quo perspiciatis id, laboriosam rerum asperiores consectetur vero dicta, fugit inventore blanditiis ducimus aut.</p></AccordionContent>
         </AccordionItem>
         <AccordionItem id="item3">
           <AccordionHeader iconEnabled={false}>Header text 3 (no icon)</AccordionHeader>

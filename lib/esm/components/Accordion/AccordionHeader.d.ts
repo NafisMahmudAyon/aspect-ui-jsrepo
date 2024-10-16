@@ -1,16 +1,16 @@
-import { ReactNode } from 'react';
-export interface AccordionHeaderProps {
+import React, { ReactNode } from 'react';
+interface AccordionHeaderProps {
+    children: ReactNode;
     isOpen?: boolean;
-    onClick?: () => void;
-    children?: ReactNode;
-    className?: string;
+    onToggle?: () => void;
     iconEnabled?: boolean;
-    activeIcon?: ReactNode;
-    inactiveIcon?: ReactNode;
+    iconPosition?: 'left' | 'right';
     iconClassName?: string;
     activeIconClassName?: string;
     inactiveIconClassName?: string;
-    iconPosition?: 'left' | 'right';
+    activeIcon?: ReactNode;
+    inactiveIcon?: ReactNode;
+    disabled?: boolean;
 }
-declare const AccordionHeader: React.FC<AccordionHeaderProps>;
-export default AccordionHeader;
+export declare const AccordionHeader: React.FC<AccordionHeaderProps>;
+export {};

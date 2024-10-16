@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
-export interface AccordionItemProps {
-    isOpen?: boolean;
-    onToggle?: () => void;
-    children?: ReactNode;
+interface AccordionItemProps {
+    children: ReactNode;
+    id: string;
+    disabled?: boolean;
 }
-declare const AccordionItem: React.FC<AccordionItemProps>;
-export default AccordionItem;
+export declare const AccordionItem: React.FC<AccordionItemProps>;
+export {};
