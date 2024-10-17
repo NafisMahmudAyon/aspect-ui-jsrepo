@@ -22,6 +22,10 @@
       "types": "./lib/esm/theme/AspectUITheme.d.ts",
       "default": "./lib/cjs/theme/AspectUITheme.js"
     },
+    "./preset": {
+      "types": "./lib/esm/theme/preset.d.ts",
+      "default": "./lib/cjs/theme/preset.js"
+    },
     "./css": {
       "default": "./lib/cjs/index.min.css"
     }
@@ -74,7 +78,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "framer-motion": "^11.11.9",
-    "next": "14.2.4",
+    "next": "^14.2.15",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",

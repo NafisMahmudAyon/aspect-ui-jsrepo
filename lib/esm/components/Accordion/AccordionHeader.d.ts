@@ -7,10 +7,14 @@ interface AccordionHeaderProps {
     iconPosition?: 'left' | 'right';
     iconClassName?: string;
     activeIconClassName?: string;
-    inactiveIconClassName?: string;
     activeIcon?: ReactNode;
     inactiveIcon?: ReactNode;
     disabled?: boolean;
+    className?: string;
+    labelClassName?: string;
+    activeLabelClassName?: string;
+    headerClassName?: string;
+    activeHeaderClassName?: string;
 }
 export declare const AccordionHeader: React.FC<AccordionHeaderProps>;
 export {};

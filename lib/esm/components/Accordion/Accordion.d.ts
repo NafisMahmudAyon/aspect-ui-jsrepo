@@ -5,11 +5,15 @@ interface AccordionProps {
     iconPosition?: 'left' | 'right';
     iconClassName?: string;
     activeIconClassName?: string;
-    inactiveIconClassName?: string;
     activeIcon?: ReactNode;
     inactiveIcon?: ReactNode;
     multiple?: boolean;
     className?: string;
+    labelClassName?: string;
+    activeLabelClassName?: string;
+    headerClassName?: string;
+    activeHeaderClassName?: string;
+    contentClassName?: string;
 }
 export declare const Accordion: React.FC<AccordionProps>;
 export {};

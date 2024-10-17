@@ -6,7 +6,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
-  presets: [require('./components/theme/default-preset.ts')],
+  // presets: [require('./components/theme/default-preset.ts')],
   plugins: []
 }
 export default config

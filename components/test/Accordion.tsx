@@ -40,22 +40,22 @@ const AccordionDemo = () => {
     <div>
       <h2 className='mb-4 text-xl font-semibold'>Multiple Open Accordions</h2>
       
-      <Accordion iconEnabled={true} iconPosition="right">
+      <Accordion activeHeaderClassName='bg-red-500' headerClassName='bg-blue-500' iconEnabled={true} iconPosition="right">
         <AccordionItem id="item1">
           <AccordionHeader>Header text 1</AccordionHeader>
           <AccordionContent>Content text 1</AccordionContent>
         </AccordionItem>
-        <AccordionItem id="item2">
+        {/* <AccordionItem id="item2">
           <AccordionHeader>Header text 2</AccordionHeader>
           <AccordionContent><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iste, esse sunt hic consequatur temporibus incidunt nemo deleniti harum dolorum optio sapiente quisquam ea sed, neque officiis suscipit nostrum obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur itaque aperiam repellat minima debitis autem sint quo perspiciatis id, laboriosam rerum asperiores consectetur vero dicta, fugit inventore blanditiis ducimus aut.</p></AccordionContent>
         </AccordionItem>
         <AccordionItem id="item3">
           <AccordionHeader iconEnabled={false}>Header text 3 (no icon)</AccordionHeader>
           <AccordionContent>Content text 3</AccordionContent>
-        </AccordionItem>
+        </AccordionItem> */}
       </Accordion>
       
-      <Accordion iconEnabled={true} iconPosition="right" multiple={true}>
+      {/* <Accordion iconEnabled={true} iconPosition="right" multiple={true}>
         <AccordionItem id="item1">
           <AccordionHeader>Header text 1</AccordionHeader>
           <AccordionContent>Content text 1</AccordionContent>
@@ -68,7 +68,7 @@ const AccordionDemo = () => {
           <AccordionHeader>Header text 3 (disabled)</AccordionHeader>
           <AccordionContent>Content text 3</AccordionContent>
         </AccordionItem>
-      </Accordion>
+      </Accordion> */}
 
     </div>
   )

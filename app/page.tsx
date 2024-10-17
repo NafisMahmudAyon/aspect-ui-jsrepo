@@ -39,13 +39,14 @@ import BackToTopDemo from '@/components/test/BackToTop';
 import TimelineDemo from '@/components/test/Timeline';
 import TypographyDemo from '@/components/test/Typography';
 import MasonryDemo from '@/components/test/Masonry';
+import AccordionDemo from '@/components/test/Accordion';
 export default function Home() {
 
 
   return (
     <main className='mx-auto min-h-screen py-24'>
       <Dark />
-      {/* <AccordionDemo /> */}
+      <AccordionDemo />
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}

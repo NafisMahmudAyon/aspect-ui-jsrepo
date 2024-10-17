@@ -11,23 +11,31 @@ interface AccordionHeaderProps {
   iconPosition?: 'left' | 'right';
   iconClassName?: string;
   activeIconClassName?: string;
-  inactiveIconClassName?: string;
   activeIcon?: ReactNode;
   inactiveIcon?: ReactNode;
   disabled?: boolean;
+  className?: string;
+  labelClassName?: string;
+  activeLabelClassName?: string;
+  headerClassName?: string;
+  activeHeaderClassName?: string;
 }
 
 export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   children,
   isOpen,
   onToggle,
+  className="",
   iconEnabled: headerIconEnabled,
   iconPosition: headerIconPosition,
   iconClassName: headerIconClassName,
   activeIconClassName: headerActiveIconClassName,
-  inactiveIconClassName: headerInactiveIconClassName,
   activeIcon: headerActiveIcon,
   inactiveIcon: headerInactiveIcon,
+  labelClassName: headerLabelClassName,
+  activeLabelClassName: headerActiveLabelClassName,
+  headerClassName: headerHeaderClassName,
+  activeHeaderClassName: headerActiveHeaderClassName,
   disabled = false,
 }) => {
   const {
@@ -35,34 +43,43 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
     iconPosition: accordionIconPosition,
     iconClassName: accordionIconClassName,
     activeIconClassName: accordionActiveIconClassName,
-    inactiveIconClassName: accordionInactiveIconClassName,
     activeIcon: accordionActiveIcon,
     inactiveIcon: accordionInactiveIcon,
+    labelClassName: accordionLabelClassName,
+    activeLabelClassName: accordionActiveLabelClassName,
+    headerClassName: accordionHeaderClassName,
+    activeHeaderClassName: accordionActiveHeaderClassName,
   } = useAccordion();
 
   const iconEnabled = headerIconEnabled ?? accordionIconEnabled;
   const iconPosition = headerIconPosition ?? accordionIconPosition;
   const iconClassName = headerIconClassName ?? accordionIconClassName;
   const activeIconClassName = headerActiveIconClassName ?? accordionActiveIconClassName;
-  const inactiveIconClassName = headerInactiveIconClassName ?? accordionInactiveIconClassName;
   const activeIcon = headerActiveIcon ?? accordionActiveIcon ?? '▲';
   const inactiveIcon = headerInactiveIcon ?? accordionInactiveIcon ?? '▼';
 
   const icon = isOpen ? activeIcon : inactiveIcon;
-  const iconClass = `${iconClassName} ${isOpen ? activeIconClassName : inactiveIconClassName} transition-transform duration-300`;
+  const iconClass = `${iconClassName} ${isOpen ? activeIconClassName : ""} transition-transform duration-300`;
 
+  const labelClassName = headerLabelClassName ?? accordionLabelClassName
+  const activeLabelClassName = headerActiveLabelClassName ?? accordionActiveLabelClassName
+  const headerClassName = headerHeaderClassName?? accordionHeaderClassName
+  const activeHeaderClassName = headerActiveHeaderClassName?? accordionActiveHeaderClassName
+
+  const labelClass = `${labelClassName} ${isOpen ? activeLabelClassName : ""}`
+  const headerClass = `${headerClassName} ${isOpen? activeHeaderClassName : ""}`
   return (
     <button
-      className={`w-full p-4 text-left flex items-center justify-between ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+      className={`${className} ${headerClass} w-full p-4 text-left flex items-center justify-between ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
       onClick={onToggle}
       disabled={disabled}
     >
       {iconEnabled && iconPosition === 'left' && (
-        <span className={`${iconClass} ${isOpen ? 'rotate-180' : ''}`}>{icon}</span>
+        <span className={`${iconClass}`}>{icon}</span>
       )}
-      <span className="flex-grow">{children}</span>
+      <span className={`${labelClass} flex-grow`}>{children}</span>
       {iconEnabled && iconPosition === 'right' && (
-        <span className={`${iconClass} ${isOpen ? 'rotate-180' : ''}`}>{icon}</span>
+        <span className={`${iconClass}`}>{icon}</span>
       )}
     </button>
   );
