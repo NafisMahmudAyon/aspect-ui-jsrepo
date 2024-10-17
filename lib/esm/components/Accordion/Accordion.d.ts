@@ -9,6 +9,7 @@ interface AccordionProps {
     activeIcon?: ReactNode;
     inactiveIcon?: ReactNode;
     multiple?: boolean;
+    className?: string;
 }
 export declare const Accordion: React.FC<AccordionProps>;
 export {};

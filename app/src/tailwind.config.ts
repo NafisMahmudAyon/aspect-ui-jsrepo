@@ -5,6 +5,7 @@ const config: Config = {
   theme: {
     extend: {}
   },
+  presets: [require('./theme/default-preset')],
   plugins: []
 }
 export default config

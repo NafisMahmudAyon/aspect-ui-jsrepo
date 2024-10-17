@@ -13,6 +13,7 @@ interface AccordionProps {
   activeIcon?: ReactNode;
   inactiveIcon?: ReactNode;
   multiple?: boolean;
+  className?: string;
 }
 
 export const Accordion: React.FC<AccordionProps> = ({
@@ -25,6 +26,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   activeIcon,
   inactiveIcon,
   multiple = false,
+  className = '',
 }) => {
   const [openItems, setOpenItems] = useState<string[]>([]);
 
@@ -50,7 +52,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       activeIcon,
       inactiveIcon,
     }}>
-      <div className="space-y-2">
+      <div className={`${className} space-y-2`}>
         {children}
       </div>
     </AccordionProvider>

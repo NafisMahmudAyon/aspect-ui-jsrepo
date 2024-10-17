@@ -1,4 +1,5 @@
 import React from 'react';
+import { typographyTheme } from './theme';
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'display' | 'display2' | 'body1' | 'body2' | 'caption';
 
@@ -59,8 +60,12 @@ export const Typography: React.FC<TypographyProps> = ({ variant, children, class
   const Component = getComponent();
   const styles = getStyles();
 
+  const {text} = typographyTheme
+
+  console.log(styles)
+
   return (
-    <Component className={`${styles} ${className}`}>
+    <Component className={`${styles} ${variant == 'h1' ? "text-h1" : ""} ${text.color} ${variant == 'h2' ? "text-h2" : "" } ${className}`}>
       {children}
     </Component>
   );
