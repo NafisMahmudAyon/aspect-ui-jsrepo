@@ -44,7 +44,7 @@ export default function Home() {
 
 
   return (
-    <main className='mx-auto min-h-screen py-24'>
+    <main className='mx-auto min-h-screen py-24 bg-secondary-100 dark:bg-secondary-950'>
       <Dark />
       <AccordionDemo />
       {/* <ButtonDemo /> */}
