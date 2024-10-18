@@ -40,7 +40,7 @@ const AccordionDemo = () => {
     <div>
       <h2 className='mb-4 text-xl font-semibold'>Multiple Open Accordions</h2>
       
-      <Accordion activeHeaderClassName='bg-red-500' headerClassName='bg-blue-500' iconEnabled={true} iconPosition="right">
+      <Accordion className='sha' activeHeaderClassName='bg-red-500' headerClassName='bg-blue-500' iconEnabled={true} iconPosition="right">
         <AccordionItem id="item1">
           <AccordionHeader>Header text 1</AccordionHeader>
           <AccordionContent>Content text 1</AccordionContent>

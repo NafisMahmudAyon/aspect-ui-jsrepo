@@ -3,6 +3,45 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          '50': '#efeeff',
+          '100': '#e2e0ff',
+          '200': '#cac7fe',
+          '300': '#aaa5fc',
+          '400': '#8881f8',
+          '500': '#6b63f1',
+          '600': '#4f46e5',
+          '700': '#4038ca',
+          '800': '#3730a3',
+          '900': '#332e81',
+          '950': '#1e1b4b'
+        },
+        'secondary': {
+          '50': '#f6f7f9',
+          '100': '#eceef2',
+          '200': '#d4dae3',
+          '300': '#afbaca',
+          '400': '#8495ac',
+          '500': '#657892',
+          '600': '#506079',
+          '700': '#414e63',
+          '800': '#384252',
+          '900': '#333b47',
+          '950': '#22272f'
+        },
+        '#374151': {
+          50: '#fcfcfd',
+          100: '#f1f3f6',
+          200: '#e0e4ea',
+          300: '#c8ced9',
+          400: '#a8b3c4',
+          500: '#8292aa',
+          600: '#5b6b86',
+          700: '#384252',
+          800: '#242b35',
+          900: '#191d24',
+          950: '#15181e'
+        },
         primaryColor: {
           light: '#81d4fa',
           DEFAULT: '#0288d1',
@@ -210,79 +249,28 @@ module.exports = {
             letterSpacing: '-0.7px',
             fontWeight: '400'
           }
-        ],
-        xs: [
-          '0.625rem',
-          {
-            lineHeight: '1rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        sm: [
-          '0.75rem',
-          {
-            lineHeight: '1.125rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        md: [
-          '0.875rem',
-          {
-            lineHeight: '1.25rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        base: [
-          '1rem',
-          {
-            lineHeight: '1.5rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        lg: [
-          '1.125rem',
-          {
-            lineHeight: '1.5rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        xl: [
-          '1.25rem',
-          {
-            lineHeight: '1.75rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        '2xl': [
-          '1.5rem',
-          {
-            lineHeight: '2rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        '3xl': [
-          '1.75rem',
-          {
-            lineHeight: '2.25rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
-        ],
-        '4xl': [
-          '2rem',
-          {
-            lineHeight: '2.5rem',
-            letterSpacing: '-0.5px',
-            fontWeight: '400'
-          }
         ]
+      },
+      boxShadow: {
+        small: '0px 1px 2px rgba(45, 54, 67, 0.05)',
+        default:
+          '0px 2px 4px rgba(45, 54, 67, 0.08), 0px 1px 2px rgba(45, 54, 67, 0.04)',
+        medium:
+          '0px 4px 8px -2px rgba(45, 54, 67, 0.08), 0px 2px 4px -2px rgba(45, 54, 67, 0.06)',
+        large:
+          '0px 20px 24px -4px rgba(45, 54, 67, 0.04), 0px 8px 11px -4px rgba(45, 54, 67, 0.04)',
+        xLarge: '0px 24px 50px -12px rgba(45, 54, 67, 0.12)',
+        '2xLarge': '0px 32px 64px -12px rgba(45, 54, 67, 0.14)'
+      },
+      keyframes: {
+        zoomIn: {
+          '0%': { transform: 'scale(0.5)' },
+          '50%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)' }
+        }
+      },
+      animation: {
+        zoomIn: 'zoomIn 0.3s ease-in-out'
       }
     }
   }
