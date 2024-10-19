@@ -70,7 +70,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   const headerClass = `${headerClassName} ${isOpen? activeHeaderClassName : ""}`
   return (
     <button
-      className={`${className} ${headerClass} w-full p-4 text-left flex items-center justify-between ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+      className={`${className} ${headerClass} w-full p-4 text-left flex items-center justify-between ${disabled ? ' cursor-not-allowed' : 'cursor-pointer'} ${isOpen ? "text-primary-950 dark:text-primary-100 bg-primary-300 dark:bg-primary-950" : "text-primary-950 dark:text-primary-50 bg-primary-200 dark:bg-primary-900" } `}
       onClick={onToggle}
       disabled={disabled}
     >

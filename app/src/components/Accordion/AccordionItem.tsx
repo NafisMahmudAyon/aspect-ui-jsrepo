@@ -15,7 +15,8 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, disa
   const isOpen = openItems.includes(id);
 
   return (
-    <div className={`${className} border rounded-md overflow-hidden ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
+    <div className={`${className} border 
+    ${isOpen ? "border-primary-950 dark:border-primary-100" : "border-primary-800 dark:border-primary-100"} rounded-md overflow-hidden ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
       {React.Children.map(children, child => {
         if (isValidElement(child)) {
           const childProps: any = {
