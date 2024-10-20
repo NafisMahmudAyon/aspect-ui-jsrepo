@@ -52,7 +52,7 @@ export default function Home() {
       {/* <ProgressBarDemo /> */}
       {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
-      {/* <BreadcrumbDemo /> */}
+      <BreadcrumbDemo />
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
@@ -78,7 +78,7 @@ export default function Home() {
       {/* <SkeletonDemo /> */}
       {/* <SliderDemo /> */}
       {/* <ToastDemo /> */}
-      <BackToTopDemo />  
+      {/* <BackToTopDemo />   */}
       {/* <TimelineDemo /> */}
       {/* <TypographyDemo /> */}
       {/* <MasonryDemo /> */}

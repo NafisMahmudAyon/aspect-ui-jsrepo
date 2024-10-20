@@ -1,16 +1,19 @@
 'use client'
 import { Children, HTMLAttributes } from 'react'
+import { cn } from '../../utils/cn'
 
 interface BreadcrumbProps extends HTMLAttributes<HTMLUListElement> {
   className?: string
   children: React.ReactNode
   separator?: React.ReactNode
+  separatorClassName?: string
 }
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   children,
-  className,
+  className = "",
   separator = '>',
+  separatorClassName = '',
   ...rest
 }) => {
   // Safely convert children to an array
@@ -18,14 +21,14 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
 
   return (
     <ul
-      className={`border-metal-100 dark:border-metal-700 flex max-w-max items-center gap-3 px-3.5 py-2.5 ${className} `}
+      className={cn("flex max-w-max items-center gap-3 px-3.5 py-2.5 text-primary-800 dark:text-primary-100", className)}
       {...rest}
     >
       {childrenArray.map((child: React.ReactNode, index: number) => (
         <>
           {child}
           {index < childrenArray.length - 1 && (
-            <span className='mx-2'>{separator}</span>
+            <span className={cn('mx-2 text-primary-500',separatorClassName)}>{separator}</span>
           )}
         </>
       ))}
