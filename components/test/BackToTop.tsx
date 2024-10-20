@@ -8,9 +8,9 @@ const BackToTopDemo = () => {
       <div id='hello1' className='h-[100vh] w-full bg-red-600'></div>
       <a href='#hello'>hello</a>
       <BackToTop />
-      <BackToTop threshold={500} smooth={false}>
+      {/* <BackToTop threshold={500} smooth={false}>
         <span className='text-sm'>Top</span>
-      </BackToTop>
+      </BackToTop> */}
     </div>
   )
 }

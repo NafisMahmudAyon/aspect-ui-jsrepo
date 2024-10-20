@@ -48,7 +48,7 @@ export default function Home() {
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
-      <AvatarDemo />
+      {/* <AvatarDemo /> */}
       {/* <ProgressBarDemo /> */}
       {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
@@ -78,7 +78,7 @@ export default function Home() {
       {/* <SkeletonDemo /> */}
       {/* <SliderDemo /> */}
       {/* <ToastDemo /> */}
-      {/* <BackToTopDemo />   */}
+      <BackToTopDemo />  
       {/* <TimelineDemo /> */}
       {/* <TypographyDemo /> */}
       {/* <MasonryDemo /> */}

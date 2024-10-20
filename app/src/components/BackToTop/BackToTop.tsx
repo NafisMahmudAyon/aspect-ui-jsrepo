@@ -1,15 +1,18 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { cn } from '../../utils/cn'
 
 interface BackToTopProps {
   threshold?: number
   smooth?: boolean
   children?: React.ReactNode
+  className?: string
 }
 
 export const BackToTop: React.FC<BackToTopProps> = ({
   threshold = 300,
   smooth = true,
+  className = '',
   children
 }) => {
   const [isVisible, setIsVisible] = useState(false)
@@ -22,9 +25,7 @@ export const BackToTop: React.FC<BackToTopProps> = ({
         setIsVisible(false)
       }
     }
-
     window.addEventListener('scroll', toggleVisibility)
-
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [threshold])
 
@@ -46,23 +47,10 @@ export const BackToTop: React.FC<BackToTopProps> = ({
   return (
     <button
       onClick={scrollToTop}
-      className='fixed bottom-5 right-5 rounded-full bg-blue-500 px-4 py-2 font-bold text-white shadow-lg transition-all duration-300 ease-in-out hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400'
+      className={cn('fixed bottom-5 right-5 rounded-full bg-primary-500 p-3 font-bold text-white shadow-lg transition-all duration-300 ease-in-out hover:bg-primary-600 focus:outline-none', className)}
     >
       {children || (
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          className='h-6 w-6'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-        >
-          <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth={2}
-            d='M5 10l7-7m0 0l7 7m-7-7v18'
-          />
-        </svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m5.996 14.996 6-6L18 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       )}
     </button>
   )
