@@ -2,6 +2,7 @@
 
 import React, { ReactNode, useState } from 'react';
 import { AccordionProvider } from './AccordionContext';
+import { cn } from '../../utils/cn';
 
 interface AccordionProps {
   children: ReactNode;
@@ -64,7 +65,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       activeHeaderClassName,
       contentClassName,
     }}>
-      <div className={`${className} space-y-2`}>
+      <div className={cn("space-y-2", className)}>
         {children}
       </div>
     </AccordionProvider>

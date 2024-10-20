@@ -65,10 +65,12 @@
     "url": "https://github.com/NafisMahmudAyon/aspect-ui/issues"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "deepmerge": "^4.3.1",
     "embla-carousel": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
-    "framer-motion": "^11.11.9"
+    "framer-motion": "^11.11.9",
+    "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@splidejs/react-splide": "^0.7.12",

@@ -3,6 +3,7 @@
 import React, { ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAccordion } from './AccordionContext';
+import { cn } from '../../utils/cn';
 
 interface AccordionContentProps {
   children: ReactNode;
@@ -25,9 +26,16 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({ children, is
             collapsed: { opacity: 0, height: 0 }
           }}
           transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-          className={`${className} ${contentClassName} overflow-hidden`}
         >
-          <div className={`${isOpen ? "border-primary-950 dark:border-primary-100 bg-primary-100 text-primary-950 dark:bg-primary-950 dark:text-primary-100" : "border-primary-950 dark:border-primary-100"} p-4 border-t`}>
+          <div className={cn(
+            "overflow-hidden p-4 border-t",
+            isOpen
+            ? "border-primary-950 dark:border-primary-100 bg-primary-100 text-primary-950 dark:bg-primary-950 dark:text-primary-100"
+            : "border-primary-950 dark:border-primary-100",
+            contentClassName,
+            className
+          )
+}>
             {children}
           </div>
         </motion.div>

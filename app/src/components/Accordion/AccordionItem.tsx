@@ -2,6 +2,7 @@
 
 import React, { ReactNode, isValidElement, cloneElement } from 'react';
 import { useAccordion } from './AccordionContext';
+import { cn } from '../../utils/cn';
 
 interface AccordionItemProps {
   children: ReactNode;
@@ -15,8 +16,15 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, disa
   const isOpen = openItems.includes(id);
 
   return (
-    <div className={`${className} border 
-    ${isOpen ? "border-primary-950 dark:border-primary-100" : "border-primary-800 dark:border-primary-100"} rounded-md overflow-hidden ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}>
+    <div className={cn(
+      "border rounded-md overflow-hidden",
+      isOpen
+      ? "border-primary-950 dark:border-primary-100"
+      : "border-primary-800 dark:border-primary-100",
+      disabled ? "opacity-50 cursor-not-allowed" : "",
+      className
+    )
+}>
       {React.Children.map(children, child => {
         if (isValidElement(child)) {
           const childProps: any = {
