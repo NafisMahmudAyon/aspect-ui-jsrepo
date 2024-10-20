@@ -1,5 +1,6 @@
 'use client'
 import { HTMLAttributes } from 'react'
+import { cn } from '../../utils/cn'
 
 export interface BreadcrumbItemProps extends HTMLAttributes<HTMLLIElement> {
   children: React.ReactNode
@@ -8,11 +9,11 @@ export interface BreadcrumbItemProps extends HTMLAttributes<HTMLLIElement> {
 
 export const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
   children,
-  className,
+  className="",
   ...rest
 }) => {
   return (
-    <li {...rest} className={`flex cursor-pointer items-center ${className} `}>
+    <li {...rest} className={cn("flex cursor-pointer items-center", className) }>
       {children}
     </li>
   )
