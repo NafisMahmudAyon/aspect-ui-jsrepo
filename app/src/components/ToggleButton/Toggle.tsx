@@ -2,14 +2,14 @@
 
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 interface ToggleProps {
-  value: string;
-  children: React.ReactNode;
-  className?: string;
-  defaultSelected?: boolean;
-  onChange?: (value: string, selected: boolean) => void;
+  value: string
+  children: React.ReactNode
+  className?: string
+  defaultSelected?: boolean
+  onChange?: (value: string, selected: boolean) => void
 }
 
 export const Toggle: React.FC<ToggleProps> = ({
@@ -17,25 +17,26 @@ export const Toggle: React.FC<ToggleProps> = ({
   children,
   className = '',
   defaultSelected = false,
-  onChange,
+  onChange
 }) => {
-  const [isSelected, setIsSelected] = useState(defaultSelected);
+  const [isSelected, setIsSelected] = useState(defaultSelected)
 
   const handleClick = () => {
-    const newSelectedState = !isSelected;
-    setIsSelected(newSelectedState);
-    onChange?.(value, newSelectedState);
-  };
+    const newSelectedState = !isSelected
+    setIsSelected(newSelectedState)
+    onChange?.(value, newSelectedState)
+  }
 
   return (
     <button
-      className={`px-4 py-2 rounded-md transition-colors duration-200 ${isSelected
+      className={`rounded-md px-4 py-2 transition-colors duration-200 ${
+        isSelected
           ? 'bg-blue-500 text-white'
           : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-        } ${className}`}
+      } ${className}`}
       onClick={handleClick}
     >
       {children}
     </button>
-  );
-};
+  )
+}

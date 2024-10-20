@@ -1,5 +1,8 @@
 'use client'
-import { CarouselNextButton as NextBtn, usePrevNextButtons } from './CarouselArrowButtons'
+import {
+  CarouselNextButton as NextBtn,
+  usePrevNextButtons
+} from './CarouselArrowButtons'
 import { useCarouselContext } from './CarouselContext'
 
 export const NextButton = () => {

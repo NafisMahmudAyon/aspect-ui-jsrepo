@@ -1,15 +1,11 @@
 'use client'
 
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from 'react'
 
 interface TabListProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const TabList: React.FC<TabListProps> = ({ children }) => {
-  return (
-    <div className="flex space-x-2 mb-4">
-      {children}
-    </div>
-  );
-};
+  return <div className='mb-4 flex space-x-2'>{children}</div>
+}

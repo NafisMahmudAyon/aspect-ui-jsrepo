@@ -7,7 +7,7 @@ const CheckboxDemo = () => {
   return (
     <div>
       <Checkbox
-        label="I agree to the terms and conditions"
+        label='I agree to the terms and conditions'
         checked={isChecked}
         onChange={setIsChecked}
       />

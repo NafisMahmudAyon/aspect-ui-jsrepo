@@ -1,11 +1,11 @@
 type CardHeaderProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+  children: React.ReactNode
+  className?: string
+}
 
 export const CardHeader: React.FC<CardHeaderProps> = ({
   children,
-  className="",
+  className = ''
 }) => {
-  return <div className={`${className} p-4 border-b`}>{children}</div>;
-};
+  return <div className={`${className} border-b p-4`}>{children}</div>
+}

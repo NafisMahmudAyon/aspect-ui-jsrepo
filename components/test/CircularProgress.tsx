@@ -12,11 +12,8 @@ const CircularProgressDemo = () => {
       >
         hello
       </CircularProgressBar>
-      <CircularProgressBar
-      value={85}
-      onVisible={true}
-      duration={3}
-    /></div>
+      <CircularProgressBar value={85} onVisible={true} duration={3} />
+    </div>
   )
 }
 

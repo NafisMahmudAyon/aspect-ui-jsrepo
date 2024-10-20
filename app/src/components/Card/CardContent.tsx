@@ -1,11 +1,11 @@
 interface CardContentProps {
-  children: React.ReactNode;
-  className?: string;
+  children: React.ReactNode
+  className?: string
 }
 
 export const CardContent: React.FC<CardContentProps> = ({
   children,
-  className="",
+  className = ''
 }) => {
-  return <div className={`${className} p-4`}>{children}</div>;
-};
+  return <div className={`${className} p-4`}>{children}</div>
+}

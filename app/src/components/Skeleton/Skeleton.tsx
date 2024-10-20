@@ -1,16 +1,16 @@
 'use client'
-import React from 'react';
+import React from 'react'
 // import { motion } from 'framer-motion';
 
-type SkeletonVariation = 'text' | 'circular' | 'rectangular' | 'rounded';
+type SkeletonVariation = 'text' | 'circular' | 'rectangular' | 'rounded'
 // type AnimationType = 'pulse' | 'wave' | 'shimmer';
 
 interface SkeletonProps {
-  variation?: SkeletonVariation;
-  width?: string | number;
-  height?: string | number;
+  variation?: SkeletonVariation
+  width?: string | number
+  height?: string | number
   // animation?: boolean;
-  className?: string;
+  className?: string
 }
 
 export const Skeleton: React.FC<SkeletonProps> = ({
@@ -18,21 +18,21 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   width,
   height,
   // animation = 'pulse',
-  className = '',
+  className = ''
 }) => {
   const getVariationStyle = () => {
     switch (variation) {
       case 'circular':
-        return 'rounded-full';
+        return 'rounded-full'
       case 'rectangular':
-        return 'rounded-none';
+        return 'rounded-none'
       case 'rounded':
-        return 'rounded-md';
+        return 'rounded-md'
       case 'text':
       default:
-        return 'rounded';
+        return 'rounded'
     }
-  };
+  }
   // const animation = 'pulse'
 
   // const getAnimationStyle = () => {
@@ -59,13 +59,12 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 
   return (
     <div
-      className={`bg-gray-200 animate-pulse ${getVariationStyle()} ${className}`}
+      className={`animate-pulse bg-gray-200 ${getVariationStyle()} ${className}`}
       style={{
         width: width || '100%',
-        height: height || (variation === 'text' ? '1em' : '100%'),
+        height: height || (variation === 'text' ? '1em' : '100%')
         // ...getAnimationStyle(),
-      }}>
-    </div>
-
-  );
-};
+      }}
+    ></div>
+  )
+}

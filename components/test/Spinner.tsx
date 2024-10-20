@@ -4,7 +4,7 @@ import React from 'react'
 const SpinnerDemo = () => {
   return (
     <div className=''>
-      <Spinner size="small" color="text-purple-500" thickness={2} />
+      <Spinner size='small' color='text-purple-500' thickness={2} />
     </div>
   )
 }

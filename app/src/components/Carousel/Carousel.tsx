@@ -13,18 +13,29 @@ interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
-  ({ children, options, plugins, className, carouselViewportClasses }: CarouselProps, ref: Ref<HTMLDivElement>) => {
+  (
+    {
+      children,
+      options,
+      plugins,
+      className,
+      carouselViewportClasses
+    }: CarouselProps,
+    ref: Ref<HTMLDivElement>
+  ) => {
     const theme = carouselTheme
     const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins)
 
     return (
       <div className={`${theme.carouselContainer} ${className}`} ref={ref}>
         <CarouselContext.Provider value={{ emblaApi, emblaRef }}>
-          <CarouselViewport className={carouselViewportClasses}>{children}</CarouselViewport>
+          <CarouselViewport className={carouselViewportClasses}>
+            {children}
+          </CarouselViewport>
         </CarouselContext.Provider>
       </div>
     )
-  },
+  }
 )
 
 Carousel.displayName = 'Carousel'

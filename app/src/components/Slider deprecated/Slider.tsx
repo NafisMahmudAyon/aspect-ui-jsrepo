@@ -1,40 +1,54 @@
-'use strict';
-import { Splide, SplideTrack, Options } from '@splidejs/react-splide';
-import "@splidejs/splide/dist/css/splide.min.css";
-import { ReactElement } from 'react';
+'use strict'
+import { Splide, SplideTrack, Options } from '@splidejs/react-splide'
+import '@splidejs/splide/dist/css/splide.min.css'
+import { ReactElement } from 'react'
 
 interface SliderProps {
-  children: React.ReactNode;
-  options: Options;
-  playPauseButton?: ReactElement;
-  arrowIcon?: ReactElement;
-  playIcon?: ReactElement;
-  pauseIcon?: ReactElement;
-  autoplay?: boolean;
-  pagination?: boolean;
-  arrows?: boolean;
-  progressBar?: boolean;
-  arrowStyle?: string;
-  prevArrowStyle?: string;
-  nextArrowStyle?: string;
-  autoplayStyle?: string;
-  playIconStyle?: string;
-  pgStyle?: string;
-  pauseIconStyle?: string;
-  paginationStyle?: React.CSSProperties;  // Make sure this is an object for custom styles
+  children: React.ReactNode
+  options: Options
+  playPauseButton?: ReactElement
+  arrowIcon?: ReactElement
+  playIcon?: ReactElement
+  pauseIcon?: ReactElement
+  autoplay?: boolean
+  pagination?: boolean
+  arrows?: boolean
+  progressBar?: boolean
+  arrowStyle?: string
+  prevArrowStyle?: string
+  nextArrowStyle?: string
+  autoplayStyle?: string
+  playIconStyle?: string
+  pgStyle?: string
+  pauseIconStyle?: string
+  paginationStyle?: React.CSSProperties // Make sure this is an object for custom styles
 }
 
 export const Slider: React.FC<SliderProps> = ({
-  children, options, arrowIcon, playIcon, pauseIcon, autoplay, pagination = true, arrows = true,
-  pgStyle="",
-  progressBar, arrowStyle = '', prevArrowStyle = '', nextArrowStyle = '', autoplayStyle = '',
-  playIconStyle = "", pauseIconStyle = "", paginationStyle, ...rest
+  children,
+  options,
+  arrowIcon,
+  playIcon,
+  pauseIcon,
+  autoplay,
+  pagination = true,
+  arrows = true,
+  pgStyle = '',
+  progressBar,
+  arrowStyle = '',
+  prevArrowStyle = '',
+  nextArrowStyle = '',
+  autoplayStyle = '',
+  playIconStyle = '',
+  pauseIconStyle = '',
+  paginationStyle,
+  ...rest
 }) => {
-  var pgStyles = ""
+  var pgStyles = ''
   if (pgStyle) {
-    var style = pgStyle.split(" ") // split by blank space if multiple spaces
+    var style = pgStyle.split(' ') // split by blank space if multiple spaces
     for (let i = 0; i < style.length; i++) {
-      if (style[i] != "") {
+      if (style[i] != '') {
         pgStyles += `[&_li_.splide\_\_pagination\_\_page]:${style[i]} `
       }
     }
@@ -55,31 +69,55 @@ export const Slider: React.FC<SliderProps> = ({
   // const paginationStyleCSS = generateCSSFromStyle(paginationStyle);
 
   return (
-    <div className='relative uid'>
-      <Splide hasTrack={false} className="" aria-label="My Favorite Images" options={options} {...rest}>
+    <div className='uid relative'>
+      <Splide
+        hasTrack={false}
+        className=''
+        aria-label='My Favorite Images'
+        options={options}
+        {...rest}
+      >
         <SplideTrack>{children}</SplideTrack>
         {arrows && (
           <div className={`${arrowStyle} splide__arrows`}>
-            <button className={`${prevArrowStyle} splide__arrow splide__arrow--prev`} type="button" aria-label="Previous slide">
-              {arrowIcon && arrowIcon != undefined ? arrowIcon : "<"}
+            <button
+              className={`${prevArrowStyle} splide__arrow splide__arrow--prev`}
+              type='button'
+              aria-label='Previous slide'
+            >
+              {arrowIcon && arrowIcon != undefined ? arrowIcon : '<'}
             </button>
-            <button className={`${nextArrowStyle} splide__arrow splide__arrow--next`} type="button" aria-label="Next slide">
-              {arrowIcon && arrowIcon != undefined ? arrowIcon : ">"}
+            <button
+              className={`${nextArrowStyle} splide__arrow splide__arrow--next`}
+              type='button'
+              aria-label='Next slide'
+            >
+              {arrowIcon && arrowIcon != undefined ? arrowIcon : '>'}
             </button>
           </div>
         )}
         {autoplay && (
           <>
-            <button className={`${autoplayStyle} splide__toggle`} type="button">
-              <span className={`${playIconStyle} splide__toggle__play`}>{playIcon || "play"}</span>
-              <span className={`${pauseIconStyle} splide__toggle__pause`}>{pauseIcon || "pause"}</span>
+            <button className={`${autoplayStyle} splide__toggle`} type='button'>
+              <span className={`${playIconStyle} splide__toggle__play`}>
+                {playIcon || 'play'}
+              </span>
+              <span className={`${pauseIconStyle} splide__toggle__pause`}>
+                {pauseIcon || 'pause'}
+              </span>
             </button>
-            {progressBar && <div className="splide__progress"><div className="splide__progress__bar" /></div>}
+            {progressBar && (
+              <div className='splide__progress'>
+                <div className='splide__progress__bar' />
+              </div>
+            )}
           </>
         )}
-        {pagination && <ul className={`splide__pagination ${pgStyles}`}>
-          <li role="presentation"><button className="splide__pagination__page ">
-        {/* <style jsx>{`
+        {pagination && (
+          <ul className={`splide__pagination ${pgStyles}`}>
+            <li role='presentation'>
+              <button className='splide__pagination__page'>
+                {/* <style jsx>{`
         .uid {
           background-color: red;
         }
@@ -87,10 +125,12 @@ export const Slider: React.FC<SliderProps> = ({
             background-color: blue;
           }
         `}</style> */}
-            </button></li>
-        </ul>}
+              </button>
+            </li>
+          </ul>
+        )}
         {/* Dynamically applying styles */}
       </Splide>
     </div>
-  );
-};
+  )
+}

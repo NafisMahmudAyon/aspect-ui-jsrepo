@@ -1,4 +1,9 @@
-import {Accordion, AccordionContent, AccordionHeader, AccordionItem} from '@/app/src/components/Accordion'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionHeader,
+  AccordionItem
+} from '@/app/src/components/Accordion'
 import React from 'react'
 
 const AccordionDemo = () => {
@@ -39,22 +44,43 @@ const AccordionDemo = () => {
   return (
     <div>
       <h2 className='mb-4 text-xl font-semibold'>Multiple Open Accordions</h2>
-      
-      <Accordion className='space-y-4' activeHeaderClassName='' headerClassName='' iconEnabled={true} iconPosition="right">
-        <AccordionItem id="item1">
+
+      <Accordion
+        className='space-y-4'
+        activeHeaderClassName=''
+        headerClassName=''
+        iconEnabled={true}
+        iconPosition='right'
+      >
+        <AccordionItem id='item1'>
           <AccordionHeader>Header text 1</AccordionHeader>
-          <AccordionContent className='bg-red-400'>Content text 1</AccordionContent>
+          <AccordionContent className='bg-red-400'>
+            Content text 1
+          </AccordionContent>
         </AccordionItem>
-        <AccordionItem id="item2">
+        <AccordionItem id='item2'>
           <AccordionHeader>Header text 2</AccordionHeader>
-          <AccordionContent><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore iste, esse sunt hic consequatur temporibus incidunt nemo deleniti harum dolorum optio sapiente quisquam ea sed, neque officiis suscipit nostrum obcaecati. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur itaque aperiam repellat minima debitis autem sint quo perspiciatis id, laboriosam rerum asperiores consectetur vero dicta, fugit inventore blanditiis ducimus aut.</p></AccordionContent>
+          <AccordionContent>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+              iste, esse sunt hic consequatur temporibus incidunt nemo deleniti
+              harum dolorum optio sapiente quisquam ea sed, neque officiis
+              suscipit nostrum obcaecati. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Aspernatur itaque aperiam repellat minima
+              debitis autem sint quo perspiciatis id, laboriosam rerum
+              asperiores consectetur vero dicta, fugit inventore blanditiis
+              ducimus aut.
+            </p>
+          </AccordionContent>
         </AccordionItem>
-        <AccordionItem disabled={true} id="item3">
-          <AccordionHeader iconEnabled={false}>Header text 3 (no icon)</AccordionHeader>
+        <AccordionItem disabled={true} id='item3'>
+          <AccordionHeader iconEnabled={false}>
+            Header text 3 (no icon)
+          </AccordionHeader>
           <AccordionContent>Content text 3</AccordionContent>
         </AccordionItem>
       </Accordion>
-      
+
       {/* <Accordion iconEnabled={true} iconPosition="right" multiple={true}>
         <AccordionItem id="item1">
           <AccordionHeader>Header text 1</AccordionHeader>
@@ -69,7 +95,6 @@ const AccordionDemo = () => {
           <AccordionContent>Content text 3</AccordionContent>
         </AccordionItem>
       </Accordion> */}
-
     </div>
   )
 }

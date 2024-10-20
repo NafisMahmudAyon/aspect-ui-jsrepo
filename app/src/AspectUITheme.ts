@@ -1,4 +1,4 @@
-import { Config } from "tailwindcss"
+import { Config } from 'tailwindcss'
 import merge from 'deepmerge'
 
 const DefaultTheme = {

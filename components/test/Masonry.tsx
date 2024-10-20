@@ -1,5 +1,5 @@
-import { Masonry } from '@/app/src/components/Masonry';
-import React from 'react';
+import { Masonry } from '@/app/src/components/Masonry'
+import React from 'react'
 
 const MasonryDemo: React.FC = () => {
   const items = [
@@ -10,17 +10,17 @@ const MasonryDemo: React.FC = () => {
     { id: 5, height: 180, color: 'bg-purple-500' },
     { id: 6, height: 130, color: 'bg-pink-500' },
     { id: 8, height: 160, color: 'bg-gray-500' },
-    { id: 4, height: 120, color: 'bg-yellow-500' },
-  ];
+    { id: 4, height: 120, color: 'bg-yellow-500' }
+  ]
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Masonry Layout Example</h1>
+    <div className='p-4'>
+      <h1 className='mb-4 text-2xl font-bold'>Masonry Layout Example</h1>
       <Masonry columnCount={{ sm: 1, md: 2, lg: 3, xl: 4 }} gap={2}>
-        {items.map((item) => (
+        {items.map(item => (
           <div
             key={item.id}
-            className={`w-full ${item.color} rounded-md border border-dashed flex items-center justify-center`}
+            className={`w-full ${item.color} flex items-center justify-center rounded-md border border-dashed`}
             style={{ height: `${item.height}px` }}
           >
             Item {item.id}
@@ -28,7 +28,7 @@ const MasonryDemo: React.FC = () => {
         ))}
       </Masonry>
     </div>
-  );
-};
+  )
+}
 
-export default MasonryDemo;
+export default MasonryDemo

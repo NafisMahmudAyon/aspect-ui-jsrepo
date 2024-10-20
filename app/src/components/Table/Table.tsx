@@ -45,9 +45,9 @@
 //               <th
 //                 key={column.key}
 //                 className={`
-//                   p-2 
-//                   border 
-//                   border-gray-300 
+//                   p-2
+//                   border
+//                   border-gray-300
 //                   ${index < stickyColumns ? 'sticky left-0 bg-white z-20' : ''}
 //                 `}
 //               >
@@ -63,8 +63,8 @@
 //                 <td
 //                   key={`${rowIndex}-${column.key}`}
 //                   className={`
-//                     p-2 
-//                     border 
+//                     p-2
+//                     border
 //                     border-gray-300
 //                     ${colIndex < stickyColumns ? 'sticky left-0 bg-white z-10' : ''}
 //                   `}
@@ -99,17 +99,16 @@
 //   );
 // };
 
-
 // ./app/src/components/Table/Table.tsx
 
 'use client'
 
-import React, { ReactNode } from 'react';
-import { TableProvider } from './TableContext';
+import React, { ReactNode } from 'react'
+import { TableProvider } from './TableContext'
 
 interface TableProps {
-  children: ReactNode;
-  className?: string;
+  children: ReactNode
+  className?: string
 }
 
 export const Table: React.FC<TableProps> = ({ children, className = '' }) => {
@@ -119,5 +118,5 @@ export const Table: React.FC<TableProps> = ({ children, className = '' }) => {
         {children}
       </table>
     </TableProvider>
-  );
-};
+  )
+}

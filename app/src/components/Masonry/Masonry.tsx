@@ -1,44 +1,44 @@
 'use client'
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react'
 
 interface MasonryProps {
-  children: ReactNode[];
-  columnCount?: { sm: number; md: number; lg: number; xl: number };
-  gap?: number;
+  children: ReactNode[]
+  columnCount?: { sm: number; md: number; lg: number; xl: number }
+  gap?: number
 }
 
-type ColumnWrapper = { [key: number]: React.ReactNode[] };
+type ColumnWrapper = { [key: number]: React.ReactNode[] }
 
 export const Masonry: React.FC<MasonryProps> = ({
   children,
   columnCount = { sm: 1, md: 2, lg: 3, xl: 4 },
-  gap = 4,
+  gap = 4
 }) => {
-  const [columns, setColumns] = useState(columnCount.sm);
+  const [columns, setColumns] = useState(columnCount.sm)
 
   useEffect(() => {
     const updateColumns = () => {
-      const width = window.innerWidth;
-      if (width >= 1280) setColumns(columnCount.xl);
-      else if (width >= 1024) setColumns(columnCount.lg);
-      else if (width >= 768) setColumns(columnCount.md);
-      else setColumns(columnCount.sm);
-    };
+      const width = window.innerWidth
+      if (width >= 1280) setColumns(columnCount.xl)
+      else if (width >= 1024) setColumns(columnCount.lg)
+      else if (width >= 768) setColumns(columnCount.md)
+      else setColumns(columnCount.sm)
+    }
 
-    updateColumns();
-    window.addEventListener('resize', updateColumns);
-    return () => window.removeEventListener('resize', updateColumns);
-  }, [columnCount]);
+    updateColumns()
+    window.addEventListener('resize', updateColumns)
+    return () => window.removeEventListener('resize', updateColumns)
+  }, [columnCount])
 
-  const columnWrapper: ColumnWrapper = {};
-  const result = [];
+  const columnWrapper: ColumnWrapper = {}
+  const result = []
 
   for (let i = 0; i < children.length; i++) {
-    const columnIndex = i % columns;
+    const columnIndex = i % columns
     if (!columnWrapper[columnIndex]) {
-      columnWrapper[columnIndex] = [];
+      columnWrapper[columnIndex] = []
     }
-    columnWrapper[columnIndex].push(children[i]);
+    columnWrapper[columnIndex].push(children[i])
   }
 
   for (let i = 0; i < columns; i++) {
@@ -51,12 +51,12 @@ export const Masonry: React.FC<MasonryProps> = ({
           justifyContent: 'flex-start',
           alignItems: 'center',
           width: `${100 / columns}%`,
-          gap: `${gap * 0.25}rem`,
+          gap: `${gap * 0.25}rem`
         }}
       >
         {columnWrapper[i]}
       </div>
-    );
+    )
   }
 
   return (
@@ -66,11 +66,10 @@ export const Masonry: React.FC<MasonryProps> = ({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-start',
-        gap: `${gap * 0.25}rem`,
+        gap: `${gap * 0.25}rem`
       }}
     >
       {result}
     </div>
-  );
-};
-
+  )
+}

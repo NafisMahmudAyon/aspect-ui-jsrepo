@@ -2,15 +2,15 @@
 
 'use client'
 
-import React from 'react';
-import { ToggleButtonGroupProvider } from './ToggleButtonGroupContext';
+import React from 'react'
+import { ToggleButtonGroupProvider } from './ToggleButtonGroupContext'
 
 interface ToggleButtonGroupProps {
-  children: React.ReactNode;
-  type: 'single' | 'multiple';
-  defaultValue?: string | string[];
-  onChange?: (value: string | string[]) => void;
-  className?: string;
+  children: React.ReactNode
+  type: 'single' | 'multiple'
+  defaultValue?: string | string[]
+  onChange?: (value: string | string[]) => void
+  className?: string
 }
 
 export const ToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
@@ -18,13 +18,15 @@ export const ToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
   type,
   defaultValue,
   onChange,
-  className = '',
+  className = ''
 }) => {
   return (
-    <ToggleButtonGroupProvider type={type} defaultValue={defaultValue} onChange={onChange}>
-      <div className={`flex space-x-2 ${className}`}>
-        {children}
-      </div>
+    <ToggleButtonGroupProvider
+      type={type}
+      defaultValue={defaultValue}
+      onChange={onChange}
+    >
+      <div className={`flex space-x-2 ${className}`}>{children}</div>
     </ToggleButtonGroupProvider>
-  );
-};
+  )
+}

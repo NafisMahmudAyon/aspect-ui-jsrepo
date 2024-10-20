@@ -1,9 +1,9 @@
 'use client'
-import React from 'react';
-import { useToast } from '@/app/src/components/Toast';
+import React from 'react'
+import { useToast } from '@/app/src/components/Toast'
 
 const ToastDemo: React.FC = () => {
-  const { addToast, ToastContainer, promise } = useToast();
+  const { addToast, ToastContainer, promise } = useToast()
 
   const handleClick = () => {
     addToast({
@@ -11,30 +11,26 @@ const ToastDemo: React.FC = () => {
       type: 'info',
       action: {
         label: 'Undo',
-        onClick: () => console.log('Undo clicked'),
-      },
-    });
-  };
+        onClick: () => console.log('Undo clicked')
+      }
+    })
+  }
 
   const handlePromise = () => {
-    promise(
-      new Promise((resolve) => setTimeout(resolve, 2000)),
-      {
-        loading: 'Loading...',
-        success: 'Operation successful!',
-        error: 'An error occurred',
-      }
-    );
-  };
+    promise(new Promise(resolve => setTimeout(resolve, 2000)), {
+      loading: 'Loading...',
+      success: 'Operation successful!',
+      error: 'An error occurred'
+    })
+  }
 
   const showToast = (type: 'success' | 'error' | 'info' | 'warning') => {
     addToast({
       message: `This is a ${type} toast message!`,
       type,
-      duration: 3000,
-    });
-  };
-
+      duration: 3000
+    })
+  }
 
   const handleClicks = () => {
     addToast({
@@ -43,52 +39,49 @@ const ToastDemo: React.FC = () => {
       type: 'success',
       action: {
         label: 'View',
-        onClick: () => console.log('View clicked'),
-      },
-    });
-  };
+        onClick: () => console.log('View clicked')
+      }
+    })
+  }
 
   const handlePromises = () => {
-    promise(
-      new Promise((resolve) => setTimeout(resolve, 2000)),
-      {
-        loading: 'Uploading file',
-        loadingDescription: 'Please wait while we upload your file...',
-        success: 'File uploaded',
-        successDescription: 'Your file has been successfully uploaded to the server.',
-        error: 'Upload failed',
-        errorDescription: 'An error occurred while uploading your file. Please try again.',
-      }
-    );
-  };
-
-  
+    promise(new Promise(resolve => setTimeout(resolve, 2000)), {
+      loading: 'Uploading file',
+      loadingDescription: 'Please wait while we upload your file...',
+      success: 'File uploaded',
+      successDescription:
+        'Your file has been successfully uploaded to the server.',
+      error: 'Upload failed',
+      errorDescription:
+        'An error occurred while uploading your file. Please try again.'
+    })
+  }
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Toast Example</h1>
-      <div className="space-x-2">
+    <div className='p-4'>
+      <h1 className='mb-4 text-2xl font-bold'>Toast Example</h1>
+      <div className='space-x-2'>
         <button
           onClick={() => showToast('success')}
-          className="px-4 py-2 bg-green-500 text-white rounded"
+          className='rounded bg-green-500 px-4 py-2 text-white'
         >
           Show Success Toast
         </button>
         <button
           onClick={() => showToast('error')}
-          className="px-4 py-2 bg-red-500 text-white rounded"
+          className='rounded bg-red-500 px-4 py-2 text-white'
         >
           Show Error Toast
         </button>
         <button
           onClick={() => showToast('info')}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
+          className='rounded bg-blue-500 px-4 py-2 text-white'
         >
           Show Info Toast
         </button>
         <button
           onClick={() => showToast('warning')}
-          className="px-4 py-2 bg-yellow-500 text-white rounded"
+          className='rounded bg-yellow-500 px-4 py-2 text-white'
         >
           Show Warning Toast
         </button>
@@ -100,7 +93,7 @@ const ToastDemo: React.FC = () => {
       <button onClick={handlePromises}>Start Promise with Description</button>
       <ToastContainer />
     </div>
-  );
-};
+  )
+}
 
-export default ToastDemo;
+export default ToastDemo

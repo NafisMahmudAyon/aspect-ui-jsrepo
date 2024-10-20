@@ -1,11 +1,11 @@
 interface CardDescriptionProps {
-  children: React.ReactNode;
-  className?: string;
+  children: React.ReactNode
+  className?: string
 }
 
 export const CardDescription: React.FC<CardDescriptionProps> = ({
   children,
-  className="",
+  className = ''
 }) => {
-  return <p className={`${className} text-sm text-gray-600`}>{children}</p>;
-};
+  return <p className={`${className} text-sm text-gray-600`}>{children}</p>
+}

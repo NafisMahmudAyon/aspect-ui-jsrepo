@@ -1,11 +1,11 @@
 interface CardFooterProps {
-  children: React.ReactNode;
-  className?: string;
+  children: React.ReactNode
+  className?: string
 }
 
 export const CardFooter: React.FC<CardFooterProps> = ({
   children,
-  className="",
+  className = ''
 }) => {
-  return <div className={`${className} p-4 border-t`}>{children}</div>;
-};
+  return <div className={`${className} border-t p-4`}>{children}</div>
+}

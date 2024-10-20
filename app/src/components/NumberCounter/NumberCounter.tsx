@@ -1,56 +1,57 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 
 interface NumberCounterProps {
-  end: number;
-  duration: number;
-  decimals?: number;
-  onVisible?: boolean;
+  end: number
+  duration: number
+  decimals?: number
+  onVisible?: boolean
 }
 
-export const NumberCounter: React.FC<NumberCounterProps> = ({ end, duration, decimals = 0, onVisible = false }) => {
-  const [count, setCount] = useState(0);
-  const counterRef = useRef<HTMLDivElement>(null);
+export const NumberCounter: React.FC<NumberCounterProps> = ({
+  end,
+  duration,
+  decimals = 0,
+  onVisible = false
+}) => {
+  const [count, setCount] = useState(0)
+  const counterRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const startCounting = () => {
-      let start = 0;
-      const increment = end / (duration / 16); // 16ms is roughly 60fps
+      let start = 0
+      const increment = end / (duration / 16) // 16ms is roughly 60fps
       const timer = setInterval(() => {
-        start += increment;
+        start += increment
         if (start >= end) {
-          clearInterval(timer);
-          setCount(end);
+          clearInterval(timer)
+          setCount(end)
         } else {
-          setCount(start);
+          setCount(start)
         }
-      }, 16);
-    };
+      }, 16)
+    }
 
     if (onVisible) {
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            startCounting();
-            observer.disconnect();
+            startCounting()
+            observer.disconnect()
           }
         },
         { threshold: 0.1 }
-      );
+      )
 
       if (counterRef.current) {
-        observer.observe(counterRef.current);
+        observer.observe(counterRef.current)
       }
 
-      return () => observer.disconnect();
+      return () => observer.disconnect()
     } else {
-      startCounting();
+      startCounting()
     }
-  }, [end, duration, onVisible]);
+  }, [end, duration, onVisible])
 
-  return (
-    <div ref={counterRef}>
-      {count.toFixed(decimals)}
-    </div>
-  );
-};
+  return <div ref={counterRef}>{count.toFixed(decimals)}</div>
+}

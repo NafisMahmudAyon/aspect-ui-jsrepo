@@ -1,47 +1,53 @@
 'use client'
 
-import React, { ReactNode, isValidElement, cloneElement } from 'react';
-import { useAccordion } from './AccordionContext';
-import { cn } from '../../utils/cn';
+import React, { ReactNode, isValidElement, cloneElement } from 'react'
+import { useAccordion } from './AccordionContext'
+import { cn } from '../../utils/cn'
 
 interface AccordionItemProps {
-  children: ReactNode;
-  id: string;
-  disabled?: boolean;
-  className?: string;
+  children: ReactNode
+  id: string
+  disabled?: boolean
+  className?: string
 }
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({ children, id, disabled = false, className="" }) => {
-  const { openItems, toggleItem } = useAccordion();
-  const isOpen = openItems.includes(id);
+export const AccordionItem: React.FC<AccordionItemProps> = ({
+  children,
+  id,
+  disabled = false,
+  className = ''
+}) => {
+  const { openItems, toggleItem } = useAccordion()
+  const isOpen = openItems.includes(id)
 
   return (
-    <div className={cn(
-      "border rounded-md overflow-hidden",
-      isOpen
-      ? "border-primary-950 dark:border-primary-100"
-      : "border-primary-800 dark:border-primary-100",
-      disabled ? "opacity-50 cursor-not-allowed" : "",
-      className
-    )
-}>
+    <div
+      className={cn(
+        'overflow-hidden rounded-md border',
+        isOpen
+          ? 'border-primary-950 dark:border-primary-100'
+          : 'border-primary-800 dark:border-primary-100',
+        disabled ? 'cursor-not-allowed opacity-50' : '',
+        className
+      )}
+    >
       {React.Children.map(children, child => {
         if (isValidElement(child)) {
           const childProps: any = {
             isOpen,
             onToggle: disabled ? undefined : () => toggleItem(id),
             disabled
-          };
+          }
 
           // Only add isOpen if it's a valid prop for the child
           // if ('isOpen' in child.props) {
           //   childProps.isOpen = isOpen;
           // }
 
-          return cloneElement(child, childProps);
+          return cloneElement(child, childProps)
         }
-        return child;
+        return child
       })}
     </div>
-  );
-};
+  )
+}

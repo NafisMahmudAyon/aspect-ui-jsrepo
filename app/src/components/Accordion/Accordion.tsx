@@ -1,24 +1,24 @@
 'use client'
 
-import React, { ReactNode, useState } from 'react';
-import { AccordionProvider } from './AccordionContext';
-import { cn } from '../../utils/cn';
+import React, { ReactNode, useState } from 'react'
+import { AccordionProvider } from './AccordionContext'
+import { cn } from '../../utils/cn'
 
 interface AccordionProps {
-  children: ReactNode;
-  iconEnabled?: boolean;
-  iconPosition?: 'left' | 'right';
-  iconClassName?: string;
-  activeIconClassName?: string;
-  activeIcon?: ReactNode;
-  inactiveIcon?: ReactNode;
-  multiple?: boolean;
-  className?: string;
-  labelClassName?: string;
-  activeLabelClassName?: string;
-  headerClassName?: string;
-  activeHeaderClassName?: string;
-  contentClassName?: string;
+  children: ReactNode
+  iconEnabled?: boolean
+  iconPosition?: 'left' | 'right'
+  iconClassName?: string
+  activeIconClassName?: string
+  activeIcon?: ReactNode
+  inactiveIcon?: ReactNode
+  multiple?: boolean
+  className?: string
+  labelClassName?: string
+  activeLabelClassName?: string
+  headerClassName?: string
+  activeHeaderClassName?: string
+  contentClassName?: string
 }
 
 export const Accordion: React.FC<AccordionProps> = ({
@@ -35,39 +35,39 @@ export const Accordion: React.FC<AccordionProps> = ({
   activeLabelClassName = '',
   headerClassName = '',
   activeHeaderClassName = '',
-  contentClassName = '',
+  contentClassName = ''
 }) => {
-  const [openItems, setOpenItems] = useState<string[]>([]);
+  const [openItems, setOpenItems] = useState<string[]>([])
 
   const toggleItem = (itemId: string) => {
     setOpenItems(prev => {
       if (prev.includes(itemId)) {
-        return prev.filter(id => id !== itemId);
+        return prev.filter(id => id !== itemId)
       } else {
-        return multiple ? [...prev, itemId] : [itemId];
+        return multiple ? [...prev, itemId] : [itemId]
       }
-    });
-  };
+    })
+  }
 
   return (
-    <AccordionProvider value={{
-      openItems,
-      toggleItem,
-      iconEnabled,
-      iconPosition,
-      iconClassName,
-      activeIconClassName,
-      activeIcon,
-      inactiveIcon,
-      labelClassName,
-      activeLabelClassName,
-      headerClassName,
-      activeHeaderClassName,
-      contentClassName,
-    }}>
-      <div className={cn("space-y-2", className)}>
-        {children}
-      </div>
+    <AccordionProvider
+      value={{
+        openItems,
+        toggleItem,
+        iconEnabled,
+        iconPosition,
+        iconClassName,
+        activeIconClassName,
+        activeIcon,
+        inactiveIcon,
+        labelClassName,
+        activeLabelClassName,
+        headerClassName,
+        activeHeaderClassName,
+        contentClassName
+      }}
+    >
+      <div className={cn('space-y-2', className)}>{children}</div>
     </AccordionProvider>
-  );
-};
+  )
+}

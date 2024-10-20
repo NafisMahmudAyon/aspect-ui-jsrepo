@@ -1,22 +1,20 @@
 'use client'
 
-import React, { ReactNode } from 'react';
-import { useModal } from './ModalContext';
+import React, { ReactNode } from 'react'
+import { useModal } from './ModalContext'
 
 interface ModalContentProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const ModalContent: React.FC<ModalContentProps> = ({ children }) => {
-  const { isOpen } = useModal();
+  const { isOpen } = useModal()
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
       {children}
-      
     </div>
-  );
-};
-
+  )
+}

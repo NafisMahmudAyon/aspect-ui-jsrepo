@@ -1,35 +1,39 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
-import { Avatar } from './Avatar';
-
-// import "../../../css/output.css"
+import React from 'react'
+import { Avatar } from './Avatar'
+import { cn } from '../../utils/cn'
 
 interface AvatarGroupProps {
-  styles?: string;
-  children?: React.ReactNode;
-  variant?: number;
+  className?: string
+  children?: React.ReactNode
+  variant?: number
 }
 
-export const AvatarGroup: React.FC<AvatarGroupProps> = ({ styles = "", children, variant, ...rest }) => {
-  const [variantValue, setVariantValue] = useState({
-    styles: "",
-  });
+export const AvatarGroup: React.FC<AvatarGroupProps> = ({
+  className = '',
+  children,
+  variant,
+  ...rest
+}) => {
+  // const [variantValue, setVariantValue] = useState({
+  //   className: "",
+  // });
 
-  useEffect(() => {
-    if (variant == 1) {
-      setVariantValue({
-        styles: " -space-x-2",
-      });
-    } else if (variant == 2 || variant == 3 || variant == 4 || variant == 5 || variant == 6) {
-      setVariantValue({
-        styles: "-space-x-2 ",
-      });
-    }
-  }, [variant]);
+  // useEffect(() => {
+  //   if (variant == 1) {
+  //     setVariantValue({
+  //       className: " ",
+  //     });
+  //   } else if (variant == 2 || variant == 3 || variant == 4 || variant == 5 || variant == 6) {
+  //     setVariantValue({
+  //       className: "-space-x-2 ",
+  //     });
+  //   }
+  // }, [variant]);
 
   return (
-    <div className={`${styles} ${variantValue.styles} flex items-center`} {...rest}>
+    <div className={cn('flex items-center -space-x-2', className)} {...rest}>
       {!children ? (
         <>
           <Avatar />
@@ -39,7 +43,5 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = ({ styles = "", children,
         <>{children}</>
       )}
     </div>
-  );
-};
-
-// export default AvatarGroup;
+  )
+}

@@ -1,18 +1,18 @@
 'use client'
-import { Pagination } from '@/app/src/components/Pagination';
+import { Pagination } from '@/app/src/components/Pagination'
 import React, { useState } from 'react'
 
 const PaginationDemo = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1)
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    console.log(`Current Page: ${page}`);
-  };
+    setCurrentPage(page)
+    console.log(`Current Page: ${page}`)
+  }
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Pagination Example</h1>
+    <div className='p-4'>
+      <h1 className='mb-4 text-2xl font-bold'>Pagination Example</h1>
       <Pagination
         count={20}
         defaultPage={6}
@@ -34,7 +34,7 @@ const PaginationDemo = () => {
       /> */}
       <p>Current Page: {currentPage}</p>
     </div>
-  );
+  )
 }
 
 export default PaginationDemo

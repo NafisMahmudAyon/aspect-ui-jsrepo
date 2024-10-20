@@ -1,1 +1,1 @@
-export * from './Masonry';
+export * from './Masonry'

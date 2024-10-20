@@ -1,15 +1,11 @@
 'use client'
 
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from 'react'
 
 interface DropdownListProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const DropdownList: React.FC<DropdownListProps> = ({ children }) => {
-  return (
-    <div className="py-1">
-      {children}
-    </div>
-  );
-};
+  return <div className='py-1'>{children}</div>
+}

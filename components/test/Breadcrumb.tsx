@@ -3,7 +3,7 @@ import { Breadcrumb, BreadcrumbItem } from '@/app/src/components/Breadcrumb'
 const BreadcrumbDemo = () => {
   return (
     <div>
-      <Breadcrumb separator="/">
+      <Breadcrumb separator='/'>
         <BreadcrumbItem>Home</BreadcrumbItem>
         <BreadcrumbItem>Category</BreadcrumbItem>
         <BreadcrumbItem>Product</BreadcrumbItem>

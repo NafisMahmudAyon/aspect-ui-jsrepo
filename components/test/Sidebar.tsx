@@ -1,4 +1,10 @@
-import { Sidebar, SidebarContainer, SidebarFooter, SidebarHeader, SidebarItem } from '@/app/src/components/Sidebar'
+import {
+  Sidebar,
+  SidebarContainer,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarItem
+} from '@/app/src/components/Sidebar'
 import React from 'react'
 
 const SidebarDemo = () => {
@@ -6,7 +12,7 @@ const SidebarDemo = () => {
     <div>
       <Sidebar>
         <SidebarHeader>
-          <h2 className="text-xl font-bold">My App</h2>
+          <h2 className='text-xl font-bold'>My App</h2>
         </SidebarHeader>
         <SidebarContainer>
           <SidebarItem>Dashboard</SidebarItem>

@@ -1,19 +1,17 @@
 // ./app/src/components/Navbar/Navbar.tsx
 'use client'
 
-import React, { ReactNode } from 'react';
-import { NavbarProvider } from './NavbarContext';
+import React, { ReactNode } from 'react'
+import { NavbarProvider } from './NavbarContext'
 
 interface NavbarProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ children }) => {
   return (
     <NavbarProvider>
-      <nav className="bg-gray-400 shadow-md relative">
-        {children}
-      </nav>
+      <nav className='relative bg-gray-400 shadow-md'>{children}</nav>
     </NavbarProvider>
-  );
-};
+  )
+}

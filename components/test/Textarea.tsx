@@ -6,14 +6,14 @@ const TextareaDemo = () => {
     <div>
       <form>
         <Textarea
-          label="Comments"
-          placeholder="Enter your comments here"
+          label='Comments'
+          placeholder='Enter your comments here'
           rows={4}
         />
         <Textarea
-          label="Feedback"
-          placeholder="Provide your feedback"
-          error="This field is required"
+          label='Feedback'
+          placeholder='Provide your feedback'
+          error='This field is required'
         />
       </form>
     </div>

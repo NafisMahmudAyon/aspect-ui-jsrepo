@@ -3,19 +3,19 @@ import React from 'react'
 
 const ImageDemo = () => {
   return (
-    <div className="p-8 size-40">
+    <div className='size-40 p-8'>
       <Image
-        src="https://images.pexels.com/photos/365668/pexels-photo-365668.jpeg"
-        alt="Sample image"
-        caption="ffdf"
+        src='https://images.pexels.com/photos/365668/pexels-photo-365668.jpeg'
+        alt='Sample image'
+        caption='ffdf'
         width='auto'
         height='auto'
         lightbox={true}
         lightboxProps={{
-          src: "https://images.pexels.com/photos/365669/pexels-photo-365669.jpeg",
-          alt: "Sample image",
+          src: 'https://images.pexels.com/photos/365669/pexels-photo-365669.jpeg',
+          alt: 'Sample image'
         }}
-        objectFit="contain"
+        objectFit='contain'
       />
     </div>
   )

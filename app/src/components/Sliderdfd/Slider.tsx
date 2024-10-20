@@ -1,106 +1,108 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from 'react'
 
 interface CarouselProps {
-  images: string[];
+  images: string[]
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [startPos, setStartPos] = useState<number>(0);
-  const [currentTranslate, setCurrentTranslate] = useState<number>(0);
-  const [prevTranslate, setPrevTranslate] = useState<number>(0);
-  const [animationId, setAnimationId] = useState<number | null>(null);
-  const [startTime, setStartTime] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [isDragging, setIsDragging] = useState<boolean>(false)
+  const [startPos, setStartPos] = useState<number>(0)
+  const [currentTranslate, setCurrentTranslate] = useState<number>(0)
+  const [prevTranslate, setPrevTranslate] = useState<number>(0)
+  const [animationId, setAnimationId] = useState<number | null>(null)
+  const [startTime, setStartTime] = useState<number>(0)
 
-  const carouselRef = useRef<HTMLDivElement | null>(null);
+  const carouselRef = useRef<HTMLDivElement | null>(null)
 
   // Utility: to get the current time
-  const getTime = () => new Date().getTime();
+  const getTime = () => new Date().getTime()
 
   // Handle Next Slide
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
+    setCurrentIndex(prevIndex =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+    )
+  }
 
   // Handle Previous Slide
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
+    setCurrentIndex(prevIndex =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+    )
+  }
 
   // Go to specific slide
   const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
+    setCurrentIndex(index)
+  }
 
   // Smooth dragging with requestAnimationFrame
   const animation = () => {
     if (isDragging) {
-      setPrevTranslate(currentTranslate);
-      setAnimationId(requestAnimationFrame(animation));
+      setPrevTranslate(currentTranslate)
+      setAnimationId(requestAnimationFrame(animation))
     }
-  };
+  }
 
   // Drag Start
   const startDrag = (clientX: number) => {
-    setIsDragging(true);
-    setStartPos(clientX);
-    setStartTime(getTime());
-    setPrevTranslate(currentTranslate);
-    setAnimationId(requestAnimationFrame(animation));
-  };
+    setIsDragging(true)
+    setStartPos(clientX)
+    setStartTime(getTime())
+    setPrevTranslate(currentTranslate)
+    setAnimationId(requestAnimationFrame(animation))
+  }
 
   // Dragging
   const moveDrag = (clientX: number) => {
-    if (!isDragging) return;
-    const currentPosition = clientX - startPos;
-    setCurrentTranslate(prevTranslate + currentPosition);
-  };
+    if (!isDragging) return
+    const currentPosition = clientX - startPos
+    setCurrentTranslate(prevTranslate + currentPosition)
+  }
 
   // Drag End
   const endDrag = () => {
-    setIsDragging(false);
-    cancelAnimationFrame(animationId as number);
+    setIsDragging(false)
+    cancelAnimationFrame(animationId as number)
 
-    const dragDuration = getTime() - startTime;
-    const movedBy = currentTranslate - prevTranslate;
+    const dragDuration = getTime() - startTime
+    const movedBy = currentTranslate - prevTranslate
 
-    const velocity = Math.abs(movedBy / dragDuration); // Velocity in px/ms
+    const velocity = Math.abs(movedBy / dragDuration) // Velocity in px/ms
 
     // Determine if the drag was fast enough to change slides
     if (velocity > 0.5 || Math.abs(movedBy) > 100) {
       if (movedBy < 0) {
-        nextSlide();
+        nextSlide()
       } else {
-        prevSlide();
+        prevSlide()
       }
     }
 
-    setCurrentTranslate(0); // Reset translate for smooth animation
-    setPrevTranslate(0); // Reset prev translate for next drag
-  };
+    setCurrentTranslate(0) // Reset translate for smooth animation
+    setPrevTranslate(0) // Reset prev translate for next drag
+  }
 
   // Mouse and Touch Event Handlers
-  const handleMouseDown = (e: React.MouseEvent) => startDrag(e.clientX);
-  const handleMouseMove = (e: React.MouseEvent) => moveDrag(e.clientX);
-  const handleMouseUp = () => endDrag();
-  const handleTouchStart = (e: React.TouchEvent) => startDrag(e.touches[0].clientX);
-  const handleTouchMove = (e: React.TouchEvent) => moveDrag(e.touches[0].clientX);
-  const handleTouchEnd = () => endDrag();
+  const handleMouseDown = (e: React.MouseEvent) => startDrag(e.clientX)
+  const handleMouseMove = (e: React.MouseEvent) => moveDrag(e.clientX)
+  const handleMouseUp = () => endDrag()
+  const handleTouchStart = (e: React.TouchEvent) =>
+    startDrag(e.touches[0].clientX)
+  const handleTouchMove = (e: React.TouchEvent) =>
+    moveDrag(e.touches[0].clientX)
+  const handleTouchEnd = () => endDrag()
 
   useEffect(() => {
     return () => {
-      if (animationId) cancelAnimationFrame(animationId);
-    };
-  }, [animationId]);
+      if (animationId) cancelAnimationFrame(animationId)
+    }
+  }, [animationId])
 
   return (
     <div
-      className="relative w-full max-w-2xl mx-auto overflow-hidden"
+      className='relative mx-auto w-full max-w-2xl overflow-hidden'
       ref={carouselRef}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
@@ -112,48 +114,53 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     >
       {/* Left button */}
       <button
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white bg-opacity-50 hover:bg-opacity-75 px-3 py-1 rounded focus:outline-none"
+        className='absolute left-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-3 py-1 text-white hover:bg-opacity-75 focus:outline-none'
         onClick={prevSlide}
       >
         &#10094;
       </button>
 
       <div
-        className="flex transition-transform ease-in-out duration-500"
+        className='flex transition-transform duration-500 ease-in-out'
         style={{
-          transform: `translateX(calc(-${currentIndex * 100}% + ${currentTranslate}px))`,
+          transform: `translateX(calc(-${currentIndex * 100}% + ${currentTranslate}px))`
         }}
       >
         {images.map((image, index) => (
-          <div key={index} className="min-w-full">
-            <img src={image} alt={`Slide ${index}`} className="w-full object-cover" />
+          <div key={index} className='min-w-full'>
+            <img
+              src={image}
+              alt={`Slide ${index}`}
+              className='w-full object-cover'
+            />
           </div>
         ))}
       </div>
 
       {/* Right button */}
       <button
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white bg-opacity-50 hover:bg-opacity-75 px-3 py-1 rounded focus:outline-none"
+        className='absolute right-0 top-1/2 -translate-y-1/2 transform rounded bg-black bg-opacity-50 px-3 py-1 text-white hover:bg-opacity-75 focus:outline-none'
         onClick={nextSlide}
       >
         &#10095;
       </button>
 
       {/* Dots */}
-      <div className="flex justify-center mt-4">
+      <div className='mt-4 flex justify-center'>
         {images.map((_, index) => (
           <span
             key={index}
-            className={`h-3 w-3 mx-1 rounded-full cursor-pointer transition-transform duration-300 ease-in-out ${index === currentIndex
-                ? "bg-gray-800 scale-125"
-                : "bg-gray-400 hover:bg-gray-600"
-              }`}
+            className={`mx-1 h-3 w-3 cursor-pointer rounded-full transition-transform duration-300 ease-in-out ${
+              index === currentIndex
+                ? 'scale-125 bg-gray-800'
+                : 'bg-gray-400 hover:bg-gray-600'
+            }`}
             onClick={() => goToSlide(index)}
           ></span>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Carousel;
+export default Carousel

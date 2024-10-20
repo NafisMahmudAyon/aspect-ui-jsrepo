@@ -1,6 +1,14 @@
 'use client'
 import { EmblaCarouselType } from 'embla-carousel'
-import { ButtonHTMLAttributes, cloneElement, forwardRef, isValidElement, useCallback, useEffect, useState } from 'react'
+import {
+  ButtonHTMLAttributes,
+  cloneElement,
+  forwardRef,
+  isValidElement,
+  useCallback,
+  useEffect,
+  useState
+} from 'react'
 
 type UseDotButtonType = {
   selectedIndex: number
@@ -8,7 +16,9 @@ type UseDotButtonType = {
   onDotButtonClick: (index: number) => void
 }
 
-export const useDotButton = (emblaApi: EmblaCarouselType | undefined): UseDotButtonType => {
+export const useDotButton = (
+  emblaApi: EmblaCarouselType | undefined
+): UseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
 
@@ -17,7 +27,7 @@ export const useDotButton = (emblaApi: EmblaCarouselType | undefined): UseDotBut
       if (!emblaApi) return
       emblaApi.scrollTo(index)
     },
-    [emblaApi],
+    [emblaApi]
   )
 
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
@@ -41,11 +51,12 @@ export const useDotButton = (emblaApi: EmblaCarouselType | undefined): UseDotBut
   return {
     selectedIndex,
     scrollSnaps,
-    onDotButtonClick,
+    onDotButtonClick
   }
 }
 
-export interface DotButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface DotButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean
 }
 
@@ -54,16 +65,16 @@ export const DotButton = forwardRef<HTMLButtonElement, DotButtonProps>(
     if (asChild && isValidElement(children)) {
       return cloneElement(children, {
         itemRef: ref,
-        ...props,
+        ...props
       })
     }
 
     return (
-      <button ref={ref} type="button" {...props} className={`${className}`}>
+      <button ref={ref} type='button' {...props} className={`${className}`}>
         {children}
       </button>
     )
-  },
+  }
 )
 
 DotButton.displayName = 'DotButton'

@@ -1,20 +1,27 @@
-import { Table, TableBody, TableCaption, TableFooter, TableHeader, TableRow } from '@/app/src/components/Table';
-import { TableCell } from '@/app/src/components/Table/TableCell';
-import { TableHeadCell } from '@/app/src/components/Table/TableHeadCell';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableFooter,
+  TableHeader,
+  TableRow
+} from '@/app/src/components/Table'
+import { TableCell } from '@/app/src/components/Table/TableCell'
+import { TableHeadCell } from '@/app/src/components/Table/TableHeadCell'
 import React from 'react'
 
 const TableDemo = () => {
   const data = [
     { id: 1, name: 'John Doe', age: 30 },
-    { id: 2, name: 'Jane Smith', age: 25 },
+    { id: 2, name: 'Jane Smith', age: 25 }
     // ... more data
-  ];
+  ]
 
   const columns = [
     { key: 'id', label: 'ID' },
     { key: 'name', label: 'Name' },
-    { key: 'age', label: 'Age' },
-  ];
+    { key: 'age', label: 'Age' }
+  ]
   return (
     <div>
       {/* <Table
@@ -50,9 +57,7 @@ const TableDemo = () => {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell 
-            colSpan={3}
-            >Footer content</TableCell>
+            <TableCell colSpan={3}>Footer content</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
