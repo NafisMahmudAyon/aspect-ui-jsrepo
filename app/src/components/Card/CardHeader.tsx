@@ -1,3 +1,5 @@
+import { cn } from "../../utils/cn"
+
 type CardHeaderProps = {
   children: React.ReactNode
   className?: string
@@ -7,5 +9,5 @@ export const CardHeader: React.FC<CardHeaderProps> = ({
   children,
   className = ''
 }) => {
-  return <div className={`${className} border-b p-4`}>{children}</div>
+  return <div className={cn(className)}>{children}</div>
 }

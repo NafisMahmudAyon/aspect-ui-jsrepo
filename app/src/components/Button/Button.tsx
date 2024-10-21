@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react'
+import { cn } from '../../utils/cn';
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   type?: 'button' | 'submit' | 'reset'
@@ -46,8 +47,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   const sizeStyles = {
     small: `${variant == 'link' ? "" : "px-3 py-2"} text-sm`,
-    medium: 'px-4 py-2 text-base',
-    large: 'px-6 py-3 text-lg',
+    medium: `${variant == 'link' ? "" : "px-4 py-2"} text-base`,
+    large: `${variant == 'link' ? "" : "px-6 py-3"} text-lg`,
     fab: 'w-16 h-16 p-0 rounded-full'
   }
 
@@ -65,24 +66,19 @@ export const Button: React.FC<ButtonProps> = ({
       bg-warning-500 hover:bg-warning-600 text-warning-950 dark:text-warning-100 focus-visible:ring-1 focus-visible:ring-warning-900 dark:focus-visible:ring-warning-100 focus-visible:outline-none
     `,
     link: `
-      text-primary-950 dark:text-primary-100 hover:underline underline-offset-2 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
+      text-primary-500 hover:underline underline-offset-2 focus-visible:underline focus-visible:outline-none
     `,
     outline: `
-      border border-primaryColor text-primaryColor hover:bg-primaryColor-light focus:ring-primaryColor
-      dark:border-primaryColor-dark dark:text-primaryColor-dark dark:hover:bg-primaryColor-hoverDark
+      border border-primary-800 dark:border-primary-200 text-primary-800 hover:text-primary-900 dark:text-primary-200 dark:hover:text-primary-300 hover:border-primary-900 dark:hover:border-primary-300 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `,
     ghost: `
-      bg-transparent hover:bg-accentColor focus:ring-primaryColor
-      dark:hover:bg-accentColor-dark
+      bg-transparent hover:bg-primary-500 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `,
     icon: `
-      p-0 rounded-full bg-transparent hover:bg-accentColor focus:ring-primaryColor
-      dark:hover:bg-accentColor-dark
+      bg-primary-500 hover:bg-primary-600 text-primary-950 dark:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `,
     withIcon: `
-      bg-primaryColor text-white hover:bg-primaryColor-hover focus:ring-primaryColor
-      dark:bg-primaryColor-dark dark:hover:bg-primaryColor-hoverDark dark:focus:ring-primaryColor-hoverDark
-      inline-flex items-center
+      bg-primary-500 hover:bg-primary-600 text-primary-950 dark:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `
   }
 
@@ -96,12 +92,22 @@ export const Button: React.FC<ButtonProps> = ({
       type={type}
       onClick={onClick}
       disabled={disabled || loading}
-      className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${disabled ? 'cursor-not-allowed opacity-50' : ''} ${loading ? 'relative' : ''} ${isFab ? fabPositionStyles[position] : ''} ${className} font-sans`}
+      className={cn(
+        baseStyles,
+        sizeStyles[size],
+        variantStyles[variant],
+        disabled ? 'cursor-not-allowed opacity-50' : '',
+        loading ? 'relative' : '',
+        isFab ? fabPositionStyles[position] : '',
+        "font-sans",
+        className
+      )
+}
       {...rest}
     >
       {loading && (
         <span className=''>
-          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8V0C5.373 0 0 5.373 0 12zm2 5.291A7.96 7.96 0 0 1 4 12H0c0 3.042 1.135 5.824 3 7.938z" /></svg>
+          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 0 1 8-8V0C5.373 0 0 5.373 0 12zm2 5.291A7.96 7.96 0 0 1 4 12H0c0 3.042 1.135 5.824 3 7.938z" /></svg>
         </span>
       )}
       {icon && iconPosition === 'left' && !loading && (

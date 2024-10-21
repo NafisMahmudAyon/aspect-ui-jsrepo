@@ -1,14 +1,18 @@
 import React from 'react'
+import { cn } from '../../utils/cn'
 
 type CardProps = {
   children: React.ReactNode
   className?: string
 }
 
-export const Card: React.FC<CardProps> = ({ children, className }) => {
+export const Card: React.FC<CardProps> = ({ children, className="" }) => {
   return (
     <div
-      className={`${className} overflow-hidden rounded-lg bg-gray-400 shadow-md`}
+      className={cn(
+        "overflow-hidden rounded-lg bg-primary-200 hover:bg-primary-300 dark:bg-primary-700 dark:hover:bg-primary-800 shadow-sm group transition-all duration-150 ease-in-out",
+        className
+      )}
     >
       {children}
     </div>

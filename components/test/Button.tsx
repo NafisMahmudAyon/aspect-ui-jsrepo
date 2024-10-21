@@ -1,5 +1,6 @@
 'use client'
 import { Button } from '@/app/src/components/Button'
+import { Star } from '@/app/src/components/Icon/Star'
 import React, { useState } from 'react'
 
 const ButtonDemo = () => {
@@ -55,14 +56,14 @@ const ButtonDemo = () => {
       {/* Icon Button */}
       <Button
         variant='icon'
-        icon={<span className='material-icons'>star</span>}
+        icon={<Star />}
         aria-label='Icon Button'
       />
 
       {/* Button with Icon (Icon on Left) */}
       <Button
         variant='withIcon'
-        icon={<span className='material-icons'>favorite</span>}
+        icon={<Star />}
         iconPosition='left'
       >
         With Icon Left
@@ -71,7 +72,7 @@ const ButtonDemo = () => {
       {/* Button with Icon (Icon on Right) */}
       <Button
         variant='withIcon'
-        icon={<span className='material-icons'>send</span>}
+        icon={<Star />}
         iconPosition='right'
       >
         With Icon Right

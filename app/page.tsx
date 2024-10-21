@@ -45,8 +45,8 @@ export default function Home() {
     <main className='mx-auto min-h-screen bg-secondary-100 px-20 py-24 dark:bg-secondary-950'>
       <Dark />
       {/* <AccordionDemo /> */}
-      <ButtonDemo />
-      {/* <CardDemo /> */}
+      {/* <ButtonDemo /> */}
+      <CardDemo />
       {/* <ImageDemo /> */}
       {/* <AvatarDemo /> */}
       {/* <ProgressBarDemo /> */}
