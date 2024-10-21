@@ -1,5 +1,5 @@
 import { Options } from '@splidejs/react-splide';
-import "@splidejs/splide/dist/css/splide.min.css";
+import '@splidejs/splide/dist/css/splide.min.css';
 import { ReactElement } from 'react';
 interface SliderProps {
     children: React.ReactNode;

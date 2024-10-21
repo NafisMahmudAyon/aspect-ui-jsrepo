@@ -1,7 +1,7 @@
 import React from 'react';
 interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
     value: number;
-    contentPosition?: "left" | "right";
+    contentPosition?: 'left' | 'right';
     duration?: number;
     animateOnLoad?: boolean;
     animateOnVisible?: boolean;

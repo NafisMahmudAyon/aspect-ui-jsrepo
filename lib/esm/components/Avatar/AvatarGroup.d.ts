@@ -1,6 +1,6 @@
 import React from 'react';
 interface AvatarGroupProps {
-    styles?: string;
+    className?: string;
     children?: React.ReactNode;
     variant?: number;
 }

@@ -1,1 +1,1 @@
-export * from "./CircularProgressBar";
+export * from './CircularProgressBar';

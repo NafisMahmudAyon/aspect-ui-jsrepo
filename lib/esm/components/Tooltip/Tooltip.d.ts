@@ -1,7 +1,10 @@
 import React, { ReactNode } from 'react';
 type TooltipDirection = 'top' | 'right' | 'bottom' | 'left';
 interface TooltipProps {
-    children: [React.ReactElement<TooltipActionProps>, React.ReactElement<TooltipContentProps>];
+    children: [
+        React.ReactElement<TooltipActionProps>,
+        React.ReactElement<TooltipContentProps>
+    ];
     direction?: TooltipDirection;
     showOnClick?: boolean;
 }

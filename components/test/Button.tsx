@@ -5,11 +5,11 @@ import React, { useState } from 'react'
 const ButtonDemo = () => {
   const [isModalOpen, setModalOpen] = useState(false)
 
-  const handleAddTask = () => {
-    setModalOpen(true)
-  }
+  // const handleAddTask = () => {
+  //   setModalOpen(true)
+  // }
   return (
-    <div>
+    <div className='flex gap-3 flex-col items-start'>
       {/* Primary Button */}
       <Button variant='primary' onClick={() => alert('Primary Button Clicked')}>
         Primary Button
@@ -25,10 +25,16 @@ const ButtonDemo = () => {
 
       {/* Destructive Button */}
       <Button
-        variant='destructive'
+        variant='success'
+        onClick={() => alert('Destructive Button Clicked')} loading={true}
+      >
+        Success Button
+      </Button>
+      <Button
+        variant='warning'
         onClick={() => alert('Destructive Button Clicked')}
       >
-        Destructive Button
+        Warning Button
       </Button>
 
       {/* Link Button */}

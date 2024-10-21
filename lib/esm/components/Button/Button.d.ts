@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     type?: 'button' | 'submit' | 'reset';
-    variant?: 'primary' | 'secondary' | 'destructive' | 'link' | 'outline' | 'ghost' | 'icon' | 'withIcon';
-    size?: 'small' | 'medium' | 'large' | 'fab';
+    variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'link' | 'outline' | 'ghost' | 'icon' | 'withIcon';
+    size?: 'small' | 'medium' | 'large';
     disabled?: boolean;
     loading?: boolean;
     onClick?: () => void;

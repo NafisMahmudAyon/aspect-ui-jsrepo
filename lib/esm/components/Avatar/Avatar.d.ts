@@ -1,11 +1,7 @@
 import React from 'react';
 interface AvatarProps {
-    styles?: string;
-    name?: string;
-    src?: string;
-    altText?: string;
-    imageStyles?: string;
-    variant?: number;
+    className?: string;
+    children?: React.ReactNode;
     onClick?: () => void;
 }
 export declare const Avatar: React.FC<AvatarProps>;
