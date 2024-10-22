@@ -9,6 +9,7 @@ type UsePrevNextButtonsType = {
 export declare const usePrevNextButtons: (emblaApi: EmblaCarouselType | undefined) => UsePrevNextButtonsType;
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     asChild?: boolean;
+    className?: string;
 }
 declare const CarouselPrevButton: import("react").ForwardRefExoticComponent<ButtonProps & import("react").RefAttributes<HTMLButtonElement>>;
 declare const CarouselNextButton: import("react").ForwardRefExoticComponent<ButtonProps & import("react").RefAttributes<HTMLButtonElement>>;

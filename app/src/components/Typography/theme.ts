@@ -5,6 +5,6 @@ interface TypographyTheme {
 }
 export const typographyTheme: TypographyTheme = {
   text: {
-    color: 'text-primaryColor'
+    color: ''
   }
 }

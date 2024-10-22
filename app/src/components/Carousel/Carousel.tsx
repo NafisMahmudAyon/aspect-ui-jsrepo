@@ -4,7 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { HTMLAttributes, Ref, forwardRef } from 'react'
 import { CarouselContext } from './CarouselContext'
 import { CarouselViewport } from './Viewport'
-import { carouselTheme } from './theme'
+import { cn } from '../../utils/cn'
 
 interface CarouselProps extends HTMLAttributes<HTMLDivElement> {
   options?: EmblaOptionsType
@@ -23,11 +23,10 @@ const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
     }: CarouselProps,
     ref: Ref<HTMLDivElement>
   ) => {
-    const theme = carouselTheme
     const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins)
 
     return (
-      <div className={`${theme.carouselContainer} ${className}`} ref={ref}>
+      <div className={cn("w-full relative pb-[2.4rem]", className)} ref={ref}>
         <CarouselContext.Provider value={{ emblaApi, emblaRef }}>
           <CarouselViewport className={carouselViewportClasses}>
             {children}

@@ -1,16 +1,15 @@
 'use client'
 import { HTMLAttributes, Ref, forwardRef } from 'react'
-import { carouselTheme } from './theme'
+import { cn } from '../../utils/cn'
 
 export const CarouselButtons = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
 >(({ children, className, ...props }, ref: Ref<HTMLDivElement>) => {
-  const theme = carouselTheme
   return (
     <div
       {...props}
-      className={`${theme.controls.button.container} bg-red-300 ${className}`}
+      className={cn("flex items-center gap-2", className)}
       ref={ref}
     >
       {children}

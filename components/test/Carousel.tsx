@@ -10,6 +10,7 @@ import {
   CarouselPrevButton,
   CarouselSlides
 } from '@/app/src/components/Carousel'
+import autoPlay from 'embla-carousel-autoplay'
 // import { CarouselContext } from ''
 import { Slider } from '@/app/src/components/Slider deprecated/Slider'
 
@@ -56,61 +57,27 @@ const CarouselDemo = () => {
   ]
   return (
     <div>
-      <div className='[&:]-bg-red-500 [&_li_.splide\\_\\_pagination\\_\\_page]:bg-red-500'>
-        jsdfsdfsfsf
-      </div>
-      <Slider
-        options={{
-          type: 'loop',
-          perPage: 1,
-          perMove: 1,
-          pagination: true,
-          arrows: true,
-          autoplay: true,
-          interval: 3000
-        }}
-        prevArrowStyle='!bg-red-500'
-        pgStyle={`bg-red-500   w-[${items.length * 20}px] `}
-        paginationStyle={{
-          backgroundColor: 'blue',
-          color: 'red',
-          width: '100%',
-          height: '100%'
-        }}
-      >
-        {items.map(item => (
-          <SliderItem className='text-center' key={item.id}>
-            {item.title}
-            <img
-              src={item.image}
-              alt={item.title}
-              className='h-full w-full object-cover'
-            />
-          </SliderItem>
-        ))}
-      </Slider>
-      <Carousel options={{ loop: true }}>
+      <Carousel options={{ loop: true }} plugins={[autoPlay()]}>
         <CarouselSlides>
-          {[1, 2, 3, 4, 5].map(slide => (
-            <CarouselItem key={slide} className='bg-red-300'>
-              <div className='border-metal-100 bg-metal-50 dark:border-metal-900 dark:bg-metal-900 flex h-96 items-center justify-center rounded-xl border'>
-                <h1 className='text-heading-1 text-metal-900 font-medium dark:text-white'>
-                  {slide}
-                </h1>
+          {[1, 2, 3, 4, 5].map((slide) => (
+            <CarouselItem key={slide}>
+              <div className="flex items-center justify-center rounded-xl border border-primary-100 bg-primary-100 h-96 dark:border-primary-900 dark:bg-primary-900">
+                <h1 className="text-heading-1 font-medium text-primary-800 dark:text-primary-200">{slide}</h1>
               </div>
             </CarouselItem>
           ))}
         </CarouselSlides>
-        <CarouselControl>
+        <CarouselControl className='z-50'>
           <CarouselButtons>
             <CarouselPrevButton />
             <CarouselNextButton />
           </CarouselButtons>
+          {/* <CarouselIndicators className='' /> */}
         </CarouselControl>
-        <CarouselIndicators />
+        <CarouselControl className='bottom-3 left-1/2 -translate-x-1/2 top'>
+          <CarouselIndicators className='' />
+        </CarouselControl>
       </Carousel>
-
-      <div className='hello'>Hello</div>
     </div>
   )
 }

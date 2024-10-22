@@ -2,7 +2,7 @@
 import { HTMLAttributes, Ref, forwardRef } from 'react'
 import { useCarouselContext } from './CarouselContext'
 import { DotButton, useDotButton } from './CarouselDotButton'
-import { carouselTheme } from './theme'
+import { cn } from '../../utils/cn'
 
 export interface CarouselIndicatorsProps
   extends HTMLAttributes<HTMLDivElement> {
@@ -14,22 +14,21 @@ export const CarouselIndicators = forwardRef<
   CarouselIndicatorsProps
 >(({ className, dotButtonStyle, ...props }, ref: Ref<HTMLDivElement>) => {
   const { emblaApi } = useCarouselContext()
-  const theme = carouselTheme
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi)
   return (
     <div
       {...props}
-      className={`${theme.controls.indicators.container} ${className}`}
+      className={cn('flex flex-wrap items-center gap-2 absolute bottom-0 left-1/2 -translate-x-1/2 w-full', className)}
       ref={ref}
     >
       {scrollSnaps.map((number, index) => (
         <DotButton
           key={number}
           onClick={() => onDotButtonClick(index)}
-          className={`${theme.controls.indicators.dot} ${
-            index === selectedIndex && 'border-metal-900 dark:border-metal-100'
-          } ${dotButtonStyle}`}
+          className={cn("inline-flex size-3 rounded-full border-2 border-primary-300 dark:border-primary-800", `${
+            index === selectedIndex && 'border-primary-900 dark:border-primary-100'
+          }`, dotButtonStyle)}
         />
       ))}
     </div>

@@ -64,7 +64,7 @@ export const Typography: React.FC<TypographyProps> = ({
       case 'caption':
         return 'text-caption'
       case 'display':
-        return 'text-display'
+        return 'text-display1'
       case 'display2':
         return 'text-display2'
       default:
@@ -76,8 +76,6 @@ export const Typography: React.FC<TypographyProps> = ({
   const styles = getStyles()
 
   const { text } = typographyTheme
-
-  console.log(styles)
 
   return (
     <Component

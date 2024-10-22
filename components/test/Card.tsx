@@ -70,7 +70,7 @@ const CardDemo = () => {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="max-w-md">
         <CardHeader>
           <img src="https://react.keepdesign.io/_next/image?url=%2Fimages%2Fkeep-card.jpg&w=640&q=75" className="rounded-t-xl" alt="image" width={600} height={300} />
         </CardHeader>

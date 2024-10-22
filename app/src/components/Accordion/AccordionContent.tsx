@@ -35,7 +35,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
             className={cn(
               'overflow-hidden border-t p-4',
               isOpen
-                ? 'border-primary-950 bg-primary-100 text-primary-950 dark:border-primary-100 dark:bg-primary-950 dark:text-primary-100'
+                ? 'border-primary-950 bg-primary-100 text-primary-800 dark:border-primary-100 dark:bg-primary-700 dark:text-primary-100'
                 : 'border-primary-950 dark:border-primary-100',
               contentClassName,
               className
