@@ -7,6 +7,7 @@ import React, { ChangeEvent } from 'react'
 interface CheckboxProps {
   label: string
   checked: boolean
+  // variant?: 'rounded' | 'circle' | 'default'
   onChange: (checked: boolean) => void
   disabled?: boolean
   className?: string
@@ -17,6 +18,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   checked,
   onChange,
   disabled = false,
+  // variant = 'default',
   className = ''
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +34,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         checked={checked}
         onChange={handleChange}
         disabled={disabled}
-        className='form-checkbox h-5 w-5 text-blue-600 transition duration-150 ease-in-out'
+        className={'form-checkbox h-5 w-5 text-blue-600 transition duration-150 ease-in-out'}
       />
       <span className='ml-2 text-gray-700'>{label}</span>
     </label>

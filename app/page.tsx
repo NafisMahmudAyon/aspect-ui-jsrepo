@@ -44,14 +44,14 @@ export default function Home() {
   return (
     <main className='mx-auto min-h-screen bg-secondary-100 px-20 py-24 dark:bg-secondary-950'>
       <Dark />
-      <AccordionDemo />
+      {/* <AccordionDemo /> */}
       {/* <ButtonDemo /> */}
-      <CardDemo />
+      {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
       {/* <AvatarDemo /> */}
       {/* <ProgressBarDemo /> */}
-      {/* <CircularProgressDemo /> */}
-      <CarouselDemo />
+      <CircularProgressDemo />
+      {/* <CarouselDemo /> */}
       {/* <BreadcrumbDemo /> */}
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
@@ -61,7 +61,7 @@ export default function Home() {
       {/* <SidebarDemo /> */}
       {/* <InputDemo /> */}
       {/* <TextareaDemo /> */}
-      {/* <CheckboxDemo /> */}
+      <CheckboxDemo />
       {/* <RadioDemo /> */}
       {/* <SwitchDemo /> */}
       {/* <FileUploadDemo /> */}
@@ -72,7 +72,7 @@ export default function Home() {
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}
       {/* <RatingDemo /> */}
-      <AlertDemo />
+      {/* <AlertDemo /> */}
       {/* <DividerDemo /> */}
       {/* <NumberCounterDemo /> */}
       {/* <SkeletonDemo /> */}

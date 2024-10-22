@@ -3,13 +3,13 @@
 ### UI Components:
 
 - Accordion //icon
-- Button //icon
+- Button
 - Card
 - Image
 - ~~Video~~
-- Slider/Carousel //icon
+- Slider/Carousel 
 - Progress Bar
-- Avatar //icon
+- Avatar 
 - Badge //wait
 - Breadcrumb
 - Blockquote //wait
