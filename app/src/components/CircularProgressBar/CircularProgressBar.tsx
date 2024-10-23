@@ -1,17 +1,24 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
+import { cn } from '../../utils/cn'
 
 interface CircularProgressBarProps
   extends React.HTMLAttributes<HTMLDivElement> {
   value: number
   className?: string
   onVisible?: boolean
-  duration?: number
+  /**
+   * Duration of the progress bar in seconds
+   * 
+   * Default value is 2 seconds
+   */
+  duration?: number;
   strokeColor?: string
   strokeFillColor?: string
   strokeWidth?: number
   contentClassName?: string
+  hideValue?: boolean
   onClick?: () => void
 }
 
@@ -24,6 +31,7 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   strokeFillColor = '#333333',
   strokeWidth = 2,
   contentClassName = '',
+  hideValue = false,
   children,
   onClick,
   ...rest
@@ -75,14 +83,14 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
 
   return (
     <div
-      className={`${className} relative h-24 w-24`}
+      className={cn("relative size-24", className)}
       onClick={onClick}
       role='progressbar'
       {...rest}
     >
       <div className='absolute left-0 top-0 h-full w-full origin-center -rotate-90 transform'>
         <svg
-          className='absolute left-1/2 top-1/2 z-0 h-full w-full -translate-x-1/2 -translate-y-1/2 text-red-400'
+          className='absolute left-1/2 top-1/2 z-0 h-full w-full -translate-x-1/2 -translate-y-1/2'
           viewBox='0 0 24 24'
           ref={svgRef}
         >
@@ -98,7 +106,7 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
           />
         </svg>
         <svg
-          className='absolute left-1/2 top-1/2 z-10 h-full w-full -translate-x-1/2 -translate-y-1/2'
+          className='absolute left-1/2 top-1/2 z-10 h-full w-full -translate-x-1/2 -translate-y-1/2 stroke-slate-600'
           viewBox='0 0 24 24'
           ref={svgRef}
         >
@@ -120,7 +128,7 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
         <span
           className={`${contentClassName} absolute inset-0 flex h-full w-full rotate-90 items-center justify-center text-gray-500 text-inherit`}
         >
-          {!children && <>{percentage}%</>}
+          {!children && !hideValue && <>{percentage}%</>}
           {children && <>{children}</>}
         </span>
       </div>
