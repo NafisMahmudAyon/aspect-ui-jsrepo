@@ -7,8 +7,8 @@ const DatePickerDemo = () => {
     console.log('Selected date:', dates)
   }
   return (
-    <div>
-      <h1 className='mb-4 text-2xl font-bold'>Date Picker Example</h1>
+    <div className='flex justify-around'>
+      {/* <h1 className='mb-4 text-2xl font-bold'>Date Picker Example</h1> */}
       <div className='w-64'>
         <DatePicker onChange={handleDateChange} />
       </div>

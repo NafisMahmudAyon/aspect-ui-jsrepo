@@ -50,7 +50,7 @@ export default function Home() {
       {/* <ImageDemo /> */}
       {/* <AvatarDemo /> */}
       {/* <ProgressBarDemo /> */}
-      <CircularProgressDemo />
+      {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
       {/* <BreadcrumbDemo /> */}
       {/* <ModalDemo /> */}
@@ -61,13 +61,13 @@ export default function Home() {
       {/* <SidebarDemo /> */}
       {/* <InputDemo /> */}
       {/* <TextareaDemo /> */}
-      <CheckboxDemo />
+      {/* <CheckboxDemo /> */}
       {/* <RadioDemo /> */}
       {/* <SwitchDemo /> */}
       {/* <FileUploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
       {/* <PaginationDemo /> */}
-      {/* <DatePickerDemo /> */}
+      <DatePickerDemo />
       {/* <TooltipDemo /> */}
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}
