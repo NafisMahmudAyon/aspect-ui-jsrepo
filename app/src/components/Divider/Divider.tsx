@@ -1,32 +1,43 @@
 import React, { ReactNode } from 'react'
+import { cn } from '../../utils/cn'
 
 interface DividerProps {
   orientation?: 'horizontal' | 'vertical'
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl'
   color?: string
   variant?: 'start' | 'center' | 'end' | 'full'
+  className?: string
+  borderStyle?: "solid" | "dashed" | "dotted" | "double"
   children?: ReactNode
 }
 
 export const Divider: React.FC<DividerProps> = ({
   orientation = 'horizontal',
   size = 'md',
-  color = 'gray-200',
   variant = 'full',
+  borderStyle = "solid",
+  className = '',
   children
 }) => {
-  const sizeStyles = {
-    sm: 'border-[1px]',
-    md: 'border-[2px]',
-    lg: 'border-[3px]',
-    xl: 'border-[4px]',
-    '2xl': 'border-[6px]'
+  const horizontalSizeStyles = {
+    sm: 'border-t-[1px]',
+    md: 'border-t-[2px]',
+    lg: 'border-t-[3px]',
+    xl: 'border-t-[4px]',
+    '2xl': 'border-t-[6px]'
+  }
+  const verticalSizeStyles = {
+    sm: 'border-l-[1px]',
+    md: 'border-l-[2px]',
+    lg: 'border-l-[3px]',
+    xl: 'border-l-[4px]',
+    '2xl': 'border-l-[6px]'
   }
 
-  const baseStyles = `border-${color} ${sizeStyles[size]}`
+  const baseStyles = `border-primary-500 ${orientation === 'horizontal' ? horizontalSizeStyles[size] : verticalSizeStyles[size]}`
 
   const orientationStyles =
-    orientation === 'horizontal' ? 'w-full border-t' : 'h-full border-l'
+    orientation === 'horizontal' ? 'w-full' : 'h-full'
 
   const variantStyles = {
     start: 'justify-start',
@@ -35,18 +46,20 @@ export const Divider: React.FC<DividerProps> = ({
     full: ''
   }
 
+  const borderStyleClass = `border-${borderStyle}`
+
   if (!children || variant === 'full') {
-    return <div className={`${baseStyles} ${orientationStyles}`}></div>
+    return <div className={cn(baseStyles, orientationStyles, borderStyleClass, className)}></div>
   }
 
   return (
     <div className={`flex items-center ${variantStyles[variant]}`}>
       {variant !== 'start' && (
-        <span className={`${baseStyles} ${orientationStyles} flex-grow`}></span>
+        <span className={cn("flex-1 mr-4", baseStyles, borderStyleClass, orientationStyles, className)}></span>
       )}
-      <span className='px-3 text-sm text-gray-500'>{children}</span>
+      <span className="">{children}</span>
       {variant !== 'end' && (
-        <span className={`${baseStyles} ${orientationStyles} flex-grow`}></span>
+        <span className={cn("flex-1 ml-4", baseStyles, borderStyleClass, orientationStyles, className)}></span>
       )}
     </div>
   )

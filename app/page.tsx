@@ -56,7 +56,7 @@ export default function Home() {
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
-      <DropdownDemo />
+      {/* <DropdownDemo /> */}
       {/* <NavbarDemo /> */}
       {/* <SidebarDemo /> */}
       {/* <InputDemo /> */}
@@ -67,13 +67,13 @@ export default function Home() {
       {/* <FileUploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
       {/* <PaginationDemo /> */}
-      <DatePickerDemo />
+      {/* <DatePickerDemo /> */}
       {/* <TooltipDemo /> */}
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}
       {/* <RatingDemo /> */}
       {/* <AlertDemo /> */}
-      {/* <DividerDemo /> */}
+      <DividerDemo />
       {/* <NumberCounterDemo /> */}
       {/* <SkeletonDemo /> */}
       {/* <SliderDemo /> */}
