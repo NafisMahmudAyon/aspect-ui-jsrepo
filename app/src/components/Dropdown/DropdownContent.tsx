@@ -35,7 +35,11 @@ export const DropdownContent: React.FC<DropdownContentProps> = ({
     <div className={`absolute z-10 ${positionClass}`}>
       <div
         ref={contentRef}
-        className='rounded-md border border-primary-50 dark:border-primary-950 shadow-lg overflow-y-auto'
+        className='rounded-md border border-primary-50 dark:border-primary-950 shadow-lg overflow-y-auto [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500'
         style={{ maxHeight }}
       >
         {children}

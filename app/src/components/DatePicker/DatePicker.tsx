@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from '../Dropdown'
+import { cn } from '../../utils/cn'
 
 interface DatePickerProps {
   onChange: (dates: Date[]) => void
@@ -217,7 +218,15 @@ console.log(selectedDates)
               <button
                 key={index}
                 onClick={() => date && handleDateClick(date)}
-                className={`h-8 w-8 rounded-full text-center ${date ? 'hover:bg-primary-200 dark:hover:bg-primary-800' : 'invisible'} ${date && date.getDate() === currentDate.getDate() && (isRange && selectedDates.length < 2) ? 'bg-primary-200 dark:bg-primary-800' : ""} ${date && date.getDate() === currentDate.getDate() && (!isRange && selectedDates.length === 0) ? 'bg-primary-200 dark:bg-primary-800' : "" } ${date && selectedDates.some(d => d.toDateString() === date.toDateString()) ? 'bg-primary-200 dark:bg-primary-800 text-primary-900 dark:text-primary-100' : ''} ${date && isRange && selectedDates.length === 2 && date > selectedDates[0] && date < selectedDates[1] ? 'bg-primary-50 dark:bg-primary-500 text-primary-300 dark:text-primary-800' : ''}`}
+                className={cn(
+                  'h-8 w-8 rounded-full text-center',
+                  !date && 'invisible',
+                  date && 'hover:bg-primary-200 dark:hover:bg-primary-800',
+                  date && date.getDate() === currentDate.getDate() &&
+                  ((isRange && selectedDates.length < 2) || (!isRange && selectedDates.length === 0)) && 'bg-primary-200 dark:bg-primary-800',
+                  date && selectedDates.some(d => d.toDateString() === date.toDateString()) && 'bg-primary-200 dark:bg-primary-800 text-primary-900 dark:text-primary-100',
+                  date && isRange && selectedDates.length === 2 && date > selectedDates[0] && date < selectedDates[1] && 'bg-primary-50 dark:bg-primary-500 text-primary-300 dark:text-primary-800')}
+
               >
                 {date ? date.getDate() : ''}
               </button>
