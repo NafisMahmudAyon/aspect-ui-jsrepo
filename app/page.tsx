@@ -56,7 +56,7 @@ export default function Home() {
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
-      {/* <DropdownDemo /> */}
+      <DropdownDemo />
       {/* <NavbarDemo /> */}
       {/* <SidebarDemo /> */}
       {/* <InputDemo /> */}
@@ -73,7 +73,7 @@ export default function Home() {
       {/* <StepperDemo /> */}
       {/* <RatingDemo /> */}
       {/* <AlertDemo /> */}
-      <DividerDemo />
+      {/* <DividerDemo /> */}
       {/* <NumberCounterDemo /> */}
       {/* <SkeletonDemo /> */}
       {/* <SliderDemo /> */}

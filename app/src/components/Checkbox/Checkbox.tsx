@@ -17,7 +17,7 @@ interface CheckboxProps {
 export const Checkbox: React.FC<CheckboxProps> = ({
   label,
   checked,
-  checkboxStyle="",
+  // checkboxStyle="",
   onChange,
   disabled = false,
   // variant = 'default',
@@ -36,7 +36,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         checked={checked}
         onChange={handleChange}
         disabled={disabled}
-        className={checkboxStyle}
+        className=""
       />
       <span className=''>{label}</span>
     </label>
