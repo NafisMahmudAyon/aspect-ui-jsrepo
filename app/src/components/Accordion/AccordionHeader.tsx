@@ -3,6 +3,7 @@
 import React, { ReactNode } from 'react'
 import { useAccordion } from './AccordionContext'
 import { cn } from '../../utils/cn'
+import { Down, Up } from '../Icon/Arrow'
 
 interface AccordionHeaderProps {
   children: ReactNode
@@ -57,8 +58,8 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   const iconClassName = headerIconClassName ?? accordionIconClassName
   const activeIconClassName =
     headerActiveIconClassName ?? accordionActiveIconClassName
-  const activeIcon = headerActiveIcon ?? accordionActiveIcon ?? '▲'
-  const inactiveIcon = headerInactiveIcon ?? accordionInactiveIcon ?? '▼'
+  const activeIcon = headerActiveIcon ?? accordionActiveIcon ?? <Up />
+  const inactiveIcon = headerInactiveIcon ?? accordionInactiveIcon ?? <Down />
 
   const icon = isOpen ? activeIcon : inactiveIcon
   const iconClass = `${iconClassName} ${isOpen ? activeIconClassName : ''} transition-transform duration-300`

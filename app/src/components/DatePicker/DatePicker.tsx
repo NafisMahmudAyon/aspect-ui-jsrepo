@@ -2,17 +2,20 @@
 import React, { useState, useEffect } from 'react'
 import { Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from '../Dropdown'
 import { cn } from '../../utils/cn'
+import { Left, Right } from '../Icon/Arrow'
 
 interface DatePickerProps {
   onChange: (dates: Date[]) => void
   initialDates?: Date[]
   isRange?: boolean
+  shape?: 'rounded' | 'square' | 'circle'
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
   onChange,
   initialDates = [],
-  isRange = false
+  isRange = false,
+  shape="circle",
 }) => {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [selectedDates, setSelectedDates] = useState<Date[]>(initialDates)
@@ -114,25 +117,23 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     return `${monthNames[date.getMonth()]} ${date.getDate().toString().padStart(2, '0')}, ${date.getFullYear()}`
   }
-console.log(currentDate)
-console.log(selectedDates)
   return (
     <div className='relative'>
       <input
         type='text'
-        className='w-full rounded-md border px-4 py-2 text-black'
+        className='w-full rounded-md border text-primary-800 dark:text-primary-200 border-primary-500 px-4 py-2 bg-primary-200 dark:bg-primary-800 outline-none focus-visible:outlined'
         value={formatDateRange(selectedDates)}
         onClick={() => setIsOpen(!isOpen)}
         readOnly
         placeholder='Select your date'
       />
       {isOpen && (
-        <div className='absolute left-0 top-full mt-2 rounded-md border border-primary-500 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 shadow-lg'>
-          <div className='flex items-center justify-between border-b border-primary-500 p-2'>
-            <button onClick={handlePrevMonth} className='p-1'>
-              &lt;
+        <div className='absolute p-4 left-0 top-full mt-2 rounded-md border border-primary-500 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 shadow-lg'>
+          <div className='flex items-center justify-between py-2'>
+            <button onClick={handlePrevMonth} className={cn('p-1 border border-primary-500/30 hover:bg-primary-200 dark:hover:bg-primary-800', shape === 'circle' ? 'rounded-full' : shape === 'rounded' ? 'rounded-md' : '')}>
+              <Left />
             </button>
-            <div className='flex gap-2'>
+            <div className='flex flex-1 justify-center gap-3'>
               {/* <select
                 value={currentDate.getMonth()}
                 onChange={(e) => setCurrentDate(new Date(currentDate.getFullYear(), parseInt(e.target.value), 1))}
@@ -204,22 +205,25 @@ console.log(selectedDates)
                 ))}
               </select> */}
             </div>
-            <button onClick={handleNextMonth} className='p-1'>
-              &gt;
+            <button onClick={handleNextMonth} className={cn('p-1 border border-primary-500/30 hover:bg-primary-200 dark:hover:bg-primary-800', shape === 'circle' ? 'rounded-full' : shape === 'rounded' ? 'rounded-md' : '')}>
+              <Right />
             </button>
           </div>
-          <div className='grid grid-cols-7 gap-1 p-2'>
-            {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
-              <div key={day} className='text-center text-sm font-bold'>
-                {day}
-              </div>
-            ))}
+          <div className='grid grid-cols-[repeat(7,_minmax(2rem,_1fr))] gap-1'>
+            <div className='grid grid-cols-[repeat(7,_minmax(2rem,_1fr))] col-start-1 col-end-8 gap-1 border-t border-b border-primary-500/30'>
+              {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
+                <div key={day} className='size-8 flex items-center justify-center text-center text-sm font-bold'>
+                  {day}
+                </div>
+              ))}
+            </div>
             {generateCalendar().map((date, index) => (
               <button
                 key={index}
                 onClick={() => date && handleDateClick(date)}
                 className={cn(
-                  'h-8 w-8 rounded-full text-center',
+                  'h-8 w-8 text-center',
+                  shape === 'circle' ? 'rounded-full' : shape === 'rounded' ? 'rounded-md' : '',
                   !date && 'invisible',
                   date && 'hover:bg-primary-200 dark:hover:bg-primary-800',
                   date && date.getDate() === currentDate.getDate() &&

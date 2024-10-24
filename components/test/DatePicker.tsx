@@ -9,10 +9,10 @@ const DatePickerDemo = () => {
   return (
     <div className='flex justify-around'>
       {/* <h1 className='mb-4 text-2xl font-bold'>Date Picker Example</h1> */}
-      <div className='w-64'>
+      <div className=''>
         <DatePicker onChange={handleDateChange} />
       </div>
-      <div className='w-64'>
+      <div className=''>
         <DatePicker onChange={handleDateChange} isRange={true} />
       </div>
     </div>
