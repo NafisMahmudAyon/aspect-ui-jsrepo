@@ -56,7 +56,7 @@ export default function Home() {
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
-      {/* <DropdownDemo /> */}
+      <DropdownDemo />
       {/* <NavbarDemo /> */}
       {/* <SidebarDemo /> */}
       {/* <InputDemo /> */}

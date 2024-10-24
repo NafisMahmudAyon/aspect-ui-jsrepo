@@ -1,16 +1,21 @@
-'use client'
-
-import React, { ReactNode } from 'react'
-import { useDropdown } from './DropdownContext'
+import { ReactNode } from "react"
+import { cn } from "../../utils/cn"
+import { useDropdown } from "./DropdownContext"
 
 interface DropdownItemProps {
   children: ReactNode
   onClick?: () => void
+  className?: string
+  activeClassName?: string
+  isSelected?: boolean
 }
 
 export const DropdownItem: React.FC<DropdownItemProps> = ({
   children,
-  onClick
+  className = '',
+  activeClassName = '',
+  onClick,
+  isSelected = false
 }) => {
   const { closeDropdown } = useDropdown()
 
@@ -24,9 +29,10 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
   return (
     <a
       href='#'
-      className='block px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 hover:text-gray-900'
+      className={cn('block px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 hover:text-gray-900', className, isSelected ? activeClassName : '')}
       role='menuitem'
       onClick={handleClick}
+      data-selected={isSelected}
     >
       {children}
     </a>

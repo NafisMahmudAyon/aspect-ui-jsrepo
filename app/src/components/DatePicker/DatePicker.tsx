@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { Dropdown, DropdownAction, DropdownContent, DropdownItem, DropdownList } from '../Dropdown'
 
 interface DatePickerProps {
   onChange: (dates: Date[]) => void
@@ -112,7 +113,8 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     return `${monthNames[date.getMonth()]} ${date.getDate().toString().padStart(2, '0')}, ${date.getFullYear()}`
   }
-
+console.log(currentDate)
+console.log(selectedDates)
   return (
     <div className='relative'>
       <input
@@ -129,29 +131,77 @@ export const DatePicker: React.FC<DatePickerProps> = ({
             <button onClick={handlePrevMonth} className='p-1'>
               &lt;
             </button>
-            <div className='flex'>
-              <select
+            <div className='flex gap-2'>
+              {/* <select
                 value={currentDate.getMonth()}
                 onChange={(e) => setCurrentDate(new Date(currentDate.getFullYear(), parseInt(e.target.value), 1))}
-                className='mr-2 bg-transparent'
+                className='mr-2 bg-transparent appearance-none text-center border-b border-dotted border-primary-800 dark:border-primary-200 outline-none cursor-pointer'
               >
                 {monthNames.map((month, index) => (
                   <option key={month} value={index}>
                     {month}
                   </option>
                 ))}
-              </select>
-              <select
+              </select> */}
+              <Dropdown>
+                <DropdownAction className='mr-2 bg-transparent appearance-none text-center border-b border-dotted border-primary-800 dark:border-primary-200 outline-none cursor-pointer hover:bg-transparent text-primary-800 dark:text-primary-200 rounded-none p-0 ring-0'>
+                  {monthNames[currentDate.getMonth()]}
+                </DropdownAction>
+                <DropdownContent>
+                  <DropdownList>
+                    {monthNames.map((month, index) => (
+                      <DropdownItem className={`bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 hover:bg-primary-200 dark:hover:bg-primary-800 ${currentDate.getMonth() == index ? "bg-primary-200 dark:bg-primary-800" : ""}`} key={month} onClick={() => {
+                        console.log(month)
+                        const cDate = new Date()
+                        if (cDate.getMonth() === index) {
+
+                          setCurrentDate(new Date(currentDate.getFullYear(), index, cDate.getDate()))
+                        } else
+                          setCurrentDate(new Date(currentDate.getFullYear(), index, 1))
+                      }}>
+                        {month}
+                      </DropdownItem>
+                    ))}
+                  </DropdownList>
+                </DropdownContent>
+              </Dropdown>
+              <Dropdown>
+                <DropdownAction className='mr-2 bg-transparent appearance-none text-center border-b border-dotted border-primary-800 dark:border-primary-200 outline-none cursor-pointer hover:bg-transparent text-primary-800 dark:text-primary-200 rounded-none p-0 ring-0'>
+                  {currentDate.getFullYear()}
+                </DropdownAction>
+                <DropdownContent>
+                  <DropdownList>
+                    {years.map((year) => (
+                      <DropdownItem className={`bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 hover:bg-primary-200 dark:hover:bg-primary-800`}
+                        activeClassName="bg-primary-200 dark:bg-primary-800"
+                        key={year}
+                        onClick={() => {
+
+                          if (year == new Date().getFullYear() && currentDate.getMonth() == new Date().getMonth()) {
+                            const cDate = new Date()
+                            setCurrentDate(new Date(year, cDate.getMonth(), cDate.getDate()))
+                          } else
+                            setCurrentDate(new Date(year, currentDate.getMonth(), 1))
+                        }}
+                        isSelected={year === currentDate.getFullYear()}
+                      >
+                        {year}
+                      </DropdownItem>
+                    ))}
+                  </DropdownList>
+                </DropdownContent>
+              </Dropdown>
+              {/* <select
                 value={currentDate.getFullYear()}
                 onChange={(e) => setCurrentDate(new Date(parseInt(e.target.value), currentDate.getMonth(), 1))}
-                className='bg-transparent'
+                className='bg-transparent appearance-none border-b border-dotted border-primary-800 dark:border-primary-200'
               >
                 {years.map((year) => (
                   <option key={year} value={year}>
                     {year}
                   </option>
                 ))}
-              </select>
+              </select> */}
             </div>
             <button onClick={handleNextMonth} className='p-1'>
               &gt;
@@ -167,7 +217,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
               <button
                 key={index}
                 onClick={() => date && handleDateClick(date)}
-                className={`h-8 w-8 rounded-full text-center ${date ? 'hover:bg-primary-200 dark:hover:bg-primary-800' : 'invisible'} ${date && (date.getDate() == currentDate.getDate()) ? "bg-primary-200 dark:bg-primary-800" : ""} ${date && selectedDates.some(d => d.toDateString() === date.toDateString()) ? 'bg-primary-200 dark:bg-primary-800 text-primary-900 dark:text-primary-100' : ''} ${date && isRange && selectedDates.length === 2 && date > selectedDates[0] && date < selectedDates[1] ? 'bg-primary-50 dark:bg-primary-500 text-primary-300 dark:text-primary-800' : ''}`}
+                className={`h-8 w-8 rounded-full text-center ${date ? 'hover:bg-primary-200 dark:hover:bg-primary-800' : 'invisible'} ${date && date.getDate() === currentDate.getDate() && (isRange && selectedDates.length < 2) ? 'bg-primary-200 dark:bg-primary-800' : ""} ${date && date.getDate() === currentDate.getDate() && (!isRange && selectedDates.length === 0) ? 'bg-primary-200 dark:bg-primary-800' : "" } ${date && selectedDates.some(d => d.toDateString() === date.toDateString()) ? 'bg-primary-200 dark:bg-primary-800 text-primary-900 dark:text-primary-100' : ''} ${date && isRange && selectedDates.length === 2 && date > selectedDates[0] && date < selectedDates[1] ? 'bg-primary-50 dark:bg-primary-500 text-primary-300 dark:text-primary-800' : ''}`}
               >
                 {date ? date.getDate() : ''}
               </button>
