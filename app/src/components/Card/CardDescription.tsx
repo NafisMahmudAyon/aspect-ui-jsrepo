@@ -7,8 +7,9 @@ interface CardDescriptionProps {
 
 export const CardDescription: React.FC<CardDescriptionProps> = ({
   children,
-  className = ''
+  className = '',
+  ...rest
 }) => {
   return <p className={cn("text-sm text-secondary-800 dark:text-secondary-300", className,)
-}>{children}</p>
+} {...rest}>{children}</p>
 }

@@ -13,7 +13,7 @@ export const BreadcrumbItem: React.FC<BreadcrumbItemProps> = ({
   ...rest
 }) => {
   return (
-    <li {...rest} className={cn("flex cursor-pointer items-center", className) }>
+    <li className={cn("flex cursor-pointer items-center", className) } {...rest} >
       {children}
     </li>
   )

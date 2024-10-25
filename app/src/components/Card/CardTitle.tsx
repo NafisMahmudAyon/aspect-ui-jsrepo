@@ -7,13 +7,14 @@ interface CardTitleProps {
 
 export const CardTitle: React.FC<CardTitleProps> = ({
   children,
-  className = ''
+  className = '',
+  ...rest
 }) => {
   return (
     <h3 className={cn(
       "text-lg font-semibold text-primary-900 hover:text-primary-800 group-hover:text-primary-900 dark:text-primary-200 dark:hover:text-primary-300 dark:group-hover:text-primary-300",
       className
-    )}>
+    )} {...rest}>
       {children}
     </h3>
   )

@@ -38,7 +38,8 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
   activeLabelClassName: headerActiveLabelClassName,
   headerClassName: headerHeaderClassName,
   activeHeaderClassName: headerActiveHeaderClassName,
-  disabled = false
+  disabled = false,
+  ...rest
 }) => {
   const {
     iconEnabled: accordionIconEnabled,
@@ -87,7 +88,7 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         className
       )}
       onClick={onToggle}
-      disabled={disabled}
+      disabled={disabled} {...rest}
     >
       {iconEnabled && iconPosition === 'left' && (
         <span className={`${iconClass}`}>{icon}</span>

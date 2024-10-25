@@ -6,13 +6,14 @@ type CardProps = {
   className?: string
 }
 
-export const Card: React.FC<CardProps> = ({ children, className="" }) => {
+export const Card: React.FC<CardProps> = ({ children, className = "",
+  ...rest }) => {
   return (
     <div
       className={cn(
         "overflow-hidden rounded-lg bg-primary-200 hover:bg-primary-300 dark:bg-primary-700 dark:hover:bg-primary-800 shadow-small group transition-all duration-150 ease-in-out",
         className
-      )}
+      )} {...rest}
     >
       {children}
     </div>

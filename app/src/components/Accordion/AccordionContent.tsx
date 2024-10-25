@@ -14,7 +14,8 @@ interface AccordionContentProps {
 export const AccordionContent: React.FC<AccordionContentProps> = ({
   children,
   isOpen,
-  className = ''
+  className = '',
+  ...rest
 }) => {
   const { contentClassName } = useAccordion()
 
@@ -39,7 +40,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
                 : 'border-primary-950 dark:border-primary-100',
               contentClassName,
               className
-            )}
+            )} {...rest}
           >
             {children}
           </div>

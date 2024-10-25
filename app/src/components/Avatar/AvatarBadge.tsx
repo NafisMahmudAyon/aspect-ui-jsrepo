@@ -28,7 +28,8 @@ export const AvatarBadge: React.FC<AvatarBadgeProps> = ({
   position = 'bottom-right',
   icon,
   iconEnabled,
-  iconSize = 6
+  iconSize = 6,
+  ...rest
 }) => {
   const getPosition = (position: string) => {
     if (position === 'bottom-left') {
@@ -74,7 +75,7 @@ export const AvatarBadge: React.FC<AvatarBadgeProps> = ({
           getStatusColor(status),
           getPosition(position),
           className
-        )}
+        )} {...rest}
       >
         {iconEnabled && icon && icon}
         {iconEnabled && !icon && (
@@ -98,7 +99,7 @@ export const AvatarBadge: React.FC<AvatarBadgeProps> = ({
           'absolute flex size-4 items-center justify-center rounded-full bg-primary-500 text-[12px] text-primary-800 dark:text-primary-200',
           getPosition(position),
           className
-        )}
+        )} {...rest}
       >
         {counter}
       </div>

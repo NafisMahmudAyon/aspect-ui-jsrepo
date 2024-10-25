@@ -15,7 +15,8 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
   children,
   id,
   disabled = false,
-  className = ''
+  className = '',
+  ...rest
 }) => {
   const { openItems, toggleItem } = useAccordion()
   const isOpen = openItems.includes(id)
@@ -29,7 +30,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
           : 'border-primary-800 dark:border-primary-100',
         disabled ? 'cursor-not-allowed opacity-50' : '',
         className
-      )}
+      )} {...rest}
     >
       {React.Children.map(children, child => {
         if (isValidElement(child)) {

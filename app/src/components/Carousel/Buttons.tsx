@@ -5,12 +5,12 @@ import { cn } from '../../utils/cn'
 export const CarouselButtons = forwardRef<
   HTMLDivElement,
   HTMLAttributes<HTMLDivElement>
->(({ children, className, ...props }, ref: Ref<HTMLDivElement>) => {
+>(({ children, className, ...rest }, ref: Ref<HTMLDivElement>) => {
   return (
     <div
-      {...props}
-      className={cn("flex items-center gap-2", className)}
-      ref={ref}
+    className={cn("flex items-center gap-2", className)}
+    ref={ref}
+    {...rest}
     >
       {children}
     </div>

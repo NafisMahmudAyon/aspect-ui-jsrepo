@@ -17,7 +17,8 @@ export const Divider: React.FC<DividerProps> = ({
   variant = 'full',
   borderStyle = "solid",
   className = '',
-  children
+  children,
+  ...rest
 }) => {
   const horizontalSizeStyles = {
     sm: 'border-t-[1px]',
@@ -53,7 +54,7 @@ export const Divider: React.FC<DividerProps> = ({
   }
 
   return (
-    <div className={`flex items-center ${variantStyles[variant]}`}>
+    <div className={`flex items-center ${variantStyles[variant]}`} {...rest}>
       {variant !== 'start' && (
         <span className={cn("flex-1 mr-4", baseStyles, borderStyleClass, orientationStyles, className)}></span>
       )}

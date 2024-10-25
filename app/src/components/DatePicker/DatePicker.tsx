@@ -9,6 +9,8 @@ interface DatePickerProps {
   initialDates?: Date[]
   isRange?: boolean
   shape?: 'rounded' | 'square' | 'circle'
+  placeholder?: string
+  className?: string
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
@@ -16,6 +18,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   initialDates = [],
   isRange = false,
   shape="circle",
+  placeholder = 'Select your date',
+  className="",
+  ...rest
 }) => {
   const [currentDate, setCurrentDate] = useState(new Date())
   const [selectedDates, setSelectedDates] = useState<Date[]>(initialDates)
@@ -121,11 +126,12 @@ export const DatePicker: React.FC<DatePickerProps> = ({
     <div className='relative'>
       <input
         type='text'
-        className='w-full rounded-md border text-primary-800 dark:text-primary-200 border-primary-500 px-4 py-2 bg-primary-200 dark:bg-primary-800 outline-none focus-visible:outlined'
+        className={cn('w-full rounded-md border text-primary-800 dark:text-primary-200 border-primary-500 px-4 py-2 bg-primary-200 dark:bg-primary-800 outline-none focus-visible:outlined', className)}
         value={formatDateRange(selectedDates)}
         onClick={() => setIsOpen(!isOpen)}
         readOnly
-        placeholder='Select your date'
+        placeholder={placeholder}
+        {...rest}
       />
       {isOpen && (
         <div className='absolute p-4 left-0 top-full mt-2 rounded-md border border-primary-500 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 shadow-lg'>
@@ -171,7 +177,11 @@ export const DatePicker: React.FC<DatePickerProps> = ({
                 <DropdownAction className='mr-2 bg-transparent appearance-none text-center border-b border-dotted border-primary-800 dark:border-primary-200 outline-none cursor-pointer hover:bg-transparent text-primary-800 dark:text-primary-200 rounded-none p-0 ring-0'>
                   {currentDate.getFullYear()}
                 </DropdownAction>
-                <DropdownContent>
+                <DropdownContent className='overflow-y-auto [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500' style={{ maxHeight: '300px' }}>
                   <DropdownList>
                     {years.map((year) => (
                       <DropdownItem className={`bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 hover:bg-primary-200 dark:hover:bg-primary-800`}

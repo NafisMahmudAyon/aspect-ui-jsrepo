@@ -7,7 +7,8 @@ interface CardFooterProps {
 
 export const CardFooter: React.FC<CardFooterProps> = ({
   children,
-  className = ''
+  className = '',
+  ...rest
 }) => {
-  return <div className={cn(className)}>{children}</div>
+  return <div className={cn(className)} {...rest}>{children}</div>
 }

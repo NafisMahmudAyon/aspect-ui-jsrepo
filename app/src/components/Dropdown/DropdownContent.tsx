@@ -1,18 +1,17 @@
 'use client'
 
-import React, { ReactNode, useRef, useEffect } from 'react'
-import { useDropdown } from './DropdownContext'
+import React, { ReactNode, useEffect, useRef } from 'react';
+import { useDropdown } from './DropdownContext';
+import { cn } from '../../utils/cn';
 
-interface DropdownContentProps {
-  children: ReactNode
-  maxHeight?: string
+interface DropdownContentProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+  children: ReactNode;
+  className?: string;
 }
 
-export const DropdownContent: React.FC<DropdownContentProps> = ({
-  children,
-  maxHeight = '300px'
-}) => {
-  const { isOpen, positionClass } = useDropdown()
+export const DropdownContent: React.FC<DropdownContentProps> = ({ children, className = "", ...rest }) => {
+  const { isOpen, positionClass } = useDropdown();
+
   const contentRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -32,18 +31,10 @@ export const DropdownContent: React.FC<DropdownContentProps> = ({
   if (!isOpen) return null
 
   return (
-    <div className={`absolute z-10 ${positionClass}`}>
-      <div
-        ref={contentRef}
-        className='rounded-md border border-primary-50 dark:border-primary-950 shadow-lg overflow-y-auto [&::-webkit-scrollbar]:w-2
-  [&::-webkit-scrollbar-track]:bg-gray-100
-  [&::-webkit-scrollbar-thumb]:bg-gray-300
-  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500'
-        style={{ maxHeight }}
-      >
+    <div className={cn("absolute z-10", positionClass, className)} ref={contentRef} {...rest}>
+      <div className=" border border-primary-50 dark:border-primary-950 rounded-md shadow-lg">
         {children}
       </div>
     </div>
-  )
-}
+  );
+};

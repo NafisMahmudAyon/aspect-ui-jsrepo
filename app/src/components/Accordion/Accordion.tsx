@@ -35,7 +35,8 @@ export const Accordion: React.FC<AccordionProps> = ({
   activeLabelClassName = '',
   headerClassName = '',
   activeHeaderClassName = '',
-  contentClassName = ''
+  contentClassName = '',
+  ...rest
 }) => {
   const [openItems, setOpenItems] = useState<string[]>([])
 
@@ -67,7 +68,7 @@ export const Accordion: React.FC<AccordionProps> = ({
         contentClassName
       }}
     >
-      <div className={cn('space-y-2', className)}>{children}</div>
+      <div className={cn('space-y-2', className)} {...rest}>{children}</div>
     </AccordionProvider>
   )
 }

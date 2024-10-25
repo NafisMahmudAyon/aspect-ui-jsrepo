@@ -7,7 +7,8 @@ type CardHeaderProps = {
 
 export const CardHeader: React.FC<CardHeaderProps> = ({
   children,
-  className = ''
+  className = '',
+  ...rest
 }) => {
-  return <div className={cn(className)}>{children}</div>
+  return <div className={cn(className)} {...rest}>{children}</div>
 }

@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <main className='mx-auto min-h-screen bg-secondary-100 px-20 py-24 dark:bg-secondary-950'>
       <Dark />
-      {/* <AccordionDemo /> */}
+      <AccordionDemo />
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
@@ -52,7 +52,7 @@ export default function Home() {
       {/* <ProgressBarDemo /> */}
       {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
-      {/* <BreadcrumbDemo /> */}
+      <BreadcrumbDemo />
       {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
@@ -67,7 +67,7 @@ export default function Home() {
       {/* <FileUploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
       {/* <PaginationDemo /> */}
-      {/* <DatePickerDemo /> */}
+      <DatePickerDemo />
       {/* <TooltipDemo /> */}
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}

@@ -4,6 +4,8 @@ interface DatePickerProps {
     initialDates?: Date[];
     isRange?: boolean;
     shape?: 'rounded' | 'square' | 'circle';
+    placeholder?: string;
+    className?: string;
 }
 export declare const DatePicker: React.FC<DatePickerProps>;
 export {};

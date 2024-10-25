@@ -1,6 +1,7 @@
 'use client'
 import { Children, HTMLAttributes } from 'react'
 import { cn } from '../../utils/cn'
+import { Right } from '../Icon/Arrow'
 
 interface BreadcrumbProps extends HTMLAttributes<HTMLUListElement> {
   className?: string
@@ -12,7 +13,7 @@ interface BreadcrumbProps extends HTMLAttributes<HTMLUListElement> {
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   children,
   className = "",
-  separator = '>',
+  separator = <Right />,
   separatorClassName = '',
   ...rest
 }) => {

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
-interface DropdownContentProps {
+interface DropdownContentProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
     children: ReactNode;
-    maxHeight?: string;
+    className?: string;
 }
 export declare const DropdownContent: React.FC<DropdownContentProps>;
 export {};
