@@ -15,7 +15,8 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
   className = '',
   activeClassName = '',
   onClick,
-  isSelected = false
+  isSelected = false,
+  ...rest
 }) => {
   const { closeDropdown } = useDropdown()
 
@@ -29,10 +30,11 @@ export const DropdownItem: React.FC<DropdownItemProps> = ({
   return (
     <a
       href='#'
-      className={cn('block px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 hover:text-gray-900', className, isSelected ? activeClassName : '')}
+      className={cn('block px-4 py-2 text-sm bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 text-nowrap', className, isSelected ? activeClassName : '')}
       role='menuitem'
       onClick={handleClick}
       data-selected={isSelected}
+      {...rest}
     >
       {children}
     </a>

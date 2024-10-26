@@ -32,9 +32,9 @@ export const DropdownContent: React.FC<DropdownContentProps> = ({ children, clas
 
   return (
     <div className={cn("absolute z-10", positionClass, className)} ref={contentRef} {...rest}>
-      <div className=" border border-primary-50 dark:border-primary-950 rounded-md shadow-lg">
+      {/* <div className=" border border-primary-50 dark:border-primary-950 rounded-md shadow-lg"> */}
         {children}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

@@ -13,7 +13,7 @@ const DropdownDemo = () => {
     <div>
       <Dropdown hover>
         <DropdownAction>
-          Options <span className='ml-2'>▼</span>
+          Options
         </DropdownAction>
         <DropdownContent>
           <DropdownList>
@@ -41,7 +41,7 @@ const DropdownDemo = () => {
             </DropdownItem>
             <Dropdown direction='right'>
               <DropdownAction>
-                Options <span className='ml-2'>▼</span>
+                Options
               </DropdownAction>
               <DropdownContent>
                 <DropdownList>
@@ -69,7 +69,7 @@ const DropdownDemo = () => {
 
       <Dropdown direction='right'>
         <DropdownAction>
-          Options <span className='ml-2'>▼</span>
+          Options
         </DropdownAction>
         <DropdownContent>
           <DropdownList>
@@ -78,12 +78,12 @@ const DropdownDemo = () => {
             </DropdownItem>
             <Dropdown direction='right'>
               <DropdownAction>
-                Options <span className='ml-2'>▼</span>
+                Options
               </DropdownAction>
               <DropdownContent>
                 <DropdownList>
                   <DropdownItem onClick={() => console.log('Option 1 clicked')}>
-                    Option 1
+                    Option 100
                   </DropdownItem>
                   <DropdownItem onClick={() => console.log('Option 2 clicked')}>
                     Option 2
