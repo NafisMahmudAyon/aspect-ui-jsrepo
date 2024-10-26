@@ -22,10 +22,6 @@
       "types": "./lib/esm/theme/AspectUITheme.d.ts",
       "default": "./lib/cjs/theme/AspectUITheme.js"
     },
-    "./preset": {
-      "types": "./lib/esm/theme/preset.d.ts",
-      "default": "./lib/cjs/theme/preset.js"
-    },
     "./css": {
       "default": "./lib/cjs/theme/index.min.css"
     }
