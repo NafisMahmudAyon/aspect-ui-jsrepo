@@ -1,4 +1,4 @@
-export const AspectUITheme = {
+module.exports = {
   theme: {
     extend: {
       colors: {
