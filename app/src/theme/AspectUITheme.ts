@@ -1,5 +1,4 @@
 export const AspectUITheme = {
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
