@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { AspectUITheme } from './app/src/theme/AspectUITheme' 
 
 const config: Config = {
   content: [
@@ -9,4 +10,4 @@ const config: Config = {
   presets: [require('./app/src/theme/default-preset.ts')],
   plugins: []
 }
-export default config
+export default AspectUITheme(config)
