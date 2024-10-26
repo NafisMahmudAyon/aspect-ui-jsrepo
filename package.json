@@ -18,10 +18,6 @@
         "default": "./lib/cjs/index.js"
       }
     },
-    "./AspectUITheme": {
-      "types": "./lib/esm/theme/default-preset.d.ts",
-      "default": "./lib/cjs/theme/default-preset.js"
-    },
     "./preset": {
       "types": "./lib/esm/theme/preset.d.ts",
       "default": "./lib/cjs/theme/preset.js"
