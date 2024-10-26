@@ -1,5 +1,5 @@
 'use client'
-import { Children, HTMLAttributes } from 'react'
+import React, { Children, HTMLAttributes } from 'react'
 import { cn } from '../../utils/cn'
 import { Right } from '../Icon/Arrow'
 
@@ -26,12 +26,12 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
       {...rest}
     >
       {childrenArray.map((child: React.ReactNode, index: number) => (
-        <>
+        <React.Fragment key={index}>
           {child}
           {index < childrenArray.length - 1 && (
-            <span className={cn('mx-2 text-primary-500',separatorClassName)}>{separator}</span>
+            <span className={cn('mx-2 text-primary-500', separatorClassName)}>{separator}</span>
           )}
-        </>
+        </React.Fragment>
       ))}
     </ul>
   )

@@ -11,7 +11,7 @@ import React from 'react'
 const DropdownDemo = () => {
   return (
     <div>
-      <Dropdown>
+      <Dropdown hover>
         <DropdownAction>
           Options <span className='ml-2'>▼</span>
         </DropdownAction>
@@ -30,14 +30,14 @@ const DropdownDemo = () => {
         </DropdownContent>
       </Dropdown>
 
-      <Dropdown direction='right'>
+      <Dropdown direction='left'>
         <DropdownAction>
-          Options <span className='ml-2'>▼</span>
+          Options
         </DropdownAction>
         <DropdownContent>
           <DropdownList>
             <DropdownItem onClick={() => console.log('Option 1 clicked')}>
-              Option 1
+              Option 1 fdsfsdfsfssdfsdfsdsd
             </DropdownItem>
             <Dropdown direction='right'>
               <DropdownAction>
@@ -67,20 +67,20 @@ const DropdownDemo = () => {
         </DropdownContent>
       </Dropdown>
 
-      <Dropdown direction='right' isNested={true}>
+      <Dropdown direction='right'>
         <DropdownAction>
           Options <span className='ml-2'>▼</span>
         </DropdownAction>
         <DropdownContent>
           <DropdownList>
             <DropdownItem onClick={() => console.log('Option 1 clicked')}>
-              Option 1
+              Option 1 dfsdfsdfsdf
             </DropdownItem>
-            <Dropdown direction='right' isNested={true}>
+            <Dropdown direction='right'>
               <DropdownAction>
                 Options <span className='ml-2'>▼</span>
               </DropdownAction>
-              <DropdownContent isNested={true}>
+              <DropdownContent>
                 <DropdownList>
                   <DropdownItem onClick={() => console.log('Option 1 clicked')}>
                     Option 1

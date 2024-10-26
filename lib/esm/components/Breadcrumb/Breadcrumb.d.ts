@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import React, { HTMLAttributes } from 'react';
 interface BreadcrumbProps extends HTMLAttributes<HTMLUListElement> {
     className?: string;
     children: React.ReactNode;

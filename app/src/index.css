@@ -1034,11 +1034,6 @@ video {
   min-width: 2rem;
 }
 
-.min-w-\[max-content\] {
-  min-width: -moz-max-content;
-  min-width: max-content;
-}
-
 .min-w-full {
   min-width: 100%;
 }

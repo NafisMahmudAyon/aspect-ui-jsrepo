@@ -79,9 +79,9 @@ export const Dropdown: React.FC<DropdownProps> = ({
       case 'top':
         return 'bottom-full mb-2'
       case 'left':
-        return 'right-full mr-2'
+        return 'right-full mr-2 top-0'
       case 'right':
-        return 'left-full top-0 ml-2 min-w-[max-content]'
+        return 'left-full top-0 ml-2'
       case 'bottom-right':
         return 'top-full left-0 mt-2'
       case 'bottom-left':

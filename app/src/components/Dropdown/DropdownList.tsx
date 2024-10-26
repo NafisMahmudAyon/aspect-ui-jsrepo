@@ -7,5 +7,5 @@ interface DropdownListProps {
 }
 
 export const DropdownList: React.FC<DropdownListProps> = ({ children }) => {
-  return <div className='py-1'>{children}</div>
+  return <div className='py-1 bg-primary-500'>{children}</div>
 }
