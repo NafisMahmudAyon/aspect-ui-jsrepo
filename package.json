@@ -18,9 +18,9 @@
         "default": "./lib/cjs/index.js"
       }
     },
-    "./AspectUITheme": {
-      "types": "./lib/esm/theme/AspectUITheme.d.ts",
-      "default": "./lib/cjs/theme/AspectUITheme.js"
+    "./Theme": {
+      "types": "./lib/esm/theme/default-preset.d.ts",
+      "default": "./lib/cjs/theme/default-preset.js"
     },
     "./preset": {
       "types": "./lib/esm/theme/preset.d.ts",
