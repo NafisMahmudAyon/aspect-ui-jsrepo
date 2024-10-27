@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, ReactNode } from 'react'
+import { cn } from '../../utils/cn'
 
 type TooltipDirection = 'top' | 'right' | 'bottom' | 'left'
 
@@ -10,6 +11,11 @@ interface TooltipProps {
   ]
   direction?: TooltipDirection
   showOnClick?: boolean
+  className?: string
+  arrowColor?: string
+  arrowSize?: number
+  contentClassName?: string
+  actionClassName?: string
 }
 
 interface TooltipActionProps {
@@ -23,7 +29,13 @@ interface TooltipContentProps {
 const Tooltip: React.FC<TooltipProps> = ({
   children,
   direction = 'top',
-  showOnClick = false
+  showOnClick = false,
+  className = '',
+  arrowColor = '#847ef3',
+  arrowSize = 10,
+  contentClassName = '',
+  actionClassName = '',
+  ...rest
 }) => {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -39,12 +51,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   const getTooltipStyle = (): React.CSSProperties => {
     const baseStyle: React.CSSProperties = {
       position: 'absolute',
-      backgroundColor: 'rgba(255, 255, 255, 1)',
-      color: 'rgba(0, 0, 0, 1)',
-      padding: '0.5rem',
-      borderRadius: '0.25rem',
       zIndex: 10,
-      filter: 'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))'
     }
 
     switch (direction) {
@@ -94,7 +101,7 @@ const Tooltip: React.FC<TooltipProps> = ({
           bottom: '-10px',
           left: '50%',
           transform: 'translateX(-50%)',
-          borderTopColor: 'rgba(255, 255, 255, 1)'
+          borderTopColor: arrowColor
         }
       case 'right':
         return {
@@ -102,7 +109,7 @@ const Tooltip: React.FC<TooltipProps> = ({
           left: '-10px',
           top: '50%',
           transform: 'translateY(-50%)',
-          borderRightColor: 'rgba(255, 255, 255, 1)'
+          borderRightColor: arrowColor
         }
       case 'bottom':
         return {
@@ -110,7 +117,7 @@ const Tooltip: React.FC<TooltipProps> = ({
           top: '-10px',
           left: '50%',
           transform: 'translateX(-50%)',
-          borderBottomColor: 'rgba(255, 255, 255, 1)'
+          borderBottomColor: arrowColor
         }
       case 'left':
         return {
@@ -118,7 +125,7 @@ const Tooltip: React.FC<TooltipProps> = ({
           right: '-10px',
           top: '50%',
           transform: 'translateY(-50%)',
-          borderLeftColor: 'rgba(255, 255, 255, 1)'
+          borderLeftColor: arrowColor
         }
     }
   }
@@ -129,8 +136,8 @@ const Tooltip: React.FC<TooltipProps> = ({
   ]
 
   return (
-    <div className='relative inline-block'>
-      <div
+    <div className={cn('relative inline-block', className)} {...rest}>
+      <div className={cn('', actionClassName)}
         onMouseEnter={showOnClick ? undefined : showTooltip}
         onMouseLeave={showOnClick ? undefined : hideTooltip}
         onClick={handleClick}
@@ -138,7 +145,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         {actionElement}
       </div>
       {isVisible && (
-        <div style={getTooltipStyle()}>
+        <div className={cn('bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 px-2 py-1 rounded-md',contentClassName)} style={getTooltipStyle()}>
           {contentElement}
           <div style={getArrowStyle()}></div>
         </div>

@@ -2,24 +2,33 @@
 
 'use client'
 
-import { InputHTMLAttributes, forwardRef, ReactNode } from 'react'
-import { Mail } from '../Icon/Form'
+import { InputHTMLAttributes, forwardRef, ReactNode, useState } from 'react'
+import { Hide, Mail, Show } from '../Icon/Form'
 import { cn } from '../../utils/cn'
+import { Tooltip, TooltipAction, TooltipContent } from '../Tooltip'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
+  type?: string
   error?: string
   icon?: ReactNode
-  iconPosition?: 'left' | 'right'
   labelClassName?: string
   iconClassName?: string
   className?: string
   wrapperClassName?: string
   errorClassName?: string
+  passwordIconClassName?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, icon=<Mail />, labelClassName="", iconClassName="", className="", wrapperClassName="", errorClassName="", ...rest }, ref) => {
+  ({ label, type = "text", error, icon = <Mail />, labelClassName = "", iconClassName = "", className = "", wrapperClassName = "", errorClassName = "", passwordIconClassName = "", ...rest }, ref) => {
+    const [isShown, setIsShown] = useState(false)
+
+    const handleClick = () => setIsShown(!isShown)
+
+    // Determine the input type based on the isShown state
+    const inputType = type === "password" && isShown ? "text" : type
+
     return (
       <fieldset className={cn('mb-4', wrapperClassName)}>
         {label && (
@@ -30,16 +39,32 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <div className='relative'>
           {icon && (
             <div
-              className={cn("pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4 peer-disabled:pointer-events-none peer-disabled:opacity-50 text-primary-500", iconClassName)}
+              className={cn("pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4 text-primary-800 dark:text-primary-200 peer-disabled:pointer-events-none peer-disabled:opacity-50", error ? "text-error-500 dark:text-error-500" : "", iconClassName)}
             >
               {icon}
             </div>
           )}
           <input
             ref={ref}
-            className={cn("w-full rounded-md border px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 ps-11", error ? 'border-red-500' : 'border-gray-300', className)}
+            type={inputType} // Use the determined input type
+            className={cn("w-full rounded-md border bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 placeholder:text-secondary-500 px-3 py-2 shadow-sm focus-visible:border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-200 ps-11", type === 'password' && 'pe-11', error ? 'border-error-500' : 'border-gray-300', className)}
             {...rest}
           />
+          {type === "password" &&
+            <Tooltip
+              className={cn("absolute inset-y-0 end-0 flex items-center pe-4 cursor-pointer text-primary-800 dark:text-primary-200", passwordIconClassName ? passwordIconClassName : iconClassName)} contentClassName='text-sm text-nowrap'
+              arrowColor='#847ef3'
+            >
+              <TooltipAction>
+                <div onClick={handleClick}>
+                  {isShown ? <Show /> : <Hide />}
+                </div>
+              </TooltipAction>
+              <TooltipContent>
+                {isShown ? "Show Password" : "Hide Password"}
+              </TooltipContent>
+            </Tooltip>
+          }
         </div>
         {error && <p className={cn('mt-1 text-sm text-error-600', errorClassName)}>{error}</p>}
       </fieldset>

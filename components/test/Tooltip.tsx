@@ -13,7 +13,7 @@ const TooltipDemo = () => {
         <Tooltip direction='right' showOnClick>
           <TooltipAction>Right</TooltipAction>
           <TooltipContent>
-            <p className='text-body-5 font-medium text-black'>
+            <p className='text-body1 font-medium'>
               Tooltips - Title here
             </p>
           </TooltipContent>

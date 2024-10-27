@@ -7,6 +7,11 @@ interface TooltipProps {
     ];
     direction?: TooltipDirection;
     showOnClick?: boolean;
+    className?: string;
+    arrowColor?: string;
+    arrowSize?: number;
+    contentClassName?: string;
+    actionClassName?: string;
 }
 interface TooltipActionProps {
     children: ReactNode;

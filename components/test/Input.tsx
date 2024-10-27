@@ -9,7 +9,7 @@ const InputDemo = () => {
       <form>
         <Input
           label='Username'
-          type='text'
+          type='password'
           placeholder='Enter your username'
           // icon={<Mail className='text-red-500' />}
         />
@@ -18,13 +18,12 @@ const InputDemo = () => {
           type='email'
           placeholder='Enter your email'
           icon={<span className='text-gray-400'>asd</span>}
-          iconPosition='right'
         />
         <Input
           label='Password'
           type='password'
           placeholder='Enter your password'
-          icon={<span className='text-gray-400'>asd</span>}
+          icon={<span className=''>asdbbcvbvc</span>}
           error='Password must be at least 8 characters long'
         />
         <button type='submit'>Submit</button>

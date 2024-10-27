@@ -27,7 +27,7 @@ export const Mail = ({ className = '', size = 24, ...rest }: IconProps) => {
     </svg>
   )
 }
-export const Right = ({ className = '', size = 24, ...rest }: IconProps) => {
+export const Show = ({ className = '', size = 24, ...rest }: IconProps) => {
   return (
     <svg
       width={size}
@@ -39,16 +39,19 @@ export const Right = ({ className = '', size = 24, ...rest }: IconProps) => {
       {...rest}
     >
       <path
-        d="m9.004 5.996 6 6L9 18"
+        d="M2.454 13.846a3.78 3.78 0 0 1 0-3.602C4.295 6.85 7.88 4.544 12 4.544s7.705 2.305 9.545 5.7a3.79 3.79 0 0 1 0 3.602c-1.84 3.395-5.425 5.699-9.545 5.699s-7.705-2.304-9.546-5.7Z"
         stroke="currentColor"
         strokeWidth={1.6}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      />
+      <path
+        d="M15.013 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+        stroke="currentColor"
+        strokeWidth={1.6}
       />
     </svg>
   )
 }
-export const Up = ({ className = '', size = 24, ...rest }: IconProps) => {
+export const Hide = ({ className = '', size = 24, ...rest }: IconProps) => {
   return (
     <svg
       width={size}
@@ -60,11 +63,10 @@ export const Up = ({ className = '', size = 24, ...rest }: IconProps) => {
       {...rest}
     >
       <path
-        d="m5.996 14.996 6-6L18 15"
+        d="m2.48 2 19.07 19.07M9.768 4.308c2.724-.46 8.356.279 11.833 6.04.248.413.373.619.396 1.138.023.52-.048.663-.189.952-.318.65-.885 1.476-1.836 2.316m-2.794 2.065c-6.19 4.755-12.097-.478-14.816-4.4-.229-.33-.343-.496-.359-1.106s.04-.7.151-.877C3.02 9.04 5.088 7.088 6.343 6.01m7.18 7.4A2.915 2.915 0 0 1 9.4 9.288"
         stroke="currentColor"
         strokeWidth={1.6}
         strokeLinecap="round"
-        strokeLinejoin="round"
       />
     </svg>
   )
