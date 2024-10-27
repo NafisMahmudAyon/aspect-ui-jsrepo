@@ -3,39 +3,46 @@
 'use client'
 
 import { InputHTMLAttributes, forwardRef, ReactNode } from 'react'
+import { Mail } from '../Icon/Form'
+import { cn } from '../../utils/cn'
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   error?: string
   icon?: ReactNode
   iconPosition?: 'left' | 'right'
+  labelClassName?: string
+  iconClassName?: string
+  className?: string
+  wrapperClassName?: string
+  errorClassName?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, label, error, icon, iconPosition = 'left', ...props }, ref) => {
+  ({ label, error, icon=<Mail />, labelClassName="", iconClassName="", className="", wrapperClassName="", errorClassName="", ...rest }, ref) => {
     return (
-      <div className='mb-4'>
+      <fieldset className={cn('mb-4', wrapperClassName)}>
         {label && (
-          <label className='mb-1 block text-sm font-medium text-gray-700'>
+          <label className={cn('mb-1 block text-sm font-medium text-gray-700', labelClassName)}>
             {label}
           </label>
         )}
         <div className='relative'>
           {icon && (
             <div
-              className={`pointer-events-none absolute inset-y-0 flex items-center ${iconPosition === 'left' ? 'left-0 pl-3' : 'right-0 pr-3'}`}
+              className={cn("pointer-events-none absolute inset-y-0 start-0 flex items-center ps-4 peer-disabled:pointer-events-none peer-disabled:opacity-50 text-primary-500", iconClassName)}
             >
               {icon}
             </div>
           )}
           <input
             ref={ref}
-            className={`w-full rounded-md border px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 ${error ? 'border-red-500' : 'border-gray-300'} ${icon && iconPosition === 'left' ? 'pl-10' : 'pr-10'} ${className} `}
-            {...props}
+            className={cn("w-full rounded-md border px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 ps-11", error ? 'border-red-500' : 'border-gray-300', className)}
+            {...rest}
           />
         </div>
-        {error && <p className='mt-1 text-sm text-red-600'>{error}</p>}
-      </div>
+        {error && <p className={cn('mt-1 text-sm text-error-600', errorClassName)}>{error}</p>}
+      </fieldset>
     )
   }
 )

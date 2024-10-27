@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { FileUpload } from '@/app/src/components/FileUpload'
+import { FileUpload } from '@/app/src/components/Upload'
 
 const FileUploadDemo = () => {
   const handleFileSelect = (file: File) => {

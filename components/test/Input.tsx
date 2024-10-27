@@ -1,3 +1,5 @@
+import { Right } from '@/app/src/components/Icon/Arrow'
+import { Mail } from '@/app/src/components/Icon/Form'
 import { Input } from '@/app/src/components/Input'
 import React from 'react'
 
@@ -9,7 +11,7 @@ const InputDemo = () => {
           label='Username'
           type='text'
           placeholder='Enter your username'
-          icon={<span className='text-gray-400'>asd</span>}
+          // icon={<Mail className='text-red-500' />}
         />
         <Input
           label='Email'

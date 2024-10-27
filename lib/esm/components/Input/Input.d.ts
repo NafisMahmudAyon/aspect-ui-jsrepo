@@ -4,5 +4,10 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     error?: string;
     icon?: ReactNode;
     iconPosition?: 'left' | 'right';
+    labelClassName?: string;
+    iconClassName?: string;
+    className?: string;
+    wrapperClassName?: string;
+    errorClassName?: string;
 }
 export declare const Input: import("react").ForwardRefExoticComponent<InputProps & import("react").RefAttributes<HTMLInputElement>>;

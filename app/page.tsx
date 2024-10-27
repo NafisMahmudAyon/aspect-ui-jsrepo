@@ -20,7 +20,7 @@ import TextareaDemo from '@/components/test/Textarea'
 import CheckboxDemo from '@/components/test/Checkbox'
 import RadioDemo from '@/components/test/Radio'
 import SwitchDemo from '@/components/test/Switch'
-import FileUploadDemo from '@/components/test/FileUpload'
+import UploadDemo from '@/components/test/Upload'
 import ToggleButtonDemo from '@/components/test/ToggleButton'
 import PaginationDemo from '@/components/test/Pagination'
 import DatePickerDemo from '@/components/test/DatePicker'
@@ -59,12 +59,12 @@ export default function Home() {
       <DropdownDemo />
       {/* <NavbarDemo /> */}
       {/* <SidebarDemo /> */}
-      {/* <InputDemo /> */}
+      <InputDemo />
       {/* <TextareaDemo /> */}
       {/* <CheckboxDemo /> */}
       {/* <RadioDemo /> */}
       {/* <SwitchDemo /> */}
-      {/* <FileUploadDemo /> */}
+      {/* <UploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
       {/* <PaginationDemo /> */}
       <DatePickerDemo />
