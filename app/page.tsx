@@ -57,7 +57,7 @@ export default function Home() {
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
       <DropdownDemo />
-      {/* <NavbarDemo /> */}
+      <NavbarDemo />
       {/* <SidebarDemo /> */}
       <InputDemo />
       {/* <TextareaDemo /> */}

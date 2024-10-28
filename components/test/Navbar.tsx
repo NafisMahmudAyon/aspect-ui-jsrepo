@@ -12,11 +12,7 @@ const NavbarDemo = () => {
     <div>
       <Navbar>
         <NavbarContainer>
-          <div className='flex items-center'>
-            <h1 className='text-xl font-bold'>Logo</h1>
-          </div>
-          <NavbarCollapseBtn />
-          <NavbarCollapse>
+          <NavbarCollapse position="left">
             <NavbarItem>
               <a href='#home'>Home</a>
             </NavbarItem>
@@ -27,8 +23,24 @@ const NavbarDemo = () => {
               <a href='#contact'>Contact</a>
             </NavbarItem>
           </NavbarCollapse>
+          <div className='flex items-center'>
+            <h1 className='text-xl font-bold'>Logo</h1>
+          </div>
+          <NavbarCollapse position="right">
+            <NavbarItem>
+              <a href='#services'>Services</a>
+            </NavbarItem>
+            <NavbarItem>
+              <a href='#products'>Products</a>
+            </NavbarItem>
+            <NavbarItem>
+              <a href='#blog'>Blog</a>
+            </NavbarItem>
+          </NavbarCollapse>
+          <NavbarCollapseBtn />
         </NavbarContainer>
       </Navbar>
+
     </div>
   )
 }

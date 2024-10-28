@@ -2,17 +2,21 @@
 'use client'
 
 import React, { ReactNode } from 'react'
+import { cn } from '../../utils/cn'
 
 interface NavbarContainerProps {
   children: ReactNode
+  className?: string
 }
 
 export const NavbarContainer: React.FC<NavbarContainerProps> = ({
-  children
+  children,
+  className = '',
+  ...rest
 }) => {
   return (
-    <div className='container mx-auto px-4'>
-      <div className='flex items-center justify-between py-4'>{children}</div>
+    <div className={cn('container mx-auto flex items-center justify-between py-4 px-4', className)} {...rest}>
+      {children}
     </div>
   )
 }
