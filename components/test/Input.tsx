@@ -23,7 +23,7 @@ const InputDemo = () => {
           label='Password'
           type='password'
           placeholder='Enter your password'
-          icon={<span className=''>asdbbcvbvc</span>}
+          icon={<span className=''>asd</span>}
           error='Password must be at least 8 characters long'
         />
         <button type='submit'>Submit</button>

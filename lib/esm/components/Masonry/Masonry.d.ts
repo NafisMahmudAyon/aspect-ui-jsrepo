@@ -8,6 +8,7 @@ interface MasonryProps {
         xl: number;
     };
     gap?: number;
+    className?: string;
 }
 export declare const Masonry: React.FC<MasonryProps>;
 export {};

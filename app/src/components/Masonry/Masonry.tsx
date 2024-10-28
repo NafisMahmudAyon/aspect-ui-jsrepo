@@ -5,6 +5,7 @@ interface MasonryProps {
   children: ReactNode[]
   columnCount?: { sm: number; md: number; lg: number; xl: number }
   gap?: number
+  className?: string
 }
 
 type ColumnWrapper = { [key: number]: React.ReactNode[] }
@@ -12,7 +13,9 @@ type ColumnWrapper = { [key: number]: React.ReactNode[] }
 export const Masonry: React.FC<MasonryProps> = ({
   children,
   columnCount = { sm: 1, md: 2, lg: 3, xl: 4 },
-  gap = 4
+  gap = 4,
+  className = "",
+  ...rest
 }) => {
   const [columns, setColumns] = useState(columnCount.sm)
 
@@ -61,6 +64,7 @@ export const Masonry: React.FC<MasonryProps> = ({
 
   return (
     <div
+      className={className}
       style={{
         display: 'flex',
         flexDirection: 'row',
@@ -68,6 +72,7 @@ export const Masonry: React.FC<MasonryProps> = ({
         alignItems: 'flex-start',
         gap: `${gap * 0.25}rem`
       }}
+      {...rest}
     >
       {result}
     </div>
