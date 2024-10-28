@@ -7,9 +7,11 @@ const ModalDemo = () => {
       <Modal>
         <ModalAction>Open Modal</ModalAction>
         <ModalContent>
-          <h2 className='mb-2 text-2xl font-bold'>Modal Title</h2>
-          <p className='mb-4'>This is the modal content.</p>
-          <ModalAction>Close</ModalAction>
+          <div className='border p-4 rounded-md bg-primary-100 text-primary-800'>
+            <h2 className='mb-2 text-2xl font-bold'>Modal Title</h2>
+            <p className='mb-4'>This is the modal content.</p>
+            <ModalAction>Close</ModalAction>
+          </div>
         </ModalContent>
       </Modal>
       <Modal>
