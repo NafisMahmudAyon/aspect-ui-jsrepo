@@ -1,2 +1,7 @@
 import React from 'react';
-export declare const NavbarCollapseBtn: React.FC;
+interface NavbarCollapseBtnProps {
+    className?: string;
+    icon?: React.ReactNode;
+}
+export declare const NavbarCollapseBtn: React.FC<NavbarCollapseBtnProps>;
+export {};

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { forwardRef, HTMLAttributes, Ref } from 'react'
+import { forwardRef, HTMLAttributes, Ref } from 'react'
 import { useModal } from './ModalContext'
 import { cn } from '../../utils/cn'
 import { AnimatePresence, MotionProps, motion } from 'framer-motion'

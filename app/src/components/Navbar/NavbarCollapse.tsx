@@ -1,7 +1,7 @@
 // ./app/src/components/Navbar/NavbarCollapse.tsx
 'use client'
 
-import React, { forwardRef, HTMLAttributes, ReactNode } from 'react'
+import { forwardRef, HTMLAttributes } from 'react'
 import { useNavbar } from './NavbarContext'
 import { cn } from '../../utils/cn'
 import { AnimatePresence, motion, MotionProps } from 'framer-motion'
@@ -10,7 +10,7 @@ import { AnimatePresence, motion, MotionProps } from 'framer-motion'
 type NavbarCollapseProps = HTMLAttributes<HTMLDivElement> & MotionProps
 
 export const NavbarCollapse = forwardRef<HTMLDivElement, NavbarCollapseProps>(({ children, className, ...rest }, ref) => {
-  const { isCollapsed, collapseOn } = useNavbar()
+  const { isCollapsed } = useNavbar()
 
   return (
     <AnimatePresence>
