@@ -18,6 +18,10 @@
         "default": "./lib/cjs/index.js"
       }
     },
+    "./Typography": {
+      "types": "./lib/esm/components/Typography/index.d.ts",
+      "default": "./lib/cjs/components/Typography/index.js"
+    },
     "./AspectUITheme": {
       "types": "./lib/esm/theme/AspectUITheme.d.ts",
       "default": "./lib/cjs/theme/AspectUITheme.js"
