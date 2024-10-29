@@ -66,14 +66,16 @@
     "embla-carousel": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
     "framer-motion": "^11.11.9",
+    "react-focus-lock": "^2.13.2",
+    "react-remove-scroll": "^2.5.9",
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "^20",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
     "css-minify": "^2.0.0",
     "embla-carousel-autoplay": "^8.3.0",
     "eslint": "^8",

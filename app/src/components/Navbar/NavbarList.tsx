@@ -17,20 +17,15 @@ export const NavbarList: React.FC<NavbarListProps> = ({
   position,
   ...rest
 }) => {
-  const { isCollapsed, collapseOn } = useNavbar()
-
+  const { collapseOn } = useNavbar()
   return (
-    <div
-      className={cn(
-        'items-center',
-        isCollapsed ? `${collapseOn}:flex` : `${collapseOn}:hidden`,
-        className
-      )}
+    <ul
+      className={cn('items-center space-x-4', `hidden ${collapseOn === 'md' && 'md:flex'} ${collapseOn === 'lg' && 'lg:flex' }` , className)
+      }
       {...rest}
     >
-      <div className="flex space-x-4">
-        {children}
-      </div>
-    </div>
+      {children}
+    </ul>
   )
 }
+
