@@ -1,13 +1,14 @@
 'use client'
 import React, { useState } from 'react'
+import { cn } from '../../utils/cn'
 
 interface PaginationProps {
-  count: number // Total number of pages
-  defaultPage?: number // Default page selected initially
-  boundaryCount?: number // Number of pages to show on the boundary
-  siblingCount?: number // Number of sibling pages to show around the current page
-  showFirstLast?: boolean // Option to show 'First' and 'Last' buttons
-  showNextPrev?: boolean // Option to show 'Next' and 'Previous' buttons
+  count: number
+  defaultPage?: number
+  boundaryCount?: number
+  siblingCount?: number
+  showFirstLast?: boolean
+  showNextPrev?: boolean
   firstButton?: React.ReactNode
   lastButton?: React.ReactNode
   nextButton?: React.ReactNode
@@ -17,13 +18,12 @@ interface PaginationProps {
   nextButtonClassName?: string
   previousButtonClassName?: string
   className?: string
-  numberClassName?: string
+  buttonClassName?: string
   activeClassName?: string
-  deactivateClassName?: string
   ellipsisClassName?: string 
   numberType?: 'normal' | 'roman' | 'custom'
   numbers?: string[]
-  onChange: (page: number) => void // Callback when a page is changed
+  onChange: (page: number) => void
 }
 
 export const Pagination: React.FC<PaginationProps> = ({
@@ -33,24 +33,65 @@ export const Pagination: React.FC<PaginationProps> = ({
   siblingCount = 1,
   showFirstLast = true,
   showNextPrev = true,
+  firstButton = 'First',
+  lastButton = 'Last',
+  nextButton = 'Next',
+  previousButton = 'Previous',
+  firstButtonClassName = '',
+  lastButtonClassName = '',
+  nextButtonClassName = '',
+  previousButtonClassName = '',
+  className = '',
+  buttonClassName = '',
+  activeClassName = '',
+  ellipsisClassName = '',
+  numberType = 'normal',
+  numbers = [],
   onChange
 }) => {
   const [currentPage, setCurrentPage] = useState(defaultPage)
 
-  // Helper function to generate range of numbers
+  const convertToRoman = (num: number): string => {
+    const romanNumerals = [
+      { value: 1000, symbol: 'M' },
+      { value: 900, symbol: 'CM' },
+      { value: 500, symbol: 'D' },
+      { value: 400, symbol: 'CD' },
+      { value: 100, symbol: 'C' },
+      { value: 90, symbol: 'XC' },
+      { value: 50, symbol: 'L' },
+      { value: 40, symbol: 'XL' },
+      { value: 10, symbol: 'X' },
+      { value: 9, symbol: 'IX' },
+      { value: 5, symbol: 'V' },
+      { value: 4, symbol: 'IV' },
+      { value: 1, symbol: 'I' }
+    ]
+    
+    let result = ''
+    let remaining = num
+    
+    for (let i = 0; i < romanNumerals.length; i++) {
+      while (remaining >= romanNumerals[i].value) {
+        result += romanNumerals[i].symbol
+        remaining -= romanNumerals[i].value
+      }
+    }
+    
+    return result.toLowerCase()
+  }
+
   const range = (start: number, end: number) => {
     return Array.from({ length: end - start + 1 }, (_, i) => start + i)
   }
 
-  // Handle page change logic
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= count) {
       setCurrentPage(page)
-      onChange(page) // Trigger onChange callback
+      onChange(page)
     }
   }
 
-  // Generate pagination numbers based on boundary and sibling count
   const generatePaginationItems = () => {
     const startPages = range(1, Math.min(boundaryCount, count))
     const endPages = range(
@@ -80,7 +121,6 @@ export const Pagination: React.FC<PaginationProps> = ({
       ...(showFirstLast ? ['first'] : []),
       ...(showNextPrev ? ['previous'] : []),
       ...startPages,
-
       ...(showStartEllipsis
         ? ['start-ellipsis']
         : boundaryCount + 1 < count - boundaryCount
@@ -92,7 +132,6 @@ export const Pagination: React.FC<PaginationProps> = ({
         : count - boundaryCount > boundaryCount
           ? [count - boundaryCount]
           : []),
-
       ...endPages,
       ...(showNextPrev ? ['next'] : []),
       ...(showFirstLast ? ['last'] : [])
@@ -101,7 +140,6 @@ export const Pagination: React.FC<PaginationProps> = ({
     return paginationItems
   }
 
-  // Map the button type to its page number
   const buttonPage = (type: string) => {
     switch (type) {
       case 'first':
@@ -120,11 +158,11 @@ export const Pagination: React.FC<PaginationProps> = ({
   const paginationItems = generatePaginationItems()
 
   return (
-    <nav className='flex items-center justify-center space-x-2'>
+    <nav className={cn('flex items-center justify-center space-x-2', className)}>
       {paginationItems.map((item, index) => (
         <React.Fragment key={index}>
           {item === 'start-ellipsis' || item === 'end-ellipsis' ? (
-            <span className='px-3 py-1'>...</span>
+            <span className={cn('px-3 py-1 text-primary-800 dark:text-primary-100', ellipsisClassName)}>...</span>
           ) : (
             <button
               onClick={() =>
@@ -138,17 +176,20 @@ export const Pagination: React.FC<PaginationProps> = ({
                     (item === 'next' && currentPage === count)
                   : false
               }
-              className={`rounded-md px-3 py-1 ${
-                currentPage === item
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              } disabled:opacity-50`}
+                className={cn('rounded-md px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 hover:bg-primary-200 dark:hover:bg-primary-800 disabled:opacity-50 hover:text-primary-900 dark:hover:text-primary-100', currentPage === item
+                  && 'bg-blue-500 text-white', item === 'first' && firstButtonClassName, item === 'last' && lastButtonClassName, item === 'next' && nextButtonClassName, item === 'previous' && previousButtonClassName, currentPage === item && activeClassName, buttonClassName)}
             >
-              {item === 'first' && 'First'}
-              {item === 'previous' && 'Prev'}
-              {item === 'next' && 'Next'}
-              {item === 'last' && 'Last'}
-              {typeof item === 'number' && item}
+              {item === 'first' && firstButton}
+              {item === 'previous' && previousButton}
+              {item === 'next' && nextButton}
+              {item === 'last' && lastButton}
+              {typeof item === 'number' && (
+                numberType === 'roman' 
+                  ? convertToRoman(item)
+                  : numberType === 'custom' && numbers.length >= count
+                    ? numbers[item - 1]
+                    : item
+              )}
             </button>
           )}
         </React.Fragment>

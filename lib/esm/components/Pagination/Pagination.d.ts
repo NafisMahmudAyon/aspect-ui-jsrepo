@@ -15,9 +15,8 @@ interface PaginationProps {
     nextButtonClassName?: string;
     previousButtonClassName?: string;
     className?: string;
-    numberClassName?: string;
+    buttonClassName?: string;
     activeClassName?: string;
-    deactivateClassName?: string;
     ellipsisClassName?: string;
     numberType?: 'normal' | 'roman' | 'custom';
     numbers?: string[];

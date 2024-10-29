@@ -20,6 +20,18 @@ const PaginationDemo = () => {
         siblingCount={1}
         showFirstLast={true}
         showNextPrev={true}
+        numberType='roman'
+        onChange={handlePageChange}
+      />
+      <Pagination
+        count={10}
+        defaultPage={6}
+        boundaryCount={2}
+        siblingCount={0}
+        showFirstLast={true}
+        showNextPrev={true}
+        numberType='custom'
+        numbers={['১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯', '১০']}
         onChange={handlePageChange}
       />
 
