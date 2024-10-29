@@ -18,7 +18,7 @@ const NumberCounterDemo = () => {
 
       <div className='mb-4'>
         <h2 className='text-xl font-semibold'>Counter on Visible</h2>
-        <NumberCounter end={500} duration={1500} onVisible={true} />
+        <NumberCounter end={500} duration={5000} onVisible={true} repeatOnVisible={true} />
       </div>
     </div>
   )

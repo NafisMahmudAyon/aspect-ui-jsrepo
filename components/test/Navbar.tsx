@@ -11,7 +11,7 @@ import React from 'react'
 const NavbarDemo = () => {
   return (
     <div>
-      <Navbar>
+      <Navbar collapseBreakpoint='all'>
         <NavbarContainer>
           <NavbarList position="left">
             <NavbarItem>

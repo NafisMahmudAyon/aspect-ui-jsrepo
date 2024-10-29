@@ -10,11 +10,11 @@ interface NavbarCollapseBtnProps {
 }
 
 export const NavbarCollapseBtn: React.FC<NavbarCollapseBtnProps> = ({ className = '', icon, ...rest }) => {
-  const { toggleCollapse, collapseOn } = useNavbar()
+  const { toggleCollapse, collapseBreakpoint } = useNavbar()
 
   return (
     <button
-      className={cn('rounded-md p-2 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-200', `block ${collapseOn === 'md' && 'md:hidden'} ${collapseOn === 'lg' && 'lg:hidden'} `, className)}
+      className={cn('rounded-md p-2 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-200', `block ${collapseBreakpoint === 'sm' && 'sm:hidden'} ${collapseBreakpoint === 'md' && 'md:hidden'} ${collapseBreakpoint === 'lg' && 'lg:hidden'} ${collapseBreakpoint === 'xl' && 'xl:hidden'} ${collapseBreakpoint === '2xl' && '2xl:hidden'}`, className)}
       onClick={toggleCollapse}
       {...rest}
     >

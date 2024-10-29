@@ -1,18 +1,24 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
+import { cn } from '../../utils/cn'
 
 interface NumberCounterProps {
   end: number
   duration: number
   decimals?: number
   onVisible?: boolean
+  repeatOnVisible?: boolean
+  className?: string
 }
 
 export const NumberCounter: React.FC<NumberCounterProps> = ({
   end,
   duration,
   decimals = 0,
-  onVisible = false
+  onVisible = false,
+  repeatOnVisible = false,
+  className = '',
+  ...rest
 }) => {
   const [count, setCount] = useState(0)
   const counterRef = useRef<HTMLDivElement>(null)
@@ -37,7 +43,9 @@ export const NumberCounter: React.FC<NumberCounterProps> = ({
         ([entry]) => {
           if (entry.isIntersecting) {
             startCounting()
-            observer.disconnect()
+            if (!repeatOnVisible) {
+              observer.disconnect()
+            }
           }
         },
         { threshold: 0.1 }
@@ -51,7 +59,7 @@ export const NumberCounter: React.FC<NumberCounterProps> = ({
     } else {
       startCounting()
     }
-  }, [end, duration, onVisible])
+  }, [end, duration, onVisible, repeatOnVisible])
 
-  return <div ref={counterRef}>{count.toFixed(decimals)}</div>
+  return <div className={cn('text-800 dark:text-primary-200 text-h4', className)} ref={counterRef} {...rest}>{count.toFixed(decimals)}</div>
 }

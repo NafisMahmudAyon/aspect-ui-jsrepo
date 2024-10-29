@@ -2,11 +2,11 @@ import React from 'react';
 interface NavbarContextType {
     isCollapsed: boolean;
     toggleCollapse: () => void;
-    collapseOn: 'sm' | 'md' | 'lg' | 'xl';
+    collapseBreakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'all';
 }
 export declare const NavbarProvider: React.FC<{
     children: React.ReactNode;
-    collapseOn: 'sm' | 'md' | 'lg' | 'xl';
+    collapseBreakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'all';
 }>;
 export declare const useNavbar: () => NavbarContextType;
 export {};

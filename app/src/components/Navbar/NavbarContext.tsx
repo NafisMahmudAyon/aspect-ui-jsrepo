@@ -5,21 +5,21 @@ import React, { createContext, useContext, useState } from 'react'
 interface NavbarContextType {
   isCollapsed: boolean
   toggleCollapse: () => void
-  collapseOn: 'sm' | 'md' | 'lg' | 'xl'
+  collapseBreakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'all'
 }
 
 const NavbarContext = createContext<NavbarContextType | undefined>(undefined)
 
-export const NavbarProvider: React.FC<{ children: React.ReactNode, collapseOn: 'sm' | 'md' | 'lg' | 'xl' }> = ({
+export const NavbarProvider: React.FC<{ children: React.ReactNode, collapseBreakpoint: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'all' }> = ({
   children,
-  collapseOn = 'lg' // default value
+  collapseBreakpoint = 'md' // default value
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(true)
 
   const toggleCollapse = () => setIsCollapsed(prev => !prev)
 
   return (
-    <NavbarContext.Provider value={{ isCollapsed, toggleCollapse, collapseOn }}>
+    <NavbarContext.Provider value={{ isCollapsed, toggleCollapse, collapseBreakpoint }}>
       {children}
     </NavbarContext.Provider>
   )

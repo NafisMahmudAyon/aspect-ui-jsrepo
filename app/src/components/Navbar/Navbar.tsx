@@ -6,12 +6,12 @@ import { cn } from '../../utils/cn'
 interface NavbarProps {
   children: ReactNode
   className?: string
-  collapseOn?: 'sm' | 'md' | 'lg' | 'xl'
+  collapseBreakpoint?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'all'
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ children, className='', collapseOn='lg', ...rest }) => {
+export const Navbar: React.FC<NavbarProps> = ({ children, className = '', collapseBreakpoint ='md', ...rest }) => {
   return (
-    <NavbarProvider collapseOn={collapseOn}>
+    <NavbarProvider collapseBreakpoint={collapseBreakpoint}>
       <nav className={cn('relative bg-primary-100 dark:bg-primary-900 shadow-md', className)} {...rest}>
         {children}
       </nav>
