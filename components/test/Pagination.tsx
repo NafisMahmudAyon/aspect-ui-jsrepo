@@ -14,7 +14,7 @@ const PaginationDemo = () => {
     <div className='p-4'>
       <h1 className='mb-4 text-2xl font-bold'>Pagination Example</h1>
       <Pagination
-        count={20}
+        count={10}
         defaultPage={6}
         boundaryCount={2}
         siblingCount={1}

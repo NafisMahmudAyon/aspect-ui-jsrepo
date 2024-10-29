@@ -8,6 +8,21 @@ interface PaginationProps {
   siblingCount?: number // Number of sibling pages to show around the current page
   showFirstLast?: boolean // Option to show 'First' and 'Last' buttons
   showNextPrev?: boolean // Option to show 'Next' and 'Previous' buttons
+  firstButton?: React.ReactNode
+  lastButton?: React.ReactNode
+  nextButton?: React.ReactNode
+  previousButton?: React.ReactNode
+  firstButtonClassName?: string
+  lastButtonClassName?: string
+  nextButtonClassName?: string
+  previousButtonClassName?: string
+  className?: string
+  numberClassName?: string
+  activeClassName?: string
+  deactivateClassName?: string
+  ellipsisClassName?: string 
+  numberType?: 'normal' | 'roman' | 'custom'
+  numbers?: string[]
   onChange: (page: number) => void // Callback when a page is changed
 }
 

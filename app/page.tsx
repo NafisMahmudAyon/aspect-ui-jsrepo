@@ -66,7 +66,7 @@ export default function Home() {
       {/* <SwitchDemo /> */}
       {/* <UploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
-      {/* <PaginationDemo /> */}
+      <PaginationDemo />
       <DatePickerDemo />
       <TooltipDemo />
       {/* <SpinnerDemo /> */}
