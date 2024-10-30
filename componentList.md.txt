@@ -25,8 +25,8 @@
 - Label
 - Input (Text, Number, Password) //need style and other
 - Textarea //need style and other
-- Checkbox //need style and other
-- Radio Button //need style and other
+- Checkbox //need style and other // variant should customize
+- Radio Button //need style and other // variant should customize
 - Switch //need style and other
 - Toggle //need style and other
 - File Upload //need style and other

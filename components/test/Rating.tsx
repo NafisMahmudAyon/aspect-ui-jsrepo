@@ -1,24 +1,66 @@
 'use client'
-import { Rating } from '@/app/src/components/Rating/Rating'
+import { Avatar } from '@/app/src/components/Icon/Avatar'
+import { Rating } from '@/app/src'
+// import { Rating } from '@/app/src/components/Rating/Rating'
 import React from 'react'
 
 const RatingDemo = () => {
-  const handleRatingChange = (rating: number) => {
-    console.log(`New rating: ${rating}`)
-  }
+  const handleRatingChange = (event: React.ChangeEvent<HTMLInputElement>, rating: number) => {
+    console.log('Selected rating:', rating);
+    console.log('Event:', event);
+  };
 
   return (
     <div className='p-4'>
       <h1 className='mb-4 text-2xl font-bold'>Rating Component Example</h1>
-      <div className='space-y-4'>
-        <Rating initialRating={3.5} readOnly size={20} />
-        <Rating initialRating={3.2} readOnly size={50} />
-        <Rating initialRating={3.9} readOnly size={90} />
-        <Rating initialRating={4.8} readOnly size={10} />
+      <div className='flex flex-col space-y-4'>
+        {/* // 1. Basic usage with default props
+        <Rating />
+
+        // 2. Basic usage with onChange handler
+          <Rating onChange={handleRatingChange} /> */}
+
+          // 3. Custom max rating and initial value
         <Rating
-          initialRating={0}
-          onRatingChange={rating => console.log(`New rating: ${rating}`)}
-          size={20}
+          maxRating={10}
+          size={100}
+          initialRating={6.5}
+          unratedColor='#ff0000'
+          // readOnly
+        />
+
+{/* // 4. Custom star size and colors
+        <Rating
+          size={32}
+          starColor="#FFD700"    // Gold
+          hoverColor="#FFA500"   // Orange
+          unratedColor="#D3D3D3" // Light gray
+        />
+
+// 5. With rating texts
+        <Rating
+          ratingTexts={['Terrible', 'Poor', 'Average', 'Good', 'Excellent']}
+          initialRating={3.5}
+        />
+
+// 6. Read-only mode (for displaying static ratings)
+        <Rating
+          initialRating={4}
+          readOnly={true}
+        /> */}
+
+        // 8. Fully customized example
+        <Rating
+          maxRating={5}
+          initialRating={3.5}
+          
+          // onChange={handleRatingChange}
+          starColor={{ default:"#FFD700", dark: "#ff0000" }}
+          hoverColor="#FFA500"
+          unratedColor="#D3D3D3"
+          ratingTexts={['Poor', 'Fair', 'Good', 'Very Good', 'Excellent']}
+          readOnly={true}
+          icon={<Avatar size={100} />}
         />
       </div>
     </div>

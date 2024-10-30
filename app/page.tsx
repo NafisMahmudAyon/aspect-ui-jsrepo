@@ -62,7 +62,7 @@ export default function Home() {
       <InputDemo />
       {/* <TextareaDemo /> */}
       {/* <CheckboxDemo /> */}
-      {/* <RadioDemo /> */}
+      <RadioDemo />
       {/* <SwitchDemo /> */}
       {/* <UploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
@@ -71,7 +71,7 @@ export default function Home() {
       <TooltipDemo />
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}
-      {/* <RatingDemo /> */}
+      <RatingDemo />
       {/* <AlertDemo /> */}
       {/* <DividerDemo /> */}
       <NumberCounterDemo />
