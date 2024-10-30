@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
+import { cn } from '../../utils/cn'
 
 interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
   value: number
@@ -92,20 +93,20 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
 
   return (
     <div
-      className={`${className} my-2 flex w-full items-center gap-4`}
+      className={ cn("my-2 flex w-full items-center gap-4", className)}
       {...rest}
     >
       {contentPosition === 'left' && (
-        <span className={` ${contentClassName} min-w-8`}>
+        <span className={cn("min-w-10 text-primary-800 dark:text-primary-200", contentClassName)}>
           {!children && <>{`${percentage}%`}</>}
           {children && children}
         </span>
       )}
       <div
-        className={` ${containerClassName} flex-1 overflow-hidden rounded-full border p-1`}
+        className={cn("flex-1 overflow-hidden rounded-full border border-primary-800 dark:border-primary-200 p-1 bg-primary-100 dark:bg-primary-900", containerClassName)}
       >
         <div
-          className={` ${fillClassName} relative flex h-4 rounded-full bg-blue-200`}
+          className={cn("relative flex h-4 rounded-full bg-primary-800 dark:bg-primary-200", fillClassName)}
           role='progressbar'
           aria-valuenow={clampedValue}
           aria-valuemin={min}
@@ -115,7 +116,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         ></div>
       </div>
       {contentPosition === 'right' && (
-        <span className={` ${contentClassName} min-w-8`}>
+        <span className={cn("min-w-10 text-primary-800 dark:text-primary-200", contentClassName)}>
           {!children && <>{`${percentage}%`}</>}
           {children && children}
         </span>

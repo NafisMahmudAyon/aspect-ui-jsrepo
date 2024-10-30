@@ -9,10 +9,10 @@ const ProgressBarDemo = () => {
         value={85}
         animateOnVisible
         duration={3}
-        className='bg-red-500'
-        containerClassName='bg-blue-500'
-        fillClassName='!bg-green-500'
-        contentClassName='bg-yellow-500'
+        className=''
+        containerClassName=''
+        fillClassName=''
+        contentClassName=''
       />
     </div>
   )

@@ -49,7 +49,7 @@ export default function Home() {
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
       {/* <AvatarDemo /> */}
-      {/* <ProgressBarDemo /> */}
+      <ProgressBarDemo />
       {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
       <BreadcrumbDemo />
