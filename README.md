@@ -58,15 +58,20 @@ Edit your tailwind.config.js file:
 <!-- import { aspectTheme } from 'aspect-ui/aspectTheme' -->
 
 ```js
+import { AspectUITheme } from 'aspect-ui/AspectUITheme'
+
 const config = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {}
+  theme: {},
 }
+
+export default AspectUITheme(config)
 ```
 
 `Step 5:` Add Tailwind CSS to your CSS file
 
 ```css
+@import 'aspect-ui/css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -101,6 +106,8 @@ yarn add aspect-ui
 Edit your tailwind.config.js file:
 
 ```js
+import { AspectUITheme } from 'aspect-ui/AspectUITheme'
+
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -115,11 +122,14 @@ module.exports = {
   },
   plugins: []
 }
+
+export default AspectUITheme(config)
 ```
 
 `Step 4:` Add Tailwind CSS to your CSS file
 
 ```css
+@import 'aspect-ui/css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
