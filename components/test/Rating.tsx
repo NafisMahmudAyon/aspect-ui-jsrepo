@@ -1,7 +1,7 @@
 'use client'
 import { Avatar } from '@/app/src/components/Icon/Avatar'
-import { Rating } from '@/app/src/components/Rating/Ratingcopy'
 // import { Rating } from '@/app/src/components/Rating/Rating'
+import {Rating} from '@/app/src/components/Rating/Rating'
 import React from 'react'
 
 const RatingDemo = () => {
@@ -25,8 +25,9 @@ const RatingDemo = () => {
           maxRating={10}
           size={100}
           initialRating={6.5}
-          unratedColor='#ff0000'
-          readOnly
+          // unratedColor='text-primary-500'
+          // ratedColor='text-error-900'
+          // readOnly
         />
 
 {/* // 4. Custom star size and colors
@@ -55,11 +56,11 @@ const RatingDemo = () => {
           initialRating={3.5}
           
           // onChange={handleRatingChange}
-          starColor={{ default:"#FFD700", dark: "#ff0000" }}
+          starColor="#FFD700"
           hoverColor="#FFA500"
           unratedColor="#D3D3D3"
           ratingTexts={['Poor', 'Fair', 'Good', 'Very Good', 'Excellent']}
-          readOnly={true}
+          // readOnly={true}
           icon={<Avatar size={100} />}
         />
       </div>
