@@ -58,7 +58,7 @@ export default function Home() {
       {/* <TableDemo /> */}
       <DropdownDemo />
       <NavbarDemo />
-      {/* <SidebarDemo /> */}
+      <SidebarDemo />
       <InputDemo />
       {/* <TextareaDemo /> */}
       {/* <CheckboxDemo /> */}
@@ -71,7 +71,7 @@ export default function Home() {
       <TooltipDemo />
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}
-      <RatingDemo />
+      {/* <RatingDemo /> */}
       {/* <AlertDemo /> */}
       {/* <DividerDemo /> */}
       <NumberCounterDemo />

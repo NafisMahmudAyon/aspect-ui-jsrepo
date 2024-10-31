@@ -27,9 +27,16 @@ export const UseThemeSwitcher = (): [
   }, [])
 
   useEffect(() => {
-    window.localStorage.setItem('theme', mode)
-    document.documentElement.classList.toggle('dark', mode === 'dark')
-  }, [mode])
+        if(mode === "dark") {
+            window.localStorage.setItem("theme", "dark");
+            document.documentElement.classList.add("dark")
+        } 
+        if(mode === 'light') {
+            window.localStorage.setItem("theme", "light");
+            document.documentElement.classList.remove("dark")
+        }
+
+    }, [mode])
 
   return [mode, setMode]
 }

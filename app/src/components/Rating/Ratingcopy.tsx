@@ -139,7 +139,7 @@ const getThemeColor = (color: ColorType, theme: 'default' | 'dark'): string => {
   return color[theme];
 };
 
-const Rating: React.FC<RatingProps> = ({
+export const Rating: React.FC<RatingProps> = ({
   maxRating = 5,
   initialRating = 0,
   size = 24,
@@ -154,6 +154,12 @@ const Rating: React.FC<RatingProps> = ({
 }) => {
   const [rating, setRating] = useState(initialRating);
   const [hover, setHover] = useState<number | null>(null);
+  var darkModeMediaQuery = {}
+  if (typeof window !== 'undefined' && window.matchMedia) {
+     darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+     console.log(window.matchMedia)
+  }
+  console.log(darkModeMediaQuery)
 
   useEffect(() => {
     setRating(initialRating);

@@ -1,6 +1,6 @@
 'use client'
 import { Avatar } from '@/app/src/components/Icon/Avatar'
-import { Rating } from '@/app/src'
+import { Rating } from '@/app/src/components/Rating/Ratingcopy'
 // import { Rating } from '@/app/src/components/Rating/Rating'
 import React from 'react'
 
@@ -26,7 +26,7 @@ const RatingDemo = () => {
           size={100}
           initialRating={6.5}
           unratedColor='#ff0000'
-          // readOnly
+          readOnly
         />
 
 {/* // 4. Custom star size and colors
