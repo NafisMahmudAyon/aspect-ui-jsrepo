@@ -10,5 +10,5 @@ interface SidebarContainerProps {
 export const SidebarContainer: React.FC<SidebarContainerProps> = ({
   children
 }) => {
-  return <div className='flex-grow overflow-y-auto'>{children}</div>
+  return <div className='flex-grow overflow-y-auto my-2 space-y-1'>{children}</div>
 }
