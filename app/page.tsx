@@ -75,7 +75,7 @@ export default function Home() {
       {/* <AlertDemo /> */}
       {/* <DividerDemo /> */}
       <NumberCounterDemo />
-      {/* <SkeletonDemo /> */}
+      <SkeletonDemo />
       {/* <SliderDemo /> */}
       {/* <ToastDemo /> */}
       {/* <BackToTopDemo />   */}
