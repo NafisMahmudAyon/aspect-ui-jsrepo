@@ -1,18 +1,24 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
+import { cn } from '../../utils/cn'
 
 interface SliderProps {
-  min: number
-  max: number
+  min?: number // default 0
+  max?: number // default 100
+  step?: number // default 1
   defaultValue: number[]
   onChange?: (values: number[]) => void
+  className?: string
 }
 
 export const Slider: React.FC<SliderProps> = ({
-  min,
-  max,
+  min = 0,
+  max = 100,
+  step = 1,
   defaultValue,
-  onChange
+  onChange,
+  className = "",
+  ...rest
 }) => {
   const [values, setValues] = useState<number[]>(defaultValue)
   const sliderRef = useRef<HTMLDivElement>(null)
@@ -22,6 +28,12 @@ export const Slider: React.FC<SliderProps> = ({
       onChange(values)
     }
   }, [values, onChange])
+
+  // Helper function to round value to nearest step
+  const roundToStep = (value: number): number => {
+    const steps = Math.round((value - min) / step)
+    return Math.min(max, Math.max(min, min + (steps * step)))
+  }
 
   const handleMouseDown = (index: number) => (e: React.MouseEvent) => {
     e.preventDefault()
@@ -33,11 +45,12 @@ export const Slider: React.FC<SliderProps> = ({
           0,
           Math.min(1, (e.clientX - rect.left) / rect.width)
         )
-        const newValue = Math.round(percentage * (max - min) + min)
+        const rawValue = percentage * (max - min) + min
+        const steppedValue = roundToStep(rawValue) // Round to nearest step
 
         setValues(prevValues => {
           const newValues = [...prevValues]
-          newValues[index] = newValue
+          newValues[index] = steppedValue
           return newValues.sort((a, b) => a - b)
         })
       }
@@ -58,23 +71,23 @@ export const Slider: React.FC<SliderProps> = ({
 
   return (
     <div
-      className='relative h-2 w-full rounded-full bg-gray-200'
+      className={cn('relative h-2 w-full rounded-full bg-primary-200 dark:bg-primary-800', className)}
       ref={sliderRef}
+      {...rest}
     >
       <div
-        className='absolute h-full rounded-full bg-blue-500'
+        className='absolute h-full rounded-full bg-primary-800 dark:bg-primary-200'
         style={{
-          left: values.length === 1 ? '0%' : `${getLeftPosition(values[0])}%`,
-          right:
-            values.length === 1
-              ? `${100 - getLeftPosition(values[0])}%`
-              : `${100 - getLeftPosition(values[1])}%`
+          left: `${values.length === 1 ? '0' : getLeftPosition(values[0])}%`,
+          right: `${values.length === 1
+            ? 100 - getLeftPosition(values[0])
+            : 100 - getLeftPosition(values[1])}%`
         }}
       ></div>
       {values.map((value, index) => (
         <div
           key={index}
-          className='absolute h-4 w-4 cursor-pointer rounded-full border-2 border-blue-500 bg-white'
+          className='absolute size-4 cursor-pointer rounded-full border-2 border-primary-800 dark:border-primary-200 bg-primary-200 dark:bg-primary-800'
           style={{
             left: `calc(${getLeftPosition(value)}% - 0.5rem)`,
             top: '-0.25rem'

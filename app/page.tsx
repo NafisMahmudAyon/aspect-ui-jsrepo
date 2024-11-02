@@ -44,7 +44,7 @@ export default function Home() {
   return (
     <main className='mx-auto min-h-screen bg-secondary-100 px-20 py-24 dark:bg-secondary-950'>
       <Dark />
-      <AccordionDemo />
+      {/* <AccordionDemo /> */}
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
@@ -52,31 +52,31 @@ export default function Home() {
       <ProgressBarDemo />
       {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
-      <BreadcrumbDemo />
-      <ModalDemo />
+      {/* <BreadcrumbDemo /> */}
+      {/* <ModalDemo /> */}
       {/* <TabsDemo /> */}
       {/* <TableDemo /> */}
-      <DropdownDemo />
-      <NavbarDemo />
-      <SidebarDemo />
-      <InputDemo />
+      {/* <DropdownDemo /> */}
+      {/* <NavbarDemo /> */}
+      {/* <SidebarDemo /> */}
+      {/* <InputDemo /> */}
       {/* <TextareaDemo /> */}
       {/* <CheckboxDemo /> */}
-      <RadioDemo />
+      {/* <RadioDemo /> */}
       {/* <SwitchDemo /> */}
       {/* <UploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
-      <PaginationDemo />
-      <DatePickerDemo />
-      <TooltipDemo />
+      {/* <PaginationDemo /> */}
+      {/* <DatePickerDemo /> */}
+      {/* <TooltipDemo /> */}
       {/* <SpinnerDemo /> */}
       {/* <StepperDemo /> */}
-      <RatingDemo />
+      {/* <RatingDemo /> */}
       {/* <AlertDemo /> */}
       {/* <DividerDemo /> */}
-      <NumberCounterDemo />
-      <SkeletonDemo />
-      {/* <SliderDemo /> */}
+      {/* <NumberCounterDemo /> */}
+      {/* <SkeletonDemo /> */}
+      <SliderDemo />
       {/* <ToastDemo /> */}
       {/* <BackToTopDemo />   */}
       {/* <TimelineDemo /> */}
