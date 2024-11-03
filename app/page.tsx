@@ -63,7 +63,7 @@ export default function Home() {
       {/* <TextareaDemo /> */}
       {/* <CheckboxDemo /> */}
       {/* <RadioDemo /> */}
-      {/* <SwitchDemo /> */}
+      <SwitchDemo />
       {/* <UploadDemo /> */}
       {/* <ToggleButtonDemo /> */}
       {/* <PaginationDemo /> */}
