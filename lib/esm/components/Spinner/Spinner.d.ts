@@ -1,7 +1,7 @@
-import React from 'react';
-interface SpinnerProps {
+import React, { HTMLAttributes } from 'react';
+interface SpinnerProps extends HTMLAttributes<HTMLDivElement> {
     size?: 'small' | 'medium' | 'large';
-    color?: string;
+    className?: string;
     thickness?: number;
 }
 export declare const Spinner: React.FC<SpinnerProps>;

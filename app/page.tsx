@@ -69,8 +69,8 @@ export default function Home() {
       {/* <PaginationDemo /> */}
       {/* <DatePickerDemo /> */}
       {/* <TooltipDemo /> */}
-      {/* <SpinnerDemo /> */}
-      {/* <StepperDemo /> */}
+      <SpinnerDemo />
+      <StepperDemo />
       {/* <RatingDemo /> */}
       {/* <AlertDemo /> */}
       {/* <DividerDemo /> */}
