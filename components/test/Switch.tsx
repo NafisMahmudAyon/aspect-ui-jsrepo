@@ -1,5 +1,6 @@
 'use client'
 
+import { Left, Right } from '@/app/src/components/Icon/Arrow'
 import { Switch } from '@/app/src/components/Switch'
 import React, { useState } from 'react'
 
@@ -21,6 +22,26 @@ const SwitchDemo = () => {
       <p className='mt-4'>
         Feature is currently {isSwitched ? 'enabled' : 'disabled'}.
       </p>
+      <Switch checked={isSwitched}
+      onChange={handleSwitchChange} 
+      activeSwitchIcon={<Right />}
+      deactiveSwitchIcon={<Left />}
+      switchIconEnabled={true}
+      size='sm'
+      />
+      <Switch checked={isSwitched}
+      onChange={handleSwitchChange} 
+      activeSwitchIcon={<Right />}
+      deactiveSwitchIcon={<Left />}
+      switchIconEnabled={true}
+      />
+      <Switch checked={isSwitched}
+      onChange={handleSwitchChange} 
+      activeSwitchIcon={<Right />}
+      deactiveSwitchIcon={<Left />}
+      switchIconEnabled={true}
+      size='lg'
+      />
     </div>
   )
 }

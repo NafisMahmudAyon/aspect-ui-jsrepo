@@ -6,7 +6,15 @@ interface SwitchProps {
     label?: string;
     className?: string;
     switchClassName?: string;
+    activeClassName?: string;
+    deactiveClassName?: string;
+    activeSwitchClassName?: string;
+    deactiveSwitchClassName?: string;
     labelClassName?: string;
+    switchIconEnabled?: boolean;
+    activeSwitchIcon?: React.ReactNode;
+    deactiveSwitchIcon?: React.ReactNode;
+    size?: "sm" | "md" | "lg";
 }
 export declare const Switch: React.FC<SwitchProps>;
 export {};

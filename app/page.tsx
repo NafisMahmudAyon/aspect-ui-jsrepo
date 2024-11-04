@@ -52,9 +52,9 @@ export default function Home() {
       <ProgressBarDemo />
       {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
-      {/* <BreadcrumbDemo /> */}
+      <BreadcrumbDemo />
       {/* <ModalDemo /> */}
-      {/* <TabsDemo /> */}
+      <TabsDemo />
       {/* <TableDemo /> */}
       {/* <DropdownDemo /> */}
       {/* <NavbarDemo /> */}

@@ -10,7 +10,15 @@ interface SwitchProps {
   label?: string
   className?: string
   switchClassName?: string
+  activeClassName?: string
+  deactiveClassName?: string
+  activeSwitchClassName?: string
+  deactiveSwitchClassName?: string
   labelClassName?: string
+  switchIconEnabled?: boolean
+  activeSwitchIcon?: React.ReactNode
+  deactiveSwitchIcon?: React.ReactNode
+  size?: "sm" | "md" | "lg"
 }
 
 export const Switch: React.FC<SwitchProps> = ({
@@ -18,12 +26,32 @@ export const Switch: React.FC<SwitchProps> = ({
   onChange,
   disabled = false,
   label,
+  size ='md',
   className = '',
   switchClassName = '',
-  labelClassName = ''
+  activeClassName = '',
+  deactiveClassName = '',
+  activeSwitchClassName = '',
+  deactiveSwitchClassName = '',
+  labelClassName = '',
+  switchIconEnabled = true,
+  activeSwitchIcon,
+  deactiveSwitchIcon
 }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.checked)
+  }
+
+  const sizeClasses = {
+    sm: 'w-[28px] h-[16px]',
+    md: 'w-[36px] h-[20px]',
+    lg: 'w-[48px] h-[28px]',
+  }
+
+  const switchSizeClasses = {
+    sm: 'size-[12px]',
+    md: 'size-[16px]',
+    lg: 'size-[24px]',
   }
 
   return (
@@ -39,11 +67,17 @@ export const Switch: React.FC<SwitchProps> = ({
           disabled={disabled}
         />
         <div
-          className={cn("h-6 w-10 rounded-full bg-gray-200 shadow-inner transition-colors duration-300 ease-in-out", checked ? 'bg-blue-500' : '')}
+          className={cn("rounded-full shadow-inner transition-colors duration-300 ease-in-out", sizeClasses[size], checked ? cn('bg-primary-900 dark:bg-primary-200', activeClassName) : cn('bg-primary-200 dark:bg-primary-900', deactiveClassName))}
         ></div>
         <div
-          className={cn("absolute inset-y-1 left-1 h-4 w-4 rounded-full bg-white shadow transition-transform duration-300 ease-in-out", checked ? 'translate-x-full transform' : '')}
-        ></div>
+          className={cn("absolute -translate-y-1/2 top-1/2 left-0.5 rounded-full flex items-center justify-center shadow leading-none transition-transform duration-300 ease-in-out", switchSizeClasses[size], checked ? cn('translate-x-[calc(100%-0.125rem)] transform bg-primary-200 dark:bg-primary-900', activeSwitchClassName) : cn('bg-primary-900 dark:bg-primary-200', deactiveSwitchClassName))}
+        >
+          {switchIconEnabled && activeSwitchIcon && (
+            <>
+            { deactiveSwitchIcon ? <>{checked ? activeSwitchIcon : deactiveSwitchIcon}</> : activeSwitchIcon}
+            </>
+          )}
+        </div>
       </div>
       {label && <span className={cn("ml-3", labelClassName)}>{label}</span>}
     </label>
