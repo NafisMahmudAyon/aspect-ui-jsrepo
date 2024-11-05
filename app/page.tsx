@@ -79,7 +79,7 @@ export default function Home() {
       <SliderDemo />
       {/* <ToastDemo /> */}
       {/* <BackToTopDemo />   */}
-      {/* <TimelineDemo /> */}
+      <TimelineDemo />
       <TypographyDemo />
       {/* <MasonryDemo /> */}
       {/* <p className='text-body2  '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni delectus ab commodi est. Deserunt quos necessitatibus corporis sint hic, nulla fugit tenetur nam perspiciatis maiores aliquid veniam. Nisi, quae modi!</p> */}

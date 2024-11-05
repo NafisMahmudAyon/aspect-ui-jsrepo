@@ -1,63 +1,33 @@
-import React, { ReactNode } from 'react'
+// components/Timeline/Timeline.tsx
+import React from 'react';
+import { TimelineItem } from './TimelineItem';
 
-export interface TimelineItemProps {
-  date: string
-  title: string
-  description: ReactNode
-  icon?: ReactNode
-}
-
-interface TimelineProps {
-  items: TimelineItemProps[]
-  position: 'left' | 'right'
-  lineStyle?: 'solid' | 'dashed' | string
-}
-
-const TimelineItem: React.FC<
-  TimelineItemProps & { position: 'left' | 'right' }
-> = ({ date, title, description, icon, position }) => {
-  return (
-    <div
-      className={`flex ${position === 'right' ? '' : 'flex-row-reverse'} mb-8 items-start`}
-    >
-      <div
-        className={`flex-1 ${position == 'left' ? 'text-start' : 'text-end'} ${position === 'right' ? 'pr-4' : 'pl-4'}`}
-      >
-        <div className='text-sm text-gray-500'>{date}</div>
-        <h3 className='text-lg font-semibold'>{title}</h3>
-        <div className='mt-2'>{description}</div>
-      </div>
-      <div className='z-10 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500'>
-        {icon || <div className='h-3 w-3 rounded-full bg-white' />}
-      </div>
-    </div>
-  )
-}
+type TimelineProps = {
+  children: React.ReactNode;
+  position?: 'left' | 'right' | 'mixed';
+  className?: string;
+  lineClassName?: string;
+};
 
 export const Timeline: React.FC<TimelineProps> = ({
-  items,
-  position,
-  lineStyle = 'solid'
+  children,
+  position = 'left'
 }) => {
-  const lineClasses = `absolute ${position === 'left' ? 'left-4' : 'right-4'} top-0 w-px h-full ${
-    lineStyle === 'dashed'
-      ? 'border-l-2 border-dashed border-gray-300'
-      : 'bg-gray-300'
-  }`
-
   return (
-    <div className='relative'>
-      <div
-        className={lineClasses}
-        style={
-          lineStyle !== 'solid' && lineStyle !== 'dashed'
-            ? { borderLeft: lineStyle }
-            : {}
-        }
-      ></div>
-      {items.map((item, index) => (
-        <TimelineItem key={index} {...item} position={position} />
-      ))}
+    <div className="relative mx-auto w-full max-w-3xl">
+      <div className="absolute left-1/2 h-full w-0.5 -translate-x-1/2 bg-gray-200"></div>
+      <div className="relative">
+        {React.Children.map(children, (child, index) => {
+          if (React.isValidElement<any>(child) && child.type === TimelineItem) {
+            return React.cloneElement(child, {
+              position: position === 'mixed'
+                ? index % 2 === 0 ? 'left' : 'right'
+                : position
+            });
+          }
+          return child;
+        })}
+      </div>
     </div>
-  )
-}
+  );
+};

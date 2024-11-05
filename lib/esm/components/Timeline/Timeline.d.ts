@@ -1,14 +1,9 @@
-import React, { ReactNode } from 'react';
-export interface TimelineItemProps {
-    date: string;
-    title: string;
-    description: ReactNode;
-    icon?: ReactNode;
-}
-interface TimelineProps {
-    items: TimelineItemProps[];
-    position: 'left' | 'right';
-    lineStyle?: 'solid' | 'dashed' | string;
-}
+import React from 'react';
+type TimelineProps = {
+    children: React.ReactNode;
+    position?: 'left' | 'right' | 'mixed';
+    className?: string;
+    lineClassName?: string;
+};
 export declare const Timeline: React.FC<TimelineProps>;
 export {};
