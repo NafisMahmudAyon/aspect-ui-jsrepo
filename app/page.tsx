@@ -59,8 +59,8 @@ export default function Home() {
       {/* <DropdownDemo /> */}
       {/* <NavbarDemo /> */}
       {/* <SidebarDemo /> */}
-      {/* <InputDemo /> */}
-      {/* <TextareaDemo /> */}
+      <InputDemo />
+      <TextareaDemo />
       {/* <CheckboxDemo /> */}
       {/* <RadioDemo /> */}
       <SwitchDemo />

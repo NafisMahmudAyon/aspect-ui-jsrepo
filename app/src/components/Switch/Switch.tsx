@@ -51,7 +51,7 @@ export const Switch: React.FC<SwitchProps> = ({
   const switchSizeClasses = {
     sm: 'size-[12px]',
     md: 'size-[16px]',
-    lg: 'size-[24px]',
+    lg: 'size-[22px]',
   }
 
   return (

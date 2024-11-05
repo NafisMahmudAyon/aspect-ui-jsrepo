@@ -32,7 +32,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <fieldset className={cn('mb-4', wrapperClassName)}>
         {label && (
-          <label className={cn('mb-1 block text-sm font-medium text-gray-700', labelClassName)}>
+          <label className={cn('mb-1 block text-sm font-medium text-secondary-800 dark:text-secondary-200', labelClassName)}>
             {label}
           </label>
         )}

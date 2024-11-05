@@ -3,30 +3,34 @@
 'use client'
 
 import React, { forwardRef } from 'react'
+import { cn } from '../../utils/cn'
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   label?: string
   error?: string
   className?: string
+  labelClassName?: string
+  wrapperClassName?: string
+  errorClassName?: string
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ label, error, className, ...props }, ref) => {
+  ({ label, error, className = "", labelClassName = "", wrapperClassName = "", errorClassName = "", ...rest }, ref) => {
     return (
-      <div className='mb-4'>
+      <fieldset className={cn('mb-4', wrapperClassName)}>
         {label && (
-          <label className='mb-1 block text-sm font-medium text-gray-700'>
+          <label className={cn('mb-1 block text-sm font-medium text-secondary-800 dark:text-secondary-200', labelClassName)}>
             {label}
           </label>
         )}
         <textarea
           ref={ref}
-          className={`w-full rounded-lg border px-3 py-2 text-gray-700 focus:border-blue-500 focus:outline-none ${error ? 'border-red-500' : 'border-gray-300'} ${className})`}
-          {...props}
+          className={`w-full rounded-md border bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 placeholder:text-secondary-500 px-3 py-2 shadow-sm focus-visible:border-primary-200 focus:outline-none focus:ring-2 focus:ring-primary-200 ${error ? 'border-error-500' : 'border-gray-300'} ${className})`}
+          {...rest}
         />
-        {error && <p className='mt-1 text-xs text-red-500'>{error}</p>}
-      </div>
+        {error && <p className={cn('mt-1 text-xs text-error-600',errorClassName)}>{error}</p>}
+      </fieldset>
     )
   }
 )
