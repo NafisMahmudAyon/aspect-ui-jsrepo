@@ -4,6 +4,7 @@ type TimelineProps = {
     position?: 'left' | 'right' | 'mixed';
     className?: string;
     lineClassName?: string;
+    lineStyle?: 'solid' | 'dashed';
 };
 export declare const Timeline: React.FC<TimelineProps>;
 export {};

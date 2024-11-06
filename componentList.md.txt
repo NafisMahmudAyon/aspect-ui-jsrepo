@@ -47,7 +47,7 @@
 - Slider  //need style and other
 - Toast  //need style and other
 - Back To Top  //need style and other
-- Timeline //need style and other
+- Timeline //wait for both position handle 
 - Typography //need style and other
 - Select 
 - Chip/Tag

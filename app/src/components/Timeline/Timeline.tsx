@@ -1,28 +1,34 @@
 // components/Timeline/Timeline.tsx
 import React from 'react';
 import { TimelineItem } from './TimelineItem';
+import { cn } from '../../utils/cn';
 
 type TimelineProps = {
   children: React.ReactNode;
   position?: 'left' | 'right' | 'mixed';
   className?: string;
   lineClassName?: string;
+  lineStyle?: 'solid' | 'dashed';
 };
 
 export const Timeline: React.FC<TimelineProps> = ({
   children,
-  position = 'left'
+  position = 'left',
+  lineStyle ='solid',
+  className,
+  lineClassName,
+  ...rest
 }) => {
+  const isMixed = position === 'mixed';
   return (
-    <div className="relative mx-auto w-full max-w-3xl">
-      <div className="absolute left-1/2 h-full w-0.5 -translate-x-1/2 bg-gray-200"></div>
+    <div className={cn("relative", isMixed ? 'mx-auto max-w-3xl' : 'w-full', className)} {...rest}>
+      <div className={cn("absolute h-full border border-primary-900 dark:border-primary-200", position === 'mixed' ? "left-1/2 -translate-x-1/2" : position === 'left' ? "right-0" : "", lineStyle === 'dashed' ? 'border-dashed' : '')}></div>
       <div className="relative">
         {React.Children.map(children, (child, index) => {
           if (React.isValidElement<any>(child) && child.type === TimelineItem) {
             return React.cloneElement(child, {
-              position: position === 'mixed'
-                ? index % 2 === 0 ? 'left' : 'right'
-                : position
+              position: isMixed ? (index % 2 === 0 ? 'left' : 'right') : position,
+              isMixed: isMixed
             });
           }
           return child;
