@@ -7,11 +7,14 @@ const ToastDemo: React.FC = () => {
 
   const handleClick = () => {
     addToast({
+      className: "",
       message: 'This is a toast with an action',
+      messageClassName: "",
       type: 'info',
       action: {
         label: 'Undo',
-        onClick: () => console.log('Undo clicked')
+        onClick: () => console.log('Undo clicked'),
+        buttonClassName: ""
       }
     })
   }

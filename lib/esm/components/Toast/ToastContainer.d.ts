@@ -2,10 +2,15 @@ import React from 'react';
 interface ToastAction {
     label: string;
     onClick: () => void;
+    buttonClassName?: string;
 }
 interface ToastOptions {
+    className?: string;
+    containerClassName?: string;
     message: string;
     description?: string;
+    messageClassName?: string;
+    descriptionClassName?: string;
     type?: 'success' | 'error' | 'info' | 'warning';
     duration?: number;
     action?: ToastAction;

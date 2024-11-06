@@ -77,7 +77,7 @@ export default function Home() {
       {/* <NumberCounterDemo /> */}
       {/* <SkeletonDemo /> */}
       <SliderDemo />
-      {/* <ToastDemo /> */}
+      <ToastDemo />
       {/* <BackToTopDemo />   */}
       <TimelineDemo />
       <TypographyDemo />
