@@ -10,6 +10,7 @@ interface ToastOptions {
     message: string;
     description?: string;
     messageClassName?: string;
+    messageAreaClassName?: string;
     descriptionClassName?: string;
     type?: 'success' | 'error' | 'info' | 'warning';
     duration?: number;
