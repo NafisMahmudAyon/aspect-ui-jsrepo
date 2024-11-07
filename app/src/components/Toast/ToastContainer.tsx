@@ -14,6 +14,7 @@ interface ToastProps {
   message: string
   description?: string
   messageClassName?: string
+  messageAreaClassName?: string
   descriptionClassName?: string
   type?: 'success' | 'error' | 'info' | 'warning'
   duration?: number
@@ -27,6 +28,7 @@ const Toast: React.FC<ToastProps> = ({
   message,
   description,
   messageClassName = '',
+  messageAreaClassName = '',
   descriptionClassName = '',
   type = 'info',
   duration = 3000,
@@ -66,10 +68,12 @@ const Toast: React.FC<ToastProps> = ({
       className={cn("fixed z-[9999] bottom-4 right-4 rounded-md px-4 py-2 shadow-lg transition-opacity duration-300", getBackgroundColor(), className)}
     >
       <div className={cn('flex items-center justify-between', containerClassName)}>
-        <div className={cn("font-medium", messageClassName)}>{message}</div>
-        {description && ( // Render description if provided
-          <div className={cn('mt-1 text-sm opacity-90', descriptionClassName)}>{description}</div>
-        )}
+        <div className={messageAreaClassName}>
+          <div className={cn("font-medium", messageClassName)}>{message}</div>
+          {description && ( // Render description if provided
+            <div className={cn('mt-1 text-sm opacity-90', descriptionClassName)}>{description}</div>
+          )}
+        </div>
         {action && (
           <button
             onClick={action.onClick}
@@ -89,6 +93,7 @@ interface ToastOptions {
   message: string
   description?: string
   messageClassName?: string
+  messageAreaClassName?: string
   descriptionClassName?: string
   type?: 'success' | 'error' | 'info' | 'warning'
   duration?: number
@@ -153,7 +158,7 @@ export const useToast = () => {
 
   const ToastContainer: React.FC = () => (
     <>
-    {/* <div className='fixed bottom-4 right-4 flex flex-col space-y-2'> */}
+      {/* <div className='fixed bottom-4 right-4 flex flex-col space-y-2'> */}
       {toasts.map((toast, index) => (
         <Toast
           key={index}
@@ -162,6 +167,7 @@ export const useToast = () => {
           message={toast.message}
           description={toast.description}
           messageClassName={toast.messageClassName}
+          messageAreaClassName={toast.messageAreaClassName}
           descriptionClassName={toast.descriptionClassName}
           type={toast.type}
           duration={toast.duration}
@@ -169,7 +175,7 @@ export const useToast = () => {
           action={toast.action}
         />
       ))}
-    {/* </div> */}
+      {/* </div> */}
     </>
   )
 

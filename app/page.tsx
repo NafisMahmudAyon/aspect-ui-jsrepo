@@ -65,7 +65,7 @@ export default function Home() {
       {/* <RadioDemo /> */}
       <SwitchDemo />
       {/* <UploadDemo /> */}
-      {/* <ToggleButtonDemo /> */}
+      <ToggleButtonDemo />
       {/* <PaginationDemo /> */}
       {/* <DatePickerDemo /> */}
       {/* <TooltipDemo /> */}
