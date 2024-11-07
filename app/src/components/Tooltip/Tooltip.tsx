@@ -145,9 +145,10 @@ const Tooltip: React.FC<TooltipProps> = ({
         {actionElement}
       </div>
       {isVisible && (
-        <div className={cn('bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 px-2 py-1 rounded-md',contentClassName)} style={getTooltipStyle()}>
+        <div className={cn('bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 px-2 py-1 rounded-md text-body2 w-max',contentClassName)} style={getTooltipStyle()}>
           {contentElement}
           <div style={getArrowStyle()}></div>
+          {/* <div className={cn("absolute size-0 border-[5px] border-solid border-transparent", direction === 'top' && "bottom-[-10px] left-1/2 -translate-x-1/2 ", ``)}></div> */}
         </div>
       )}
     </div>

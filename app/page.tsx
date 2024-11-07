@@ -68,7 +68,7 @@ export default function Home() {
       <ToggleButtonDemo />
       {/* <PaginationDemo /> */}
       {/* <DatePickerDemo /> */}
-      {/* <TooltipDemo /> */}
+      <TooltipDemo />
       <SpinnerDemo />
       <StepperDemo />
       {/* <RatingDemo /> */}
