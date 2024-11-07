@@ -10,6 +10,8 @@ interface ToggleButtonGroupContextType {
   type: ToggleButtonGroupType
   selectedValues: string | string[]
   handleChange: (value: string) => void
+  outline?: boolean
+  disabled?: boolean
 }
 
 const ToggleButtonGroupContext = createContext<
@@ -31,7 +33,10 @@ interface ToggleButtonGroupProviderProps {
   type: ToggleButtonGroupType
   defaultValue?: string | string[]
   onChange?: (value: string | string[]) => void
+  outline?: boolean
+  disabled?: boolean
 }
+
 
 export const ToggleButtonGroupProvider: React.FC<
   ToggleButtonGroupProviderProps
@@ -39,7 +44,9 @@ export const ToggleButtonGroupProvider: React.FC<
   children,
   type,
   defaultValue = type === 'single' ? '' : [],
-  onChange
+  onChange,
+  outline = false,
+  disabled = false
 }) => {
   const [selectedValues, setSelectedValues] = useState<string | string[]>(
     defaultValue
@@ -66,7 +73,7 @@ export const ToggleButtonGroupProvider: React.FC<
 
   return (
     <ToggleButtonGroupContext.Provider
-      value={{ type, selectedValues, handleChange }}
+      value={{ type, selectedValues, handleChange, outline, disabled }}
     >
       {children}
     </ToggleButtonGroupContext.Provider>

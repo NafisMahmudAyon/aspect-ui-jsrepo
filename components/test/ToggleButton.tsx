@@ -24,7 +24,7 @@ const ToggleButtonDemo = () => {
       <h2 className='mb-2 mt-6 text-xl font-semibold'>
         Single Selection Group
       </h2>
-      <ToggleButtonGroup type='single' onChange={handleSingleChange}>
+      <ToggleButtonGroup type='single' outline={true} onChange={handleSingleChange}>
         <ToggleButton value='option1'>Option 1</ToggleButton>
         <ToggleButton value='option2'>Option 2</ToggleButton>
         <ToggleButton value='option3'>Option 3</ToggleButton>
@@ -33,12 +33,12 @@ const ToggleButtonDemo = () => {
       <h2 className='mb-2 mt-6 text-xl font-semibold'>
         Multiple Selection Group
       </h2>
-      <ToggleButtonGroup type='multiple' onChange={handleMultipleChange}>
+      <ToggleButtonGroup type='multiple' disabled outline={true} onChange={handleMultipleChange}>
         <ToggleButton value='option1'>Option 1</ToggleButton>
         <ToggleButton value='option2'>Option 2</ToggleButton>
         <ToggleButton value='option3'>Option 3</ToggleButton>
       </ToggleButtonGroup>
-      <Toggle value='option1' onChange={handleChange}>
+      <Toggle value='option1' outline={true} onChange={handleChange}>
         Option 1
       </Toggle>
       <Toggle value='option2' onChange={handleChange}>

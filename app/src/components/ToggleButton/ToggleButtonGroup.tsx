@@ -1,9 +1,8 @@
 // ./app/src/components/Toggle/ToggleButtonGroup.tsx
-
 'use client'
 
-import React from 'react'
-import { ToggleButtonGroupProvider } from './ToggleButtonGroupContext'
+import { cn } from "../../utils/cn"
+import { ToggleButtonGroupProvider } from "./ToggleButtonGroupContext"
 
 interface ToggleButtonGroupProps {
   children: React.ReactNode
@@ -11,6 +10,8 @@ interface ToggleButtonGroupProps {
   defaultValue?: string | string[]
   onChange?: (value: string | string[]) => void
   className?: string
+  outline?: boolean
+  disabled?: boolean
 }
 
 export const ToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
@@ -18,15 +19,20 @@ export const ToggleButtonGroup: React.FC<ToggleButtonGroupProps> = ({
   type,
   defaultValue,
   onChange,
-  className = ''
+  className = '',
+  outline = false,
+  disabled = false,
+  ...rest
 }) => {
   return (
     <ToggleButtonGroupProvider
       type={type}
       defaultValue={defaultValue}
       onChange={onChange}
+      outline={outline}
+      disabled={disabled}
     >
-      <div className={`flex space-x-2 ${className}`}>{children}</div>
+      <div className={cn("flex space-x-2", className)} {...rest}>{children}</div>
     </ToggleButtonGroupProvider>
   )
 }

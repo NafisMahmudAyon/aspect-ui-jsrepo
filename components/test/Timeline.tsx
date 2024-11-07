@@ -32,7 +32,7 @@ const TimelineDemo: React.FC = () => {
       <Timeline items={timelineItems} lineStyle='dashed' position='right' /> */}
       <div className="p-8">
         <Timeline position="mixed" lineStyle='dashed'>
-          <TimelineItem className='bg-error-700'>
+          <TimelineItem className=''>
             <h3 className="font-bold ">First Event</h3>
             <p className=''>This is the first timeline item</p>
           </TimelineItem>
