@@ -48,7 +48,7 @@ export default function Home() {
       {/* <ButtonDemo /> */}
       {/* <CardDemo /> */}
       {/* <ImageDemo /> */}
-      {/* <AvatarDemo /> */}
+      <AvatarDemo />
       <ProgressBarDemo />
       {/* <CircularProgressDemo /> */}
       {/* <CarouselDemo /> */}
@@ -73,7 +73,7 @@ export default function Home() {
       <StepperDemo />
       {/* <RatingDemo /> */}
       {/* <AlertDemo /> */}
-      {/* <DividerDemo /> */}
+      <DividerDemo />
       {/* <NumberCounterDemo /> */}
       {/* <SkeletonDemo /> */}
       <SliderDemo />
