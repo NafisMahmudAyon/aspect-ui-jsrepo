@@ -29,9 +29,11 @@ const AvatarDemo = () => {
             src='https://images.pexels.com/photos/3211479/pexels-photo-3211479.jpeg?cs=srgb&dl=pexels-manei-3211479.jpg&fm=jpg&w=640&h=640'
             altText='Avatar 3'
           />
+          <AvatarBadge type='counter' counter={5} />
         </Avatar>
         <Avatar className='border'>
           <AvatarImage name='Nafis Mahmud Ayon' />
+          <AvatarBadge type='counter' counter={5} />
         </Avatar>
         <Avatar className='border' />
       </div>

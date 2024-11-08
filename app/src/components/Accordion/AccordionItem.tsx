@@ -26,9 +26,9 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
       className={cn(
         'overflow-hidden rounded-md border',
         isOpen
-          ? 'border-primary-950 dark:border-primary-100'
+          ? 'border-primary-900 dark:border-primary-100'
           : 'border-primary-800 dark:border-primary-100',
-        disabled ? 'cursor-not-allowed opacity-50' : '',
+        disabled ? 'opacity-50' : '',
         className
       )} {...rest}
     >

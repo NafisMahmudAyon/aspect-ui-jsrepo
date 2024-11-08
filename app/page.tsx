@@ -44,44 +44,44 @@ export default function Home() {
   return (
     <main className='mx-auto min-h-screen bg-secondary-100 px-20 py-24 dark:bg-secondary-950'>
       <Dark />
-      {/* <AccordionDemo /> */}
-      {/* <ButtonDemo /> */}
-      {/* <CardDemo /> */}
+      <AccordionDemo />
+      <ButtonDemo />
+      <CardDemo />
       {/* <ImageDemo /> */}
       <AvatarDemo />
       <ProgressBarDemo />
-      {/* <CircularProgressDemo /> */}
-      {/* <CarouselDemo /> */}
+      <CircularProgressDemo />
+      <CarouselDemo />
       <BreadcrumbDemo />
-      {/* <ModalDemo /> */}
+      <ModalDemo />
       <TabsDemo />
-      {/* <TableDemo /> */}
-      {/* <DropdownDemo /> */}
-      {/* <NavbarDemo /> */}
-      {/* <SidebarDemo /> */}
+      <TableDemo />
+      <DropdownDemo />
+      <NavbarDemo />
+      <SidebarDemo />
       <InputDemo />
       <TextareaDemo />
-      {/* <CheckboxDemo /> */}
-      {/* <RadioDemo /> */}
+      <CheckboxDemo />
+      <RadioDemo />
       <SwitchDemo />
-      {/* <UploadDemo /> */}
+      <UploadDemo />
       <ToggleButtonDemo />
-      {/* <PaginationDemo /> */}
-      {/* <DatePickerDemo /> */}
+      <PaginationDemo />
+      <DatePickerDemo />
       <TooltipDemo />
       <SpinnerDemo />
       <StepperDemo />
-      {/* <RatingDemo /> */}
-      {/* <AlertDemo /> */}
+      <RatingDemo />
+      <AlertDemo />
       <DividerDemo />
-      {/* <NumberCounterDemo /> */}
-      {/* <SkeletonDemo /> */}
+      <NumberCounterDemo />
+      <SkeletonDemo />
       <SliderDemo />
       <ToastDemo />
-      {/* <BackToTopDemo />   */}
+      <BackToTopDemo />  
       <TimelineDemo />
       <TypographyDemo />
-      {/* <MasonryDemo /> */}
+      <MasonryDemo />
       {/* <p className='text-body2  '>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni delectus ab commodi est. Deserunt quos necessitatibus corporis sint hic, nulla fugit tenetur nam perspiciatis maiores aliquid veniam. Nisi, quae modi!</p> */}
     </main>
   )

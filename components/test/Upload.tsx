@@ -12,10 +12,17 @@ const FileUploadDemo = () => {
   return (
     <div>
       <h1 className='mb-4 text-3xl font-bold'>File Upload Example</h1>
-      <FileUpload
+      {/* <FileUpload
         onFileSelect={handleFileSelect}
         accept='image/*'
         multiple={true}
+      /> */}
+      <FileUpload
+        onFileSelect={(files) => console.log('Selected files:', files)}
+        accept=".pdf,.doc,.docx"
+        multiple={true}
+        maxFiles={5}
+        maxFileSize={5} // 5MB
       />
     </div>
   )

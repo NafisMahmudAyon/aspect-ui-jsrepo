@@ -68,15 +68,17 @@ const CarouselDemo = () => {
           ))}
         </CarouselSlides>
         <CarouselControl className='z-50'>
-          <CarouselButtons>
-            <CarouselPrevButton />
-            <CarouselNextButton />
-          </CarouselButtons>
+          {/* <CarouselButtons> */}
+            <div>
+              <CarouselPrevButton />
+              <CarouselNextButton />
+            </div>
+          {/* </CarouselButtons> */}
           {/* <CarouselIndicators className='' /> */}
         </CarouselControl>
-        <CarouselControl className='bottom-3 left-1/2 -translate-x-1/2 top'>
+        {/* <CarouselControl className='bottom-3 left-1/2 -translate-x-1/2 top-'> */}
           <CarouselIndicators className='' />
-        </CarouselControl>
+        {/* </CarouselControl> */}
       </Carousel>
     </div>
   )

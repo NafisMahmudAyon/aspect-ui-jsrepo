@@ -11,7 +11,6 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     className?: string;
     iconClassName?: string;
     iconPosition?: 'left' | 'right';
-    isFab?: boolean;
     position?: 'bottom-right' | 'bottom-left';
 }
 export declare const Button: React.FC<ButtonProps>;

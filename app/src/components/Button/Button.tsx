@@ -22,7 +22,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   className?: string
   iconClassName?: string
   iconPosition?: 'left' | 'right'
-  isFab?: boolean
+  // isFab?: boolean
   position?: 'bottom-right' | 'bottom-left'
 }
 
@@ -38,7 +38,7 @@ export const Button: React.FC<ButtonProps> = ({
   iconPosition = 'left',
   className = '',
   iconClassName = '',
-  isFab = false,
+  // isFab = false,
   position = 'bottom-right',
   ...rest
 }) => {
@@ -49,15 +49,15 @@ export const Button: React.FC<ButtonProps> = ({
     small: `${variant == 'link' ? "" : "px-3 py-2"} text-sm`,
     medium: `${variant == 'link' ? "" : "px-4 py-2"} text-base`,
     large: `${variant == 'link' ? "" : "px-6 py-3"} text-lg`,
-    fab: 'w-16 h-16 p-0 rounded-full'
+    // fab: 'w-16 h-16 p-0 rounded-full'
   }
 
   const variantStyles = {
     primary: `
-      bg-primary-500 hover:bg-primary-600 text-primary-950 dark:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
+      bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `,
     secondary: `
-      bg-secondary-500 hover:bg-secondary-600 text-secondary-950 dark:text-secondary-100 focus-visible:ring-1 focus-visible:ring-secondary-900 dark:focus-visible:ring-secondary-100 focus-visible:outline-none
+      bg-secondary-300 dark:bg-secondary-900 hover:bg-secondary-200 dark:hover:bg-secondary-800 text-secondary-800 dark:text-secondary-200 hover:text-secondary-900 dark:hover:text-secondary-100 focus-visible:ring-1 focus-visible:ring-secondary-900 dark:focus-visible:ring-secondary-100 focus-visible:outline-none
     `,
     success: `
       bg-success-500 hover:bg-success-600 text-success-950 dark:text-success-100 focus-visible:ring-1 focus-visible:ring-success-900 dark:focus-visible:ring-success-100 focus-visible:outline-none
@@ -72,20 +72,20 @@ export const Button: React.FC<ButtonProps> = ({
       border border-primary-800 dark:border-primary-200 text-primary-800 hover:text-primary-900 dark:text-primary-200 dark:hover:text-primary-300 hover:border-primary-900 dark:hover:border-primary-300 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `,
     ghost: `
-      bg-transparent hover:bg-primary-500 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
+      bg-transparent hover:bg-primary-100 dark:hover:bg-primary-900 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `,
     icon: `
-      bg-primary-500 hover:bg-primary-600 text-primary-950 dark:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
+      bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `,
     withIcon: `
-      bg-primary-500 hover:bg-primary-600 text-primary-950 dark:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
+      bg-primary-100 dark:bg-primary-900 hover:bg-primary-200 dark:hover:bg-primary-800 text-primary-800 dark:text-primary-200 hover:text-primary-900 dark:hover:text-primary-100 focus-visible:ring-1 focus-visible:ring-primary-900 dark:focus-visible:ring-primary-100 focus-visible:outline-none
     `
   }
 
-  const fabPositionStyles = {
-    'bottom-right': 'fixed bottom-4 right-4',
-    'bottom-left': 'fixed bottom-4 left-4'
-  }
+  // const fabPositionStyles = {
+  //   'bottom-right': 'fixed bottom-4 right-4',
+  //   'bottom-left': 'fixed bottom-4 left-4'
+  // }
 
   return (
     <button
@@ -98,7 +98,7 @@ export const Button: React.FC<ButtonProps> = ({
         variantStyles[variant],
         disabled ? 'cursor-not-allowed opacity-50' : '',
         loading ? 'relative' : '',
-        isFab ? fabPositionStyles[position] : '',
+        // isFab ? fabPositionStyles[position] : '',
         "font-sans",
         className
       )

@@ -80,10 +80,10 @@ export const AccordionHeader: React.FC<AccordionHeaderProps> = ({
         headerClass,
         'flex w-full items-center justify-between p-4 text-left transition-all duration-150 ease-in-out',
         disabled
-          ? 'cursor-not-allowed'
+          ? ''
           : 'cursor-pointer hover:bg-primary-200 dark:hover:bg-primary-900',
         isOpen
-          ? 'bg-primary-200 text-primary-950 dark:bg-primary-900 dark:text-primary-50'
+          ? 'bg-primary-200 text-primary-800 dark:bg-primary-900 dark:text-primary-200'
           : 'bg-primary-100 text-primary-900 dark:bg-primary-800 dark:text-primary-100',
         className
       )}

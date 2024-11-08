@@ -89,15 +89,15 @@ const ButtonDemo = () => {
       </Button>
 
       {/* Floating Action Button (FAB) */}
-      <Button
+      {/* <Button
         variant='primary'
-        isFab
+        // isFab
         icon={<span className='material-icons'>add</span>}
         aria-label='FAB'
-      />
+      /> */}
 
       {/* Add Task Modal */}
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <div className='fixed inset-0 flex items-center justify-center bg-gray-600 bg-opacity-50'>
           <div className='rounded-lg bg-white p-6 shadow-lg'>
             <h2 className='mb-4 text-xl font-semibold'>Add New Task</h2>
@@ -125,7 +125,7 @@ const ButtonDemo = () => {
         tenetur aliquam ipsam fugit, doloribus debitis iusto consequatur quidem
         sed consequuntur. Alias deleniti, corporis accusantium facere dicta
         nostrum non inventore voluptatibus.
-      </h1>
+      </h1> */}
     </div>
   )
 }
