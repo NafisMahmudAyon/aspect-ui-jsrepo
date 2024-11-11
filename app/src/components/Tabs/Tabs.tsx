@@ -12,13 +12,14 @@ interface TabsProps {
 export const Tabs: React.FC<TabsProps> = ({
   children,
   defaultActive,
-  className
+  className,
+  ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(defaultActive)
 
   return (
     <TabsProvider value={{ activeTab, setActiveTab }}>
-      <div className={className}>{children}</div>
+      <div className={className} {...rest}>{children}</div>
     </TabsProvider>
   )
 }

@@ -7,7 +7,7 @@ const TabsDemo = () => {
       <Tabs defaultActive='item-5' className='mx-auto max-w-xl'>
         <TabList>
           <TabItem value='item-5'>Figma</TabItem>
-          <TabItem value='item-6'>Docs</TabItem>
+          <TabItem disabled={true} value='item-6'>Docs</TabItem>
           <TabItem value='item-7'>Blog</TabItem>
           <TabItem value='item-8'>Github</TabItem>
         </TabList>
