@@ -130,9 +130,9 @@ export const Rating: React.FC<RatingProps> = ({
   initialRating = 0,
   size = 24,
   onChange,
-  starColor = '#423b9b',
-  hoverColor = '#9d99f5',
-  unratedColor = '#cfcff9',
+  starColor = '#438e96',
+  hoverColor = '#65a3a9',
+  unratedColor = '#a9cdcf',
   ratingTexts = defaultRatingTexts,
   readOnly = false,
   icon

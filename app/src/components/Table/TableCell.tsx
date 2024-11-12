@@ -1,6 +1,7 @@
 'use client'
 
 import React, { ReactNode } from 'react'
+import { cn } from '../../utils/cn'
 
 interface TableCellProps extends React.HTMLAttributes<HTMLTableCellElement> {
   children: ReactNode
@@ -16,7 +17,7 @@ export const TableCell: React.FC<TableCellProps> = ({
 }) => {
   return (
     <td
-      className={`whitespace-nowrap px-6 py-4 ${className}`}
+      className={cn("px-6 py-3 align-middle text-body2 font-medium capitalize text-primary-800 dark:text-primary-100 [&:has([role=checkbox])]:pr-0", className)}
       colSpan={colSpan}
       {...rest}
     >

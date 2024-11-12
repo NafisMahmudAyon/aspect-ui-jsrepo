@@ -105,18 +105,21 @@
 
 import React, { ReactNode } from 'react'
 import { TableProvider } from './TableContext'
+import { cn } from '../../utils/cn'
 
 interface TableProps {
   children: ReactNode
   className?: string
 }
 
-export const Table: React.FC<TableProps> = ({ children, className = '' }) => {
+export const Table: React.FC<TableProps> = ({ children, className = '', ...rest }) => {
   return (
     <TableProvider>
-      <table className={`min-w-full divide-y divide-gray-200 ${className}`}>
-        {children}
-      </table>
+      <div className='relative w-full overflow-auto'>
+        <table className={cn("relative w-full overflow-hidden", className)} {...rest}>
+          {children}
+        </table>
+      </div>
     </TableProvider>
   )
 }

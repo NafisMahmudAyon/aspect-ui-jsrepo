@@ -1,6 +1,7 @@
 'use client'
 
 import React, { ReactNode } from 'react'
+import { cn } from '../../utils/cn'
 
 interface TableBodyProps {
   children: ReactNode
@@ -12,7 +13,7 @@ export const TableBody: React.FC<TableBodyProps> = ({
   className = ''
 }) => {
   return (
-    <tbody className={`divide-y divide-gray-200 bg-white ${className}`}>
+    <tbody className={cn("divide-y  divide-primary-50 border-b border-b-primary-50", className)}>
       {children}
     </tbody>
   )

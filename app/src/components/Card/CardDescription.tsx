@@ -10,6 +10,6 @@ export const CardDescription: React.FC<CardDescriptionProps> = ({
   className = '',
   ...rest
 }) => {
-  return <p className={cn("text-sm text-secondary-800 dark:text-secondary-300", className,)
+  return <p className={cn("text-sm text-primary-800 dark:text-primary-200", className,)
 } {...rest}>{children}</p>
 }

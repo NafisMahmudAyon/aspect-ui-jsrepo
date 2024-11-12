@@ -45,14 +45,34 @@ const TableDemo = () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell>Row 1, Cell 1</TableCell>
-            <TableCell>Row 1, Cell 2</TableCell>
-            <TableCell>Row 1, Cell 3</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 1 fdgdfgdg dgfdgfdg</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 2</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 3</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Row 2, Cell 1</TableCell>
-            <TableCell>Row 2, Cell 2</TableCell>
-            <TableCell>Row 2, Cell 3</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 1</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 2</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 3</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 1</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 2</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 3</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 1</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 2</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 3</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 1</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 2</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 1, Cell 3</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 1</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 2</TableCell>
+            <TableCell className='whitespace-nowrap'>Row 2, Cell 3</TableCell>
           </TableRow>
         </TableBody>
         <TableFooter>

@@ -14,7 +14,7 @@ export const TableFooter: React.FC<TableFooterProps> = ({
   ...rest
 }) => {
   return (
-    <tfoot className={`bg-gray-50 ${className}`} {...rest}>
+    <tfoot className={`border-t  font-medium [&>tr]:last:border-b-0 ${className}`} {...rest}>
       {children}
     </tfoot>
   )
