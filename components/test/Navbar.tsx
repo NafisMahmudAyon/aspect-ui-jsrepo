@@ -13,7 +13,7 @@ const NavbarDemo = () => {
     <div>
       <Navbar collapseBreakpoint='md'>
         <NavbarContainer>
-          <NavbarList position="left">
+          <NavbarList>
             <NavbarItem>
               <a href='#home'>Home</a>
             </NavbarItem>
@@ -27,7 +27,7 @@ const NavbarDemo = () => {
           <div className='flex items-center'>
             <h1 className='text-xl font-bold'>Logo</h1>
           </div>
-          <NavbarList position="right">
+          <NavbarList>
             <NavbarItem>
               <a href='#services'>Services</a>
             </NavbarItem>

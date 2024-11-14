@@ -22,9 +22,9 @@ const RatingDemo = () => {
 
           // 3. Custom max rating and initial value
         <Rating
-          maxRating={10}
-          size={100}
-          initialRating={6.5}
+          maxRating={5}
+          size={24}
+          initialRating={3.5}
           // unratedColor='text-primary-500'
           // ratedColor='text-error-900'
           // readOnly
@@ -61,7 +61,7 @@ const RatingDemo = () => {
           unratedColor="#D3D3D3"
           ratingTexts={['Poor', 'Fair', 'Good', 'Very Good', 'Excellent']}
           // readOnly={true}
-          icon={<Avatar size={100} />}
+          icon={<Avatar size={20} />}
         />
       </div>
     </div>

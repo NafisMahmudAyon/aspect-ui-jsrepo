@@ -8,13 +8,12 @@ import { cn } from '../../utils/cn'
 interface NavbarListProps {
   children: ReactNode
   className?: string
-  position: 'left' | 'right'
+  // position: 'left' | 'right'
 }
 
 export const NavbarList: React.FC<NavbarListProps> = ({
   children,
   className = '',
-  position,
   ...rest
 }) => {
   const { collapseBreakpoint } = useNavbar()

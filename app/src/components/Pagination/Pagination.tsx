@@ -158,7 +158,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   const paginationItems = generatePaginationItems()
 
   return (
-    <nav className={cn('flex items-center justify-center space-x-2', className)}>
+    <nav className={cn('flex items-center justify-center space-x-2 flex-wrap', className)}>
       {paginationItems.map((item, index) => (
         <React.Fragment key={index}>
           {item === 'start-ellipsis' || item === 'end-ellipsis' ? (

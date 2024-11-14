@@ -219,6 +219,7 @@
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
+    "next-themes": "^0.4.3",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "^20",
     "@types/react": "^18.3.11",
