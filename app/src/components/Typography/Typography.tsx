@@ -15,7 +15,7 @@ type TypographyVariant =
   | 'caption'
 
 interface TypographyProps {
-  variant: TypographyVariant
+  variant?: TypographyVariant
   children: React.ReactNode
   className?: string
 }

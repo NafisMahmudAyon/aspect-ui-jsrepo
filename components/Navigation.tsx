@@ -10,7 +10,7 @@ const Navbar = () => {
     <header
       className={`fixed top-0 z-50 w-full border-b border-primary-100 bg-primary-100 dark:border-primary-800 text-primary-600 dark:text-primary-100 ${pathname === '/' ? 'dark:bg-primary-900' : 'dark:bg-primary-900'}`}>
       <div className="relative mx-auto max-w-7xl px-6 2xl:px-0">
-        <Nav className="flex items-center justify-between py-2 shadow-none">
+        <Nav className="flex items-center justify-between shadow-none">
           <NavbarContainer>
             <DesktopMenu />
             <NavbarCollapseBtn />
