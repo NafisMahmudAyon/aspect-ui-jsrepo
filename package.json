@@ -190,7 +190,7 @@
 		"prettier": "npx prettier --write .",
 		"format": "prettier --write 'app/**/*.{js,jsx,ts,tsx,css,html}'",
 		"watchX": "npx tailwindcss -i ./app/globals.css -o ./app/index.css",
-		"build:jsrepo": "jsrepo build --dirs ./app/src/components"
+		"build:jsrepo": "jsrepo build --dirs ./app/src"
 	},
 	"repository": {
 		"type": "git",
