@@ -1,37 +1,24 @@
 [
 	{
-		"name": "Accordion",
+		"name": "components",
 		"blocks": [
 			{
 				"name": "Accordion",
 				"directory": "app/src/components/Accordion",
-				"category": "Accordion",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Accordion.tsx"
+					"Accordion.tsx",
+					"AccordionContent.tsx",
+					"AccordionContext.tsx",
+					"AccordionHeader.tsx",
+					"AccordionItem.tsx",
+					"index.ts"
 				],
 				"localDependencies": [
-					"Accordion/AccordionContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "AccordionContent",
-				"directory": "app/src/components/Accordion",
-				"category": "Accordion",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AccordionContent.tsx"
-				],
-				"localDependencies": [
-					"Accordion/AccordionContext",
-					"utils/cn"
+					"utils/cn",
+					"components/Arrow"
 				],
 				"dependencies": [
 					"framer-motion@^11.11.9"
@@ -41,168 +28,33 @@
 				]
 			},
 			{
-				"name": "AccordionContext",
-				"directory": "app/src/components/Accordion",
-				"category": "Accordion",
+				"name": "Accordion with item",
+				"directory": "app/src/components/Accordion with item",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"AccordionContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "AccordionHeader",
-				"directory": "app/src/components/Accordion",
-				"category": "Accordion",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AccordionHeader.tsx"
-				],
-				"localDependencies": [
-					"Accordion/AccordionContext",
-					"utils/cn",
-					"Icon/Arrow"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "AccordionItem",
-				"directory": "app/src/components/Accordion",
-				"category": "Accordion",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AccordionItem.tsx"
-				],
-				"localDependencies": [
-					"Accordion/AccordionContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Accordion",
-				"category": "Accordion",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"Accordion.tsx",
+					"AccordionContent.tsx",
+					"AccordionHeader.tsx",
+					"AccordionItem.tsx",
 					"index.ts"
 				],
 				"localDependencies": [],
 				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Accordion with item",
-		"blocks": [
-			{
-				"name": "Accordion",
-				"directory": "app/src/components/Accordion with item",
-				"category": "Accordion with item",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Accordion.tsx"
-				],
-				"localDependencies": [
-					"Accordion with item/AccordionItem",
-					"Accordion with item/AccordionHeader",
-					"Accordion with item/AccordionContent"
-				],
-				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "AccordionContent",
-				"directory": "app/src/components/Accordion with item",
-				"category": "Accordion with item",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AccordionContent.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "AccordionHeader",
-				"directory": "app/src/components/Accordion with item",
-				"category": "Accordion with item",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AccordionHeader.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "AccordionItem",
-				"directory": "app/src/components/Accordion with item",
-				"category": "Accordion with item",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AccordionItem.tsx"
-				],
-				"localDependencies": [
-					"Accordion with item/AccordionHeader",
-					"Accordion with item/AccordionContent"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Accordion with item",
-				"category": "Accordion with item",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Alert",
-		"blocks": [
 			{
 				"name": "Alert",
 				"directory": "app/src/components/Alert",
-				"category": "Alert",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Alert.tsx"
+					"Alert.tsx",
+					"index.ts"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -212,121 +64,37 @@
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Alert",
-				"category": "Alert",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Avatar",
-		"blocks": [
 			{
 				"name": "Avatar",
 				"directory": "app/src/components/Avatar",
-				"category": "Avatar",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Avatar.tsx"
+					"Avatar.tsx",
+					"AvatarBadge.tsx",
+					"AvatarGroup.tsx",
+					"AvatarImage.tsx",
+					"index.ts"
 				],
 				"localDependencies": [
 					"utils/cn",
-					"Avatar/AvatarImage"
+					"components/Avatar"
 				],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "AvatarBadge",
-				"directory": "app/src/components/Avatar",
-				"category": "Avatar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AvatarBadge.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "AvatarGroup",
-				"directory": "app/src/components/Avatar",
-				"category": "Avatar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AvatarGroup.tsx"
-				],
-				"localDependencies": [
-					"Avatar/Avatar",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "AvatarImage",
-				"directory": "app/src/components/Avatar",
-				"category": "Avatar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"AvatarImage.tsx"
-				],
-				"localDependencies": [
-					"Icon/Avatar",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Avatar",
-				"category": "Avatar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "BackToTop",
-		"blocks": [
 			{
 				"name": "BackToTop",
 				"directory": "app/src/components/BackToTop",
-				"category": "BackToTop",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"BackToTop.tsx"
+					"BackToTop.tsx",
+					"index.ts"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -336,85 +104,35 @@
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "index",
-				"directory": "app/src/components/BackToTop",
-				"category": "BackToTop",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Breadcrumb",
-		"blocks": [
 			{
 				"name": "Breadcrumb",
 				"directory": "app/src/components/Breadcrumb",
-				"category": "Breadcrumb",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Breadcrumb.tsx"
+					"Breadcrumb.tsx",
+					"BreadcrumbItem.tsx",
+					"index.tsx"
 				],
 				"localDependencies": [
 					"utils/cn",
-					"Icon/Arrow"
+					"components/Arrow"
 				],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "BreadcrumbItem",
-				"directory": "app/src/components/Breadcrumb",
-				"category": "Breadcrumb",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"BreadcrumbItem.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Breadcrumb",
-				"category": "Breadcrumb",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Button",
-		"blocks": [
 			{
 				"name": "Button",
 				"directory": "app/src/components/Button",
-				"category": "Button",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Button.tsx"
+					"Button.tsx",
+					"index.tsx"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -424,142 +142,20 @@
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Button",
-				"category": "Button",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Card",
-		"blocks": [
 			{
 				"name": "Card",
 				"directory": "app/src/components/Card",
-				"category": "Card",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Card.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "CardContent",
-				"directory": "app/src/components/Card",
-				"category": "Card",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CardContent.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "CardDescription",
-				"directory": "app/src/components/Card",
-				"category": "Card",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CardDescription.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "CardFooter",
-				"directory": "app/src/components/Card",
-				"category": "Card",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CardFooter.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "CardHeader",
-				"directory": "app/src/components/Card",
-				"category": "Card",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CardHeader.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "CardTitle",
-				"directory": "app/src/components/Card",
-				"category": "Card",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CardTitle.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Card",
-				"category": "Card",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"Card.tsx",
+					"CardContent.tsx",
+					"CardDescription.tsx",
+					"CardFooter.tsx",
+					"CardHeader.tsx",
+					"CardTitle.tsx",
 					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Carousel",
-		"blocks": [
-			{
-				"name": "Buttons",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Buttons.tsx"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -572,15 +168,26 @@
 			{
 				"name": "Carousel",
 				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Carousel.tsx"
+					"Buttons.tsx",
+					"Carousel.tsx",
+					"CarouselArrowButtons.tsx",
+					"CarouselContext.tsx",
+					"CarouselDotButton.tsx",
+					"Control.tsx",
+					"index.tsx",
+					"Indicators.tsx",
+					"Item.tsx",
+					"NextButton.tsx",
+					"PrevButton.tsx",
+					"Slides.tsx",
+					"theme.ts",
+					"Viewport.tsx"
 				],
 				"localDependencies": [
-					"Carousel/CarouselContext",
-					"Carousel/Viewport",
 					"utils/cn"
 				],
 				"dependencies": [
@@ -592,217 +199,14 @@
 				]
 			},
 			{
-				"name": "CarouselArrowButtons",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CarouselArrowButtons.tsx"
-				],
-				"localDependencies": [
-					"Carousel/CarouselContext",
-					"utils/cn"
-				],
-				"dependencies": [
-					"embla-carousel@^8.3.0"
-				],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "CarouselContext",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CarouselContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [
-					"embla-carousel@^8.3.0"
-				],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "CarouselDotButton",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"CarouselDotButton.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [
-					"embla-carousel@^8.3.0"
-				],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "Control",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Control.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "Indicators",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Indicators.tsx"
-				],
-				"localDependencies": [
-					"Carousel/CarouselContext",
-					"Carousel/CarouselDotButton",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "Item",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Item.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "NextButton",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"NextButton.tsx"
-				],
-				"localDependencies": [
-					"Carousel/CarouselArrowButtons",
-					"Carousel/CarouselContext"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "PrevButton",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"PrevButton.tsx"
-				],
-				"localDependencies": [
-					"Carousel/CarouselArrowButtons",
-					"Carousel/CarouselContext"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "Slides",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Slides.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "theme",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"theme.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "Viewport",
-				"directory": "app/src/components/Carousel",
-				"category": "Carousel",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Viewport.tsx"
-				],
-				"localDependencies": [
-					"Carousel/CarouselContext"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			}
-		]
-	},
-	{
-		"name": "Checkbox",
-		"blocks": [
-			{
 				"name": "Checkbox",
 				"directory": "app/src/components/Checkbox",
-				"category": "Checkbox",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Checkbox.tsx"
+					"Checkbox.tsx",
+					"index.tsx"
 				],
 				"localDependencies": [],
 				"dependencies": [],
@@ -810,32 +214,15 @@
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Checkbox",
-				"category": "Checkbox",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "CircularProgressBar",
-		"blocks": [
 			{
 				"name": "CircularProgressBar",
 				"directory": "app/src/components/CircularProgressBar",
-				"category": "CircularProgressBar",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"CircularProgressBar.tsx"
+					"CircularProgressBar.tsx",
+					"index.ts"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -845,68 +232,35 @@
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "index",
-				"directory": "app/src/components/CircularProgressBar",
-				"category": "CircularProgressBar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "DatePicker",
-		"blocks": [
 			{
 				"name": "DatePicker",
 				"directory": "app/src/components/DatePicker",
-				"category": "DatePicker",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"DatePicker.tsx"
+					"DatePicker.tsx",
+					"index.ts"
 				],
 				"localDependencies": [
+					"components/Dropdown",
 					"utils/cn",
-					"Icon/Arrow"
+					"components/Arrow"
 				],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "index",
-				"directory": "app/src/components/DatePicker",
-				"category": "DatePicker",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Divider",
-		"blocks": [
 			{
 				"name": "Divider",
 				"directory": "app/src/components/Divider",
-				"category": "Divider",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Divider.tsx"
+					"Divider.tsx",
+					"index.ts"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -916,217 +270,41 @@
 					"react@^18.3.1"
 				]
 			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Divider",
-				"category": "Divider",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Dropdown",
-		"blocks": [
 			{
 				"name": "Dropdown",
 				"directory": "app/src/components/Dropdown",
-				"category": "Dropdown",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Dropdown.tsx"
-				],
-				"localDependencies": [
-					"Dropdown/DropdownContext"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "DropdownAction",
-				"directory": "app/src/components/Dropdown",
-				"category": "Dropdown",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"DropdownAction.tsx"
-				],
-				"localDependencies": [
-					"Dropdown/DropdownContext",
-					"utils/cn",
-					"Icon/Arrow"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "DropdownContent",
-				"directory": "app/src/components/Dropdown",
-				"category": "Dropdown",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"DropdownContent.tsx"
-				],
-				"localDependencies": [
-					"Dropdown/DropdownContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "DropdownContext",
-				"directory": "app/src/components/Dropdown",
-				"category": "Dropdown",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"DropdownContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "DropdownItem",
-				"directory": "app/src/components/Dropdown",
-				"category": "Dropdown",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"DropdownItem.tsx"
-				],
-				"localDependencies": [
-					"utils/cn",
-					"Dropdown/DropdownContext"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "DropdownList",
-				"directory": "app/src/components/Dropdown",
-				"category": "Dropdown",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"DropdownList.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "index",
-				"directory": "app/src/components/Dropdown",
-				"category": "Dropdown",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"Dropdown.tsx",
+					"DropdownAction.tsx",
+					"DropdownContent.tsx",
+					"DropdownContext.tsx",
+					"DropdownItem.tsx",
+					"DropdownList.tsx",
 					"index.ts"
 				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Icon",
-		"blocks": [
-			{
-				"name": "Arrow",
-				"directory": "app/src/components/Icon",
-				"category": "Icon",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Arrow.tsx"
+				"localDependencies": [
+					"utils/cn",
+					"components/Arrow"
 				],
-				"localDependencies": [],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
 			},
 			{
-				"name": "Avatar",
+				"name": "Icon",
 				"directory": "app/src/components/Icon",
-				"category": "Icon",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Avatar.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "Form",
-				"directory": "app/src/components/Icon",
-				"category": "Icon",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Form.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "Star",
-				"directory": "app/src/components/Icon",
-				"category": "Icon",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"Arrow.tsx",
+					"Avatar.tsx",
+					"Form.tsx",
 					"Star.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Image",
-		"blocks": [
-			{
-				"name": "Image copy",
-				"directory": "app/src/components/Image",
-				"category": "Image",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Image copy.tsx"
 				],
 				"localDependencies": [],
 				"dependencies": [],
@@ -1137,11 +315,13 @@
 			{
 				"name": "Image",
 				"directory": "app/src/components/Image",
-				"category": "Image",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Image.tsx"
+					"Image copy.tsx",
+					"Image.tsx",
+					"index.ts"
 				],
 				"localDependencies": [],
 				"dependencies": [],
@@ -1151,26 +331,8 @@
 			},
 			{
 				"name": "index",
-				"directory": "app/src/components/Image",
-				"category": "Image",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			}
-		]
-	},
-	{
-		"name": "Input",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Input",
-				"category": "Input",
+				"directory": "app/src/components",
+				"category": "components",
 				"tests": false,
 				"subdirectory": false,
 				"files": [
@@ -1183,46 +345,31 @@
 			{
 				"name": "Input",
 				"directory": "app/src/components/Input",
-				"category": "Input",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Input.tsx"
 				],
 				"localDependencies": [
-					"Icon/Form",
-					"utils/cn"
+					"components/Form",
+					"utils/cn",
+					"components/Tooltip"
 				],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Masonry",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Masonry",
-				"category": "Masonry",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Masonry",
 				"directory": "app/src/components/Masonry",
-				"category": "Masonry",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Masonry.tsx"
 				],
 				"localDependencies": [],
@@ -1230,184 +377,52 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Modal",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Modal",
-				"category": "Modal",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Modal",
 				"directory": "app/src/components/Modal",
-				"category": "Modal",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Modal.tsx"
-				],
-				"localDependencies": [
-					"Modal/ModalContext"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "ModalActions",
-				"directory": "app/src/components/Modal",
-				"category": "Modal",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"ModalActions.tsx"
-				],
-				"localDependencies": [
-					"Modal/ModalContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "ModalContent",
-				"directory": "app/src/components/Modal",
-				"category": "Modal",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"ModalContent.tsx"
-				],
-				"localDependencies": [
-					"Modal/ModalContext",
-					"utils/cn",
-					"Modal/ModalPortal"
-				],
-				"dependencies": [
-					"framer-motion@^11.11.9"
-				],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "ModalContext",
-				"directory": "app/src/components/Modal",
-				"category": "Modal",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"ModalContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "ModalOverlay",
-				"directory": "app/src/components/Modal",
-				"category": "Modal",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"ModalOverlay.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [
-					"framer-motion@^11.11.9"
-				],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "ModalPortal",
-				"directory": "app/src/components/Modal",
-				"category": "Modal",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"index.ts",
+					"Modal.tsx",
+					"ModalActions.tsx",
+					"ModalContent.tsx",
+					"ModalContext.tsx",
+					"ModalOverlay.tsx",
 					"ModalPortal.tsx"
 				],
 				"localDependencies": [
-					"Modal/ModalContext",
-					"Modal/ModalOverlay",
+					"utils/cn",
 					"utils/Portal"
 				],
 				"dependencies": [
+					"framer-motion@^11.11.9",
 					"react-focus-lock@^2.13.2",
 					"react-remove-scroll@^2.5.9"
 				],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Navbar",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Navbar",
 				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Navbar.tsx"
+					"index.ts",
+					"Navbar.tsx",
+					"NavbarCollapse.tsx",
+					"NavbarCollapseBtn.tsx",
+					"NavbarContainer.tsx",
+					"NavbarContext.tsx",
+					"NavbarItem.tsx",
+					"NavbarList.tsx"
 				],
 				"localDependencies": [
-					"Navbar/NavbarContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "NavbarCollapse",
-				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"NavbarCollapse.tsx"
-				],
-				"localDependencies": [
-					"Navbar/NavbarContext",
 					"utils/cn"
 				],
 				"dependencies": [
@@ -1418,115 +433,13 @@
 				]
 			},
 			{
-				"name": "NavbarCollapseBtn",
-				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"NavbarCollapseBtn.tsx"
-				],
-				"localDependencies": [
-					"Navbar/NavbarContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "NavbarContainer",
-				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"NavbarContainer.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "NavbarContext",
-				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"NavbarContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "NavbarItem",
-				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"NavbarItem.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "NavbarList",
-				"directory": "app/src/components/Navbar",
-				"category": "Navbar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"NavbarList.tsx"
-				],
-				"localDependencies": [
-					"Navbar/NavbarContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			}
-		]
-	},
-	{
-		"name": "NumberCounter",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/NumberCounter",
-				"category": "NumberCounter",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
 				"name": "NumberCounter",
 				"directory": "app/src/components/NumberCounter",
-				"category": "NumberCounter",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"NumberCounter.tsx"
 				],
 				"localDependencies": [
@@ -1536,32 +449,15 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Pagination",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Pagination",
-				"category": "Pagination",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Pagination",
 				"directory": "app/src/components/Pagination",
-				"category": "Pagination",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Pagination.tsx"
 				],
 				"localDependencies": [
@@ -1571,32 +467,15 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "ProgressBar",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/ProgressBar",
-				"category": "ProgressBar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "ProgressBar",
 				"directory": "app/src/components/ProgressBar",
-				"category": "ProgressBar",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"ProgressBar.tsx"
 				],
 				"localDependencies": [
@@ -1606,32 +485,15 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Radio",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Radio",
-				"category": "Radio",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Radio",
 				"directory": "app/src/components/Radio",
-				"category": "Radio",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Radio.tsx"
 				],
 				"localDependencies": [],
@@ -1639,190 +501,56 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Rating",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Rating",
-				"category": "Rating",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Rating",
 				"directory": "app/src/components/Rating",
-				"category": "Rating",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Rating.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "Ratingcopy",
-				"directory": "app/src/components/Rating",
-				"category": "Rating",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"index.ts",
+					"Rating.tsx",
 					"Ratingcopy.tsx"
 				],
 				"localDependencies": [
-					"Icon/Star"
+					"components/Star"
 				],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Sidebar",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Sidebar",
-				"category": "Sidebar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Sidebar",
 				"directory": "app/src/components/Sidebar",
-				"category": "Sidebar",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Sidebar.tsx"
+					"index.ts",
+					"Sidebar.tsx",
+					"SidebarContainer.tsx",
+					"SidebarContext.tsx",
+					"SidebarFooter.tsx",
+					"SidebarHeader.tsx",
+					"SidebarItem.tsx",
+					"Untitled-1.txt"
 				],
 				"localDependencies": [],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			},
-			{
-				"name": "SidebarContainer",
-				"directory": "app/src/components/Sidebar",
-				"category": "Sidebar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"SidebarContainer.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "SidebarContext",
-				"directory": "app/src/components/Sidebar",
-				"category": "Sidebar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"SidebarContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "SidebarFooter",
-				"directory": "app/src/components/Sidebar",
-				"category": "Sidebar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"SidebarFooter.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "SidebarHeader",
-				"directory": "app/src/components/Sidebar",
-				"category": "Sidebar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"SidebarHeader.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "SidebarItem",
-				"directory": "app/src/components/Sidebar",
-				"category": "Sidebar",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"SidebarItem.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			}
-		]
-	},
-	{
-		"name": "Skeleton",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Skeleton",
-				"category": "Skeleton",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Skeleton",
 				"directory": "app/src/components/Skeleton",
-				"category": "Skeleton",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Skeleton.tsx"
 				],
 				"localDependencies": [
@@ -1832,32 +560,15 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Slider",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Slider",
-				"category": "Slider",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Slider",
 				"directory": "app/src/components/Slider",
-				"category": "Slider",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Slider.tsx"
 				],
 				"localDependencies": [
@@ -1867,20 +578,16 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Slider deprecated",
-		"blocks": [
+			},
 			{
-				"name": "Slider",
+				"name": "Slider deprecated",
 				"directory": "app/src/components/Slider deprecated",
-				"category": "Slider deprecated",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Slider.tsx"
+					"Slider.tsx",
+					"SliderItem.tsx"
 				],
 				"localDependencies": [],
 				"dependencies": [
@@ -1892,80 +599,30 @@
 				]
 			},
 			{
-				"name": "SliderItem",
-				"directory": "app/src/components/Slider deprecated",
-				"category": "Slider deprecated",
+				"name": "Sliderdfd",
+				"directory": "app/src/components/Sliderdfd",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"Slider.tsx",
 					"SliderItem.tsx"
 				],
 				"localDependencies": [],
 				"dependencies": [],
 				"devDependencies": [
+					"react@^18.3.1",
 					"@splidejs/react-splide@^0.7.12"
 				]
-			}
-		]
-	},
-	{
-		"name": "Sliderdfd",
-		"blocks": [
-			{
-				"name": "Slider",
-				"directory": "app/src/components/Sliderdfd",
-				"category": "Sliderdfd",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Slider.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "SliderItem",
-				"directory": "app/src/components/Sliderdfd",
-				"category": "Sliderdfd",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"SliderItem.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"@splidejs/react-splide@^0.7.12"
-				]
-			}
-		]
-	},
-	{
-		"name": "Spinner",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Spinner",
-				"category": "Spinner",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Spinner",
 				"directory": "app/src/components/Spinner",
-				"category": "Spinner",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Spinner.tsx"
 				],
 				"localDependencies": [
@@ -1975,32 +632,15 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Stepper",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Stepper",
-				"category": "Stepper",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Stepper",
 				"directory": "app/src/components/Stepper",
-				"category": "Stepper",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Stepper.tsx"
 				],
 				"localDependencies": [],
@@ -2008,32 +648,15 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Switch",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Switch",
-				"category": "Switch",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Switch",
 				"directory": "app/src/components/Switch",
-				"category": "Switch",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Switch.tsx"
 				],
 				"localDependencies": [
@@ -2043,235 +666,24 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Table",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Table",
 				"directory": "app/src/components/Table",
-				"category": "Table",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Table.tsx"
-				],
-				"localDependencies": [
-					"Table/TableContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableBody",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TableBody.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableCaption",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TableCaption.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableCell",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TableCell.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableContext",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TableContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableFooter",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TableFooter.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableHeadCell",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TableHeadCell.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableHeader",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TableHeader.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TableRow",
-				"directory": "app/src/components/Table",
-				"category": "Table",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"index.ts",
+					"Table.tsx",
+					"TableBody.tsx",
+					"TableCaption.tsx",
+					"TableCell.tsx",
+					"TableContext.tsx",
+					"TableFooter.tsx",
+					"TableHeadCell.tsx",
+					"TableHeader.tsx",
 					"TableRow.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			}
-		]
-	},
-	{
-		"name": "Tabs",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Tabs",
-				"category": "Tabs",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "TabContent",
-				"directory": "app/src/components/Tabs",
-				"category": "Tabs",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TabContent.tsx"
-				],
-				"localDependencies": [
-					"Tabs/TabsContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TabItem",
-				"directory": "app/src/components/Tabs",
-				"category": "Tabs",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TabItem.tsx"
-				],
-				"localDependencies": [
-					"Tabs/TabsContext",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TabList",
-				"directory": "app/src/components/Tabs",
-				"category": "Tabs",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"TabList.tsx"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -2284,60 +696,33 @@
 			{
 				"name": "Tabs",
 				"directory": "app/src/components/Tabs",
-				"category": "Tabs",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Tabs.tsx"
-				],
-				"localDependencies": [
-					"Tabs/TabsContext"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TabsContext",
-				"directory": "app/src/components/Tabs",
-				"category": "Tabs",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"index.tsx",
+					"TabContent.tsx",
+					"TabItem.tsx",
+					"TabList.tsx",
+					"Tabs.tsx",
 					"TabsContext.tsx"
 				],
-				"localDependencies": [],
+				"localDependencies": [
+					"utils/cn"
+				],
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Textarea",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Textarea",
-				"category": "Textarea",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Textarea",
 				"directory": "app/src/components/Textarea",
-				"category": "Textarea",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Textarea.tsx"
 				],
 				"localDependencies": [
@@ -2347,50 +732,16 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Timeline",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Timeline",
-				"category": "Timeline",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Timeline",
 				"directory": "app/src/components/Timeline",
-				"category": "Timeline",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Timeline.tsx"
-				],
-				"localDependencies": [
-					"Timeline/TimelineItem",
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "TimelineItem",
-				"directory": "app/src/components/Timeline",
-				"category": "Timeline",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"index.ts",
+					"Timeline.tsx",
 					"TimelineItem.tsx"
 				],
 				"localDependencies": [
@@ -2400,32 +751,15 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Timeline copy",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Timeline copy",
-				"category": "Timeline copy",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
-				"name": "Timeline",
+				"name": "Timeline copy",
 				"directory": "app/src/components/Timeline copy",
-				"category": "Timeline copy",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Timeline.tsx"
 				],
 				"localDependencies": [],
@@ -2433,83 +767,17 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Toast",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Toast",
-				"category": "Toast",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Toast",
 				"directory": "app/src/components/Toast",
-				"category": "Toast",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"Toast.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			},
-			{
-				"name": "ToastContainer",
-				"directory": "app/src/components/Toast",
-				"category": "Toast",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
+					"index.ts",
+					"Toast.tsx",
 					"ToastContainer.tsx"
-				],
-				"localDependencies": [
-					"utils/cn"
-				],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			}
-		]
-	},
-	{
-		"name": "ToggleButton",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/ToggleButton",
-				"category": "ToggleButton",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "Toggle",
-				"directory": "app/src/components/ToggleButton",
-				"category": "ToggleButton",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Toggle.tsx"
 				],
 				"localDependencies": [
 					"utils/cn"
@@ -2522,14 +790,17 @@
 			{
 				"name": "ToggleButton",
 				"directory": "app/src/components/ToggleButton",
-				"category": "ToggleButton",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
-					"ToggleButton.tsx"
+					"index.ts",
+					"Toggle.tsx",
+					"ToggleButton.tsx",
+					"ToggleButtonGroup.tsx",
+					"ToggleButtonGroupContext.tsx"
 				],
 				"localDependencies": [
-					"ToggleButton/ToggleButtonGroupContext",
 					"utils/cn"
 				],
 				"dependencies": [],
@@ -2538,61 +809,13 @@
 				]
 			},
 			{
-				"name": "ToggleButtonGroup",
-				"directory": "app/src/components/ToggleButton",
-				"category": "ToggleButton",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"ToggleButtonGroup.tsx"
-				],
-				"localDependencies": [
-					"utils/cn",
-					"ToggleButton/ToggleButtonGroupContext"
-				],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "ToggleButtonGroupContext",
-				"directory": "app/src/components/ToggleButton",
-				"category": "ToggleButton",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"ToggleButtonGroupContext.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
-			}
-		]
-	},
-	{
-		"name": "Tooltip",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Tooltip",
-				"category": "Tooltip",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
 				"name": "Tooltip",
 				"directory": "app/src/components/Tooltip",
-				"category": "Tooltip",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
 					"Tooltip.tsx"
 				],
 				"localDependencies": [
@@ -2602,45 +825,16 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Typography",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Typography",
-				"category": "Typography",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "theme",
-				"directory": "app/src/components/Typography",
-				"category": "Typography",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"theme.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
 			},
 			{
 				"name": "Typography",
 				"directory": "app/src/components/Typography",
-				"category": "Typography",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
+					"theme.ts",
 					"Typography.tsx"
 				],
 				"localDependencies": [
@@ -2650,47 +844,16 @@
 				"devDependencies": [
 					"react@^18.3.1"
 				]
-			}
-		]
-	},
-	{
-		"name": "Upload",
-		"blocks": [
-			{
-				"name": "index",
-				"directory": "app/src/components/Upload",
-				"category": "Upload",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"index.ts"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": []
-			},
-			{
-				"name": "Upload copy",
-				"directory": "app/src/components/Upload",
-				"category": "Upload",
-				"tests": false,
-				"subdirectory": false,
-				"files": [
-					"Upload copy.tsx"
-				],
-				"localDependencies": [],
-				"dependencies": [],
-				"devDependencies": [
-					"react@^18.3.1"
-				]
 			},
 			{
 				"name": "Upload",
 				"directory": "app/src/components/Upload",
-				"category": "Upload",
+				"category": "components",
 				"tests": false,
-				"subdirectory": false,
+				"subdirectory": true,
 				"files": [
+					"index.ts",
+					"Upload copy.tsx",
 					"Upload.tsx"
 				],
 				"localDependencies": [
@@ -2699,6 +862,78 @@
 				"dependencies": [],
 				"devDependencies": [
 					"react@^18.3.1"
+				]
+			}
+		]
+	},
+	{
+		"name": "theme",
+		"blocks": [
+			{
+				"name": "AspectUITheme",
+				"directory": "app/src/theme",
+				"category": "theme",
+				"tests": false,
+				"subdirectory": false,
+				"files": [
+					"AspectUITheme.ts"
+				],
+				"localDependencies": [],
+				"dependencies": [
+					"deepmerge@^4.3.1"
+				],
+				"devDependencies": [
+					"tailwindcss@^3.4.1"
+				]
+			},
+			{
+				"name": "default-preset",
+				"directory": "app/src/theme",
+				"category": "theme",
+				"tests": false,
+				"subdirectory": false,
+				"files": [
+					"default-preset.ts"
+				],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": []
+			}
+		]
+	},
+	{
+		"name": "utils",
+		"blocks": [
+			{
+				"name": "cn",
+				"directory": "app/src/utils",
+				"category": "utils",
+				"tests": false,
+				"subdirectory": false,
+				"files": [
+					"cn.ts"
+				],
+				"localDependencies": [],
+				"dependencies": [
+					"clsx@^2.1.1",
+					"tailwind-merge@^2.5.4"
+				],
+				"devDependencies": []
+			},
+			{
+				"name": "Portal",
+				"directory": "app/src/utils",
+				"category": "utils",
+				"tests": false,
+				"subdirectory": false,
+				"files": [
+					"Portal.tsx"
+				],
+				"localDependencies": [],
+				"dependencies": [],
+				"devDependencies": [
+					"react@^18.3.1",
+					"react-dom@^18.3.1"
 				]
 			}
 		]
